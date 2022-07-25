@@ -45,7 +45,7 @@ function showmove(step, fx, fy, x, y){
 
 // 工具函数
 const notify = (str) => window.alert("🔔 "+str)
-const loadmo = (e) => new Pos(e.layerX>>6, e.layerY>>6)
+const loadmo = (e) => new Pos(e.offsetX>>6, e.offsetY>>6)
 const tellwiner = (num) => notify([ "红方食用了绿方", "绿方食用了红方", "红方无路可走", "绿方无路可走" ][num-1])
 const changeorder = () => { current=3-current; showinfo() }
 const showinfo = () => document.getElementById("info").innerText = `轮到${["红", "绿"][current-1]}方`
