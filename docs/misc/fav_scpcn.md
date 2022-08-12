@@ -25,3 +25,7 @@
 | [猫猫](https://scp-wiki-cn.wikidot.com/wanderers:kitty) | 猫猫 |
 | [超光速飞船已坠毁](https://scp-wiki-cn.wikidot.com/document-163-j) | |
 | [差评](https://scp-wiki-cn.wikidot.com/downvoted) | 2015 年的文 |
+| [青鸟](https://scp-wiki-cn.wikidot.com/scp-cn-1559) | “欢迎点燃人类自己的历史” |
+| [神农棺](https://scp-wiki-cn.wikidot.com/scp-cn-1600) | “行医一生，救人万世；以万人传之，亦可救人千代万代” |
+| [解脱](https://scp-wiki-cn.wikidot.com/scp-cn-2470) | “如果加个信息危害的tag…” |
+| [缓行电车](https://scp-wiki-cn.wikidot.com/scp-cn-797) | 竟然有清新风格 |
