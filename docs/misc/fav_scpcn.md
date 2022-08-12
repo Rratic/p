@@ -20,6 +20,8 @@
 | [一生](https://scp-wiki-cn.wikidot.com/one-man-life) | |
 | [末日竞赛](https://scp-wiki-cn.wikidot.com/doomsday-con-test) | 对于一个指定的idea，能写出什么？ |
 | [《第一次超自然大战简明史(上)》节选 ](https://scp-wiki-cn.wikidot.com/ow1-first) | |
+| [加速深蓝](https://scp-wiki-cn.wikidot.com/scp-cn-2463) | 这是好事吗？ |
+| [碧游主人说兽娘感应化形经](https://scp-wiki-cn.wikidot.com/wanderers:furry-girls) | 猫猫 |
 | [猫猫](https://scp-wiki-cn.wikidot.com/wanderers:kitty) | 猫猫 |
 | [超光速飞船已坠毁](https://scp-wiki-cn.wikidot.com/document-163-j) | |
 | [差评](https://scp-wiki-cn.wikidot.com/downvoted) | 2015 年的文 |
