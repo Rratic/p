@@ -1,5 +1,7 @@
 outline = [
+	"std",
 	"misc",
 ]
 [names]
+std = "标准化"
 misc = "杂项"
