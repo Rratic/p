@@ -4,5 +4,6 @@ outline = [
 	"misc",
 ]
 [names]
+blog = "博客"
 std = "标准化"
 misc = "杂项"
