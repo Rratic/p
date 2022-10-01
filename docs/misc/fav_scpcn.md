@@ -4,7 +4,6 @@
 * 这是个人推荐，*显然不适合使用人*
 * 有些文找不到了
 * [有些文](https://scp-wiki-cn.wikidot.com/time-is-a-place)没有选
-* 顺序无关
 * 表格格式解析有问题，这是 CommonMark 包的 bug，正在等待处理
 
 | 标题 & 链接 | 描述 / 感想 / 杂 |
@@ -29,3 +28,5 @@
 | [神农棺](https://scp-wiki-cn.wikidot.com/scp-cn-1600) | “行医一生，救人万世；以万人传之，亦可救人千代万代” |
 | [解脱](https://scp-wiki-cn.wikidot.com/scp-cn-2470) | “如果加个信息危害的tag…” |
 | [缓行电车](https://scp-wiki-cn.wikidot.com/scp-cn-797) | 竟然有清新风格 |
+| [嘉陵浊浪](https://scp-wiki-cn.wikidot.com/jialingjiang) | “一个理想，和它的破灭” |
+| [ＩＮＴＥＲＮＥＴ](https://scp-wiki-cn.wikidot.com/scp-cn-2091) | |
