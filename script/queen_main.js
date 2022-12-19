@@ -62,6 +62,7 @@ function new_game(){
 	map.fill(0)
 	setmap(0, 0, 2)
 	setmap(7, 8, 2)
+	showinfo()
 }
 function clicks(e){
 	let mouse = loadmo(e)
@@ -83,6 +84,7 @@ function clicks(e){
 	if(current==1){ red.x=mx; red.y=my }
 	else{ green.x=mx; green.y=my }
 	current = 3-current
+	showinfo()
 }
 
 // 地图函数
