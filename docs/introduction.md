@@ -122,4 +122,27 @@ source = "刘义庆《世说新语》"
 [[pool]]
 text = "黑夜给了我黑色的眼睛，我却用它寻找光明。"
 source = "顾城《一代人》"
+
+[[pool]]
+text = "The eternal mystery of the universe is its comprehensibility."
+source = "Albert Einstein"
+
+[[pool]]
+text = "满船清梦压星河。"
+source = "唐珙《题龙阳县青草湖》"
+
+[[pool]]
+text = "庭有枇杷树，吾妻死之年所手植也，今已亭亭如盖矣。"
+source = "《项脊轩志》"
+
+[[pool]]
+text = "生如夏花之绚烂，死如秋叶之静美"
+original = "Let life be beautiful like summer flowers, and death like autumn leaves."
+
+[[pool]]
+text = "春燕归，巢于林木。"
+source = "《资治通鉴》"
+
+[[pool]]
+text = "一个时代结束的标志就是它开始被浪漫化。"
 ```
