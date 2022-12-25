@@ -118,4 +118,6 @@ function istrapped(x, y){
 	return flag
 }
 
-new_game()
+$(document).ready(function(){
+	new_game()
+})

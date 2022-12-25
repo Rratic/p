@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>博客/IOCCC 的启示？ - 理念圈</title>
-	<meta name="tURL" id="tURL" content="../../"/>
+	<meta name="tURL" id="tURL" content="../../">
 	<meta name="description" content="博客/IOCCC 的启示？ - 理念圈">
 	<script src="../../extra/info.js"></script>
 	<link id="theme-href" rel="stylesheet" type="text/css" href="../../css/light.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../extra/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/general.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/fontawesome.min.css"/>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/solid.min.css"/>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/brands.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
 </head>
 <body>
@@ -20,13 +20,9 @@
 		<nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">理念圈</span></div><ul class="docs-menu"></ul></nav>
 		<div class="docs-main">
 			<header class="docs-navbar">
-				<nav class="breadcrumb">
-					<ul class="is-hidden-mobile"><li class="is-active">博客 / IOCCC 的启示？</li></ul>
-					<ul class="is-hidden-tablet"><li class="is-active">博客 / IOCCC 的启示？</li></ul>
-				</nav>
+				<nav class="breadcrumb"><ul><li class="is-active">博客 / IOCCC 的启示？</li></ul></nav>
 				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/blog/ioccc.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
 					<a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="设置"></a>
-					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
 				</div>
 			</header>
 			<article class="content"><h1 id='header-ioccc-的启示？'>IOCCC 的启示？<a class='docs-heading-anchor-permalink'></a></h1><div class='admonition is-info'><header class='admonition-header'>Note</header><div class='admonition-body'><p>此文曾发布于洛谷博客，并尝试进入日报，然而失败了；部分内容有删改</p></div></div><div class='admonition is-warning'><header class='admonition-header'>Warn</header><div class='admonition-body'><p>部分内容过时或有误</p></div></div><h2 id='header-前言'>前言<a class='docs-heading-anchor-permalink'></a></h2><p><a href='https://www.ioccc.org' target='_blank'>IOCCC</a> 大赛全称：The International Obfuscated C Code Contest，国际 C 语言混乱代码大赛，目的是写出最有创意的最让人难以理解的 C 语言代码</p><p>本博客挑选了部分有代表性的代码</p><h2 id='header-1984-anonymous'>1984 anonymous<a class='docs-heading-anchor-permalink'></a></h2><p>代码作用：输出<code>hello, world!</code></p><p>代码较短，<strong>注意：此代码过于古老，部分语法不符合现在的标准（当时甚至没有C89）</strong>，但也反映了当时的C状况</p><div data-lang='cpp'><div class='codeblock-header'></div><pre class='codeblock-body language-cpp'><code>int i;main(){for(;i["]&lt;i;++i){--i;}"];read('-'-'-',i+++"hell\
@@ -182,12 +178,13 @@ s),s=S+30;(clock()-c)*10&lt;i*CLOCKS_PER_SEC;);}return 0;}/*Nevertellmetheodds*/
 \x+2个16进制数字</p></li><li><p><br />
 \u+4个16进制数字（C++11新增）</p></li><li><p><br />
 \U+8个16进制数字（C++11新增）</p></li></ol><p>既然标题是“启发”，那么读者不妨思考一下：为什么要有<code>\?</code>呢？</p><hr /><hr /><hr /><p>原因在于三字符组。</p><p>1972年，在ISO 646标准中，规定了键盘中可以不保持原状的12个字符</p><div data-lang='plain'><div class='codeblock-header'></div><pre class='codeblock-body language-plain'><code># $ @ [ \ ] ^ ` { | } ~
-</code></pre></div><br /><p>于是各国纷纷把它们定义为自己语言的字符</p><p>因此规定了三字符组，用以替代部分符号</p><table style='float:center'><thead><tr><td>字符组  替代</td><td></td></tr></thead><tbody><tr><td>??=</td><td>#</td></tr><tr><td>??/</td><td><br />
-\</td></tr><tr><td>??'</td><td>^</td></tr><tr><td>??(</td><td>[</td></tr><tr><td>??)</td><td>]</td></tr><tr><td>??!</td><td><br />
-|</td></tr><tr><td>??&lt;</td><td>{</td></tr><tr><td>??&gt;</td><td>}</td></tr><tr><td>??-</td><td>~</td></tr></tbody></table><p>为了防止被处理，因而添加了<code>\?</code></p><p><strong>注：三字符组在C++17中被移除</strong></p><p>同样地，1994年加入了双字符组</p><table style='float:center'><thead><tr><td>字符组  替代</td><td></td></tr></thead><tbody><tr><td>&lt;:</td><td>[</td></tr><tr><td>:&gt;</td><td>]</td></tr><tr><td>&lt;%</td><td>{</td></tr><tr><td>%&gt;</td><td>}</td></tr><tr><td>%:</td><td>#</td></tr></tbody></table><p>C++ 还包含了关键字<code>and</code>,<code>bitor</code>,<code>or</code>,<code>xor</code>,<code>compl</code>,<code>bitand</code>,<code>and_eq</code>,<code>or_eq</code>,<code>xor_eq</code>,<code>not</code>,<code>not_eq</code></p><p>你可以使用 FILE <br />
+</code></pre></div><br /><p>于是各国纷纷把它们定义为自己语言的字符</p><p>因此规定了三字符组，用以替代部分符号</p><table><thead><tr><td style='float:center'>字符组  替代</td><td style='float:left'></td></tr></thead><tbody><tr><td style='float:center'>??=</td><td style='float:center'>#</td></tr><tr><td style='float:center'>??/</td><td style='float:center'><br />
+\</td></tr><tr><td style='float:center'>??'</td><td style='float:center'>^</td></tr><tr><td style='float:center'>??(</td><td style='float:center'>[</td></tr><tr><td style='float:center'>??)</td><td style='float:center'>]</td></tr><tr><td style='float:center'>??!</td><td style='float:center'><br />
+|</td></tr><tr><td style='float:center'>??&lt;</td><td style='float:center'>{</td></tr><tr><td style='float:center'>??&gt;</td><td style='float:center'>}</td></tr><tr><td style='float:center'>??-</td><td style='float:center'>~</td></tr></tbody></table><p>为了防止被处理，因而添加了<code>\?</code></p><p><strong>注：三字符组在C++17中被移除</strong></p><p>同样地，1994年加入了双字符组</p><table><thead><tr><td style='float:center'>字符组  替代</td><td style='float:left'></td></tr></thead><tbody><tr><td style='float:center'>&lt;:</td><td style='float:center'>[</td></tr><tr><td style='float:center'>:&gt;</td><td style='float:center'>]</td></tr><tr><td style='float:center'>&lt;%</td><td style='float:center'>{</td></tr><tr><td style='float:center'>%&gt;</td><td style='float:center'>}</td></tr><tr><td style='float:center'>%:</td><td style='float:center'>#</td></tr></tbody></table><p>C++ 还包含了关键字<code>and</code>,<code>bitor</code>,<code>or</code>,<code>xor</code>,<code>compl</code>,<code>bitand</code>,<code>and_eq</code>,<code>or_eq</code>,<code>xor_eq</code>,<code>not</code>,<code>not_eq</code></p><p>你可以使用 FILE <br />
 * 方式操作文件，使用函数 <code>fopen(文件名, 模式)</code>，<code>fclose(指针)</code>，<code>fgetc(指针)</code>，还有 <code>fputc</code>，<code>fprintf</code>，<code>fscanf</code> 等等</p><h2 id='header-参考资料'>参考资料<a class='docs-heading-anchor-permalink'></a></h2><ol><li><p>https://www.ioccc.org/years.html</p></li><li><p>https://blog.csdn.net/paulkg12/article/details/85233310</p></li><li><p>https://zh.cppreference.com/w/cpp/header/random</p></li><li><p>https://github.com/carlini/printf-tac-toe</p></li><li><p>https://en.cppreference.com/w/cpp/language/escape</p></li><li><p>https://blog.csdn.net/canguanxihu/article/details/45535491</p></li></ol></article>
-			<nav class="docs-footer"><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
+			<nav class="docs-footer"><a class="docs-footer-prevpage" href="index.html">« 索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
 			
+			<div id='rocket' onclick='boom()'></div>
 		</div>
 	</div>
 </body>
