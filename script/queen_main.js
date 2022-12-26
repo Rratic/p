@@ -11,8 +11,8 @@ class Pos{
 	}
 }
 var red, green, current = 0
-var thiscanvas = document.getElementById("queen_game")
-var draw = thiscanvas.getContext("2d")
+var thiscanvas
+var draw
 var img_cache = {}
 var map = new Uint8Array(72)
 
@@ -30,7 +30,7 @@ function showmove(step, fx, fy, x, y){
 	setmap(fx, fy, 3)
 	fill_pic(fx, fy, current==1 ? "darkred" : "darkgreen")
 	let tx = fx, ty = fy
-	for(var i = 1; i < step; ++i){
+	for(let i = 1; i < step; ++i){
 		tx += x
 		ty += y
 		setmap(tx, ty, 1)
@@ -52,6 +52,8 @@ function new_game(){
 	red = new Pos(0, 0)
 	green = new Pos(length-1, height-1)
 	current = 1
+	thiscanvas = document.getElementById("queen_game")
+	draw = thiscanvas.getContext("2d")
 	draw.fillStyle = draw.createPattern(img_cache["grid"], "repeat")
 	draw.fillRect(0, 0, qsize * length, qsize * height)
 	fill_pic(0, 0, "red")
@@ -87,8 +89,8 @@ function clicks(e){
 
 // 地图函数
 // 空 0 墙 1 当前皇后 2 过去皇后 3
-const getmap = (x, y) => map[x|y<<3]
-const setmap = (x, y, v) => map[x|y<<3]=v
+const getmap = (x, y) => map[x<<3|y]
+const setmap = (x, y, v) => map[x<<3|y]=v
 function canmove(step, fx, fy, x, y){
 	let tx = fx, ty = fy;
 	for(let i = 1; i <= step; ++i){
@@ -116,11 +118,9 @@ function istrapped(x, y){
 	return flag
 }
 
-$(document).ready(function(){
-	cache_pic("grid")
-	cache_pic("fence")
-	cache_pic("red")
-	cache_pic("green")
-	cache_pic("darkred")
-	cache_pic("darkgreen")
-})
+cache_pic("grid")
+cache_pic("fence")
+cache_pic("red")
+cache_pic("green")
+cache_pic("darkred")
+cache_pic("darkgreen")
