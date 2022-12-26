@@ -1,4 +1,4 @@
-const length = 8, height = 9, qsize = 64
+const length = 9, height = 8, qsize = 64
 const mox = [-1, 0, 1, -1, 1, -1, 0, 1]
 const moy = [1, 1, 1, 0, 0, -1, -1, -1]
 
@@ -10,7 +10,7 @@ class Pos{
 		this.y = y
 	}
 }
-var red, green, current
+var red, green, current = 0
 var thiscanvas = document.getElementById("queen_game")
 var draw = thiscanvas.getContext("2d")
 var img_cache = {}
@@ -24,9 +24,6 @@ function cache_pic(name){
 }
 function fill_pic(x, y, name){
 	let img = img_cache[name]
-	if(img==undefined){
-		img = cache_pic(name)
-	}
 	draw.drawImage(img, x<<6, y<<6)
 }
 function showmove(step, fx, fy, x, y){
@@ -53,18 +50,19 @@ const showinfo = () => document.getElementById("info").innerText = `轮到${["�
 // 流程函数
 function new_game(){
 	red = new Pos(0, 0)
-	green = new Pos(7, 8)
+	green = new Pos(length-1, height-1)
 	current = 1
-	draw.fillStyle = draw.createPattern(cache_pic("grid"), "repeat")
+	draw.fillStyle = draw.createPattern(img_cache["grid"], "repeat")
 	draw.fillRect(0, 0, qsize * length, qsize * height)
 	fill_pic(0, 0, "red")
-	fill_pic(7, 8, "green")
+	fill_pic(length-1, height-1, "green")
 	map.fill(0)
 	setmap(0, 0, 2)
-	setmap(7, 8, 2)
+	setmap(length-1, height-1, 2)
 	showinfo()
 }
 function clicks(e){
+	if(current==0)return
 	let mouse = loadmo(e)
 	let mx = mouse.x, my = mouse.y
 	let fx, fy // from
@@ -119,5 +117,10 @@ function istrapped(x, y){
 }
 
 $(document).ready(function(){
-	new_game()
+	cache_pic("grid")
+	cache_pic("fence")
+	cache_pic("red")
+	cache_pic("green")
+	cache_pic("darkred")
+	cache_pic("darkgreen")
 })

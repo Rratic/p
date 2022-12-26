@@ -321,12 +321,11 @@ s),s=S+30;(clock()-c)*10<i*CLOCKS_PER_SEC;);}return 0;}/*Nevertellmetheodds*/
 
 C++ 还包含了关键字`and`,`bitor`,`or`,`xor`,`compl`,`bitand`,`and_eq`,`or_eq`,`xor_eq`,`not`,`not_eq`
 
-你可以使用 FILE \* 方式操作文件，使用函数 `fopen(文件名, 模式)`，`fclose(指针)`，`fgetc(指针)`，还有 `fputc`，`fprintf`，`fscanf` 等等
+你可以使用 `FILE *` 方式操作文件，使用函数 `fopen(文件名, 模式)`，`fclose(指针)`，`fgetc(指针)`，还有 `fputc`，`fprintf`，`fscanf` 等等
 
-## 参考资料
-1. https://www.ioccc.org/years.html
-2. https://blog.csdn.net/paulkg12/article/details/85233310
-3. https://zh.cppreference.com/w/cpp/header/random
-4. https://github.com/carlini/printf-tac-toe
-5. https://en.cppreference.com/w/cpp/language/escape
-6. https://blog.csdn.net/canguanxihu/article/details/45535491
+[^1]. https://www.ioccc.org/years.html
+[^2]. https://blog.csdn.net/paulkg12/article/details/85233310
+[^3]. https://zh.cppreference.com/w/cpp/header/random
+[^4]. https://github.com/carlini/printf-tac-toe
+[^5]. https://en.cppreference.com/w/cpp/language/escape
+[^6]. https://blog.csdn.net/canguanxihu/article/details/45535491
