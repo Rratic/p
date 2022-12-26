@@ -148,4 +148,11 @@ text = "一个时代结束的标志就是它开始被浪漫化。"
 [[pool]]
 text = "让一让，母牛们，生命短暂啊！"
 source = "《百年孤独》"
+
+[[pool]]
+text = "任何公共领域的内容都日渐以娱乐的方式出现，人类悄无声息的成为娱乐的附庸，其结果是我们成了一个娱乐至死的物种。"
+source = "《娱乐至死》"
+
+[[pool]]
+text = "A quick brown fox jumps over the lazy dog."
 ```
