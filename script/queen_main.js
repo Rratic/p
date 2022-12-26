@@ -1,4 +1,4 @@
-const length = 8, height = 9, qsize = 64
+const length = 9, height = 8, qsize = 64
 const mox = [-1, 0, 1, -1, 1, -1, 0, 1]
 const moy = [1, 1, 1, 0, 0, -1, -1, -1]
 
@@ -50,15 +50,15 @@ const showinfo = () => document.getElementById("info").innerText = `轮到${["�
 // 流程函数
 function new_game(){
 	red = new Pos(0, 0)
-	green = new Pos(7, 8)
+	green = new Pos(length-1, height-1)
 	current = 1
 	draw.fillStyle = draw.createPattern(img_cache["grid"], "repeat")
 	draw.fillRect(0, 0, qsize * length, qsize * height)
 	fill_pic(0, 0, "red")
-	fill_pic(7, 8, "green")
+	fill_pic(length-1, height-1, "green")
 	map.fill(0)
 	setmap(0, 0, 2)
-	setmap(7, 8, 2)
+	setmap(length-1, height-1, 2)
 	showinfo()
 }
 function clicks(e){
