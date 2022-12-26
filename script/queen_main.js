@@ -10,7 +10,7 @@ class Pos{
 		this.y = y
 	}
 }
-var red, green, current
+var red, green, current = 0
 var thiscanvas = document.getElementById("queen_game")
 var draw = thiscanvas.getContext("2d")
 var img_cache = {}
@@ -24,9 +24,6 @@ function cache_pic(name){
 }
 function fill_pic(x, y, name){
 	let img = img_cache[name]
-	if(img==undefined){
-		img = cache_pic(name)
-	}
 	draw.drawImage(img, x<<6, y<<6)
 }
 function showmove(step, fx, fy, x, y){
@@ -55,7 +52,7 @@ function new_game(){
 	red = new Pos(0, 0)
 	green = new Pos(7, 8)
 	current = 1
-	draw.fillStyle = draw.createPattern(cache_pic("grid"), "repeat")
+	draw.fillStyle = draw.createPattern(img_cache["grid"], "repeat")
 	draw.fillRect(0, 0, qsize * length, qsize * height)
 	fill_pic(0, 0, "red")
 	fill_pic(7, 8, "green")
@@ -65,6 +62,7 @@ function new_game(){
 	showinfo()
 }
 function clicks(e){
+	if(current==0)return
 	let mouse = loadmo(e)
 	let mx = mouse.x, my = mouse.y
 	let fx, fy // from
@@ -119,5 +117,10 @@ function istrapped(x, y){
 }
 
 $(document).ready(function(){
-	new_game()
+	cache_pic("grid")
+	cache_pic("fence")
+	cache_pic("red")
+	cache_pic("green")
+	cache_pic("darkred")
+	cache_pic("darkgreen")
 })
