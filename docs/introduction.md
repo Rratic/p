@@ -2,10 +2,11 @@
 ## 欢迎
 欢迎来到我的主页，非常抱歉，这里只整理了一些零零散散的内容。
 
-这是一个随机句子展示器，**装饰用，且无法保证准确性与认同性**。
+这是一个随机句子展示器，不保证准确性；有些内容可能是矛盾的，但这不妨碍它们的装饰性。
 
 ```random-word
 id = "main_display"
+comment = "好了，我知道你在看源文件了"
 
 [[pool]]
 text = "龙曾在此。"
@@ -161,4 +162,12 @@ source = "《狂人日记》"
 [[pool]]
 text = "Seven times have I despised my soul:<br>The first time when I saw her being meek that she might attain height.<br>The second time when I saw her limping before the crippled.<br>The third time when she was given to choose between the hard and the easy, and she chose the easy.<br>The fourth time when she committed a wrong, and comforted herself that others also commit wrong.<br>The fifth time when she forbore for weakness, and attributed her patience to strength.<br>The sixth time when she despised the ugliness of a face, and knew not that it was one of her own masks.<br>And the seventh time when she sang a song of praise, and deemed it a virtue."
 source = "Kahlil Gibran <em>Sand and Foam</em>"
+
+[[pool]]
+text = "绿蚁新醅酒，红泥小火炉。"
+source = "白居易《问刘十九》"
+
+[[pool]]
+text = "The philosophers have only interpreted the world in various ways - the point however is to change it."
+source = "马克思墓志铭"
 ```
