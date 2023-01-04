@@ -2,7 +2,7 @@
 ## 欢迎
 欢迎来到我的主页，非常抱歉，这里只整理了一些零零散散的内容。
 
-这是一个随机句子展示器，不保证准确性；有些内容可能是矛盾的，但这不妨碍它们的装饰性。
+这是一个随机句子展示器，不保证准确性 [^1]；有些内容可能是矛盾的，但这不妨碍它们的**装饰性**。
 
 ```random-word
 id = "main_display"
@@ -170,4 +170,19 @@ source = "白居易《问刘十九》"
 [[pool]]
 text = "The philosophers have only interpreted the world in various ways - the point however is to change it."
 source = "马克思墓志铭"
+
+plan = ["史铁生"]
 ```
+
+## 鸣谢
+感谢全人类的努力，使基准现实发展到了恰当的状态。
+
+## 关于
+```hide "为什么这个东西看起来像说明文档一样，为什么不用 [Hexo](https://github.com/hexojs/hexo) 等现成博客模板？"
+主要原因是不想装 Node.js 这套东西，次要原因是希望用自己做的文档生成器，这样可以自由调节、随时添加新功能。
+```
+
+!!! warn
+	当前由于上游（CommonMark）bug 仍未解决，表格解析可能存在问题
+
+[^1]: 不准确性可能存在于用词、句子是否是原文等处

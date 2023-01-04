@@ -1,6 +1,6 @@
 # 大数
 !!! note
-	此文曾被用于校内演讲（PPT），这里有大量信息丢失懒得找
+	此文曾被用于校内演讲（PPT），可能存在信息过时，且有大量信息丢失懒得找
 
 ## 常见的“小数”
 物理中的数字大多都很小
@@ -17,15 +17,15 @@
 
 一个二元函数，用 `n[m]` 表示：
 - `n[3] = n^n`
-- `n[m] = n[m-1][m-1]…[m-1]` (n个括号)
+- `n[m] = n[m-1][m-1]…[m-1]` (n 个括号)
 
 计算示例：
 - `2[3] = 4`
 - `2[4] = 256`
 - `2[5] >> 4^4^4^4`
-- Mega数 = `2[5]`
-- Megiston数 = `2[10]`
-- Moser数 = `2[2[5]]` > 庞加莱回归时间
+- Mega 数 = `2[5]`
+- Megiston 数 = `2[10]`
+- Moser 数 = `2[2[5]]` > 庞加莱回归时间
 
 ## 高德纳箭号表示法
 Donald Ervin Knuth 发明
@@ -56,7 +56,7 @@ John Horton Conway 发明
 阿克曼函数 `A(m,n) = (2→(n+3)→(m-2))-3`
 
 ## Busy beaver
-定义：在所有n状态、2色的、能够停机的图灵机中，从开始运行到停机为止写入的格子数的最大值，记作 `BB(n)`
+定义：在所有 n 状态、2 色的、能够停机的图灵机中，从开始运行到停机为止写入的格子数的最大值，记作 `BB(n)`
 - BB(1)=1
 - BB(2)=4
 - BB(3)=6
@@ -90,10 +90,10 @@ SKI演算：
 - Ξ(24) > Graham
 
 ## 故事远没有结束……
-- Rayo 数是一个由阿古斯丁·巴列卡诺(Agustín Rayo) 2007 年所创造并命名的大数，是在麻省理工学院在2007年1月26日举办的一场"大数战斗"中被定义的。
-- 2013年出现的Fish number 7打破了Rayo数的记录
-- 2014年10月出现了更大的BIG FOOT
-- 2017年1月5日，Little Bigeddon打破了Big FOOT的记录
-- 2017年3月27日，Little Bigeddon的创造者Emlightened创造了更大的Sasquatch (Big Bigeddon)
-- Larger Number Garden Number是当前的记录保持者
+- Rayo 数是一个由阿古斯丁·巴列卡诺(Agustín Rayo) 2007 年所创造并命名的大数，是在麻省理工学院在 2007 年 1 月 26 日举办的一场"大数战斗"中被定义的。
+- 2013 年出现的 Fish number 7 打破了 Rayo 数的记录
+- 2014 年 10 月出现了更大的 BIG FOOT
+- 2017 年 1 月 5 日，Little Bigeddon 打破了 Big FOOT 的记录
+- 2017 年3 月 27 日，Little Bigeddon 的创造者 Emlightened 创造了更大的 Sasquatch (Big Bigeddon)
+- Larger Number Garden Number 是当前的记录保持者
 - 甚至有人建了一个网站收录大数以及人们的看法：<https://googology.wikia.org>

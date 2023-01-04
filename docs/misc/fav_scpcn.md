@@ -4,7 +4,6 @@
 * 这是个人推荐，*显然不适合使用人*
 * 有些文找不到了
 * [有些文](https://scp-wiki-cn.wikidot.com/time-is-a-place)没有选
-* 表格格式解析有问题，这是 CommonMark 包的 bug，正在等待处理
 
 | 标题 & 链接 | 描述 / 感想 / 杂 |
 | :-: | :-: |

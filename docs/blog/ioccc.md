@@ -12,7 +12,7 @@
 本博客挑选了部分有代表性的代码
 
 ## 1984 anonymous
-代码作用：输出`hello, world!`
+代码作用：输出 `hello, world!`
 
 代码较短，**注意：此代码过于古老，部分语法不符合现在的标准（当时甚至没有C89）**，但也反映了当时的C状况
 ```cpp
@@ -98,7 +98,7 @@ extern "C":{
 ...
 #endif
 ```
-表示该部分代码适用于C++11之前
+表示该部分代码适用于 C++11 之前
 
 使用 time, srand, rand 创建随机数已经过时了！C++11中加入了新的头文件 `random`，示例代码：
 ```cpp
@@ -183,8 +183,6 @@ cout<<"\033[33mYELLOW";
 输出黄色文字
 
 在linux下可以直接显出效果，但在windows中，你需要先执行一次system，例如将`system("");`放在控制符使用前，控制符才有效
-
-
 
 ## 面向printf编程
 虽然printf的主要作用是输出，但它是「图灵完备」的，简单来说，你可以使用 printf 的参数实现分支和循环：
@@ -275,14 +273,7 @@ s),s=S+30;(clock()-c)*10<i*CLOCKS_PER_SEC;);}return 0;}/*Nevertellmetheodds*/
 4. \\u+4个16进制数字（C++11新增）
 5. \\U+8个16进制数字（C++11新增）
 
-既然标题是“启发”，那么读者不妨思考一下：为什么要有`\?`呢？
-
----
-
----
-
----
-
+``````hide "既然标题是“启发”，那么读者不妨思考一下：为什么要支持转义问号呢？"
 原因在于三字符组。
 
 1972年，在ISO 646标准中，规定了键盘中可以不保持原状的12个字符
@@ -293,39 +284,40 @@ s),s=S+30;(clock()-c)*10<i*CLOCKS_PER_SEC;);}return 0;}/*Nevertellmetheodds*/
 
 因此规定了三字符组，用以替代部分符号
 
-| 字符组 | 替代 |
-| :---: | :---: |
-| ??= | # |
-| ??/ | \\ |
-| ??' | ^ |
-| ??( | [ |
-| ??) | ] |
-| ??! | \| |
-| ??< | { |
-| ??> | } |
-| ??- | ~ |
+| 字符组 | 替代品 |
+| :-: | :-: |
+| `??=` | `#` |
+| `??/` | `\` |
+| `??'` | `^` |
+| `??(` | `[` |
+| `??)` | `]` |
+| `??!` | `|` |
+| `??<` | `{` |
+| `??>` | `}` |
+| `??-` | `~` |
 
-为了防止被处理，因而添加了`\?`
+为了防止不必要的处理，需要添加 `\?`
 
-**注：三字符组在C++17中被移除**
+**注：三字符组在 C++17 中被移除**
+``````
 
-同样地，1994年加入了双字符组
+同样地，1994 年加入了双字符组
 
-| 字符组 | 替代 |
-| :---: | :---: |
-| <: | [ |
-| :> | ] |
-| <% | { |
-| %> | } |
-| %: | # |
+| 字符组 | 替代品 |
+| :-: | :-: |
+| `<:` | `[` |
+| `:>` | `]` |
+| `<%` | `{` |
+| `%>` | `}` |
+| `%:` | `#` |
 
-C++ 还包含了关键字`and`,`bitor`,`or`,`xor`,`compl`,`bitand`,`and_eq`,`or_eq`,`xor_eq`,`not`,`not_eq`
+C++ 还包含了关键字 `and`、`bitor`、`or`、`xor`、`compl`、`bitand`、`and_eq`、`or_eq`、`xor_eq`、`not` 与 `not_eq`
 
 你可以使用 `FILE *` 方式操作文件，使用函数 `fopen(文件名, 模式)`，`fclose(指针)`，`fgetc(指针)`，还有 `fputc`，`fprintf`，`fscanf` 等等
 
-[^1]. https://www.ioccc.org/years.html
-[^2]. https://blog.csdn.net/paulkg12/article/details/85233310
-[^3]. https://zh.cppreference.com/w/cpp/header/random
-[^4]. https://github.com/carlini/printf-tac-toe
-[^5]. https://en.cppreference.com/w/cpp/language/escape
-[^6]. https://blog.csdn.net/canguanxihu/article/details/45535491
+[^1]: https://www.ioccc.org/years.html
+[^2]: https://blog.csdn.net/paulkg12/article/details/85233310
+[^3]: https://zh.cppreference.com/w/cpp/header/random
+[^4]: https://github.com/carlini/printf-tac-toe
+[^5]: https://en.cppreference.com/w/cpp/language/escape
+[^6]: https://blog.csdn.net/canguanxihu/article/details/45535491
