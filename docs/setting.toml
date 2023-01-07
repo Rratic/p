@@ -1,10 +1,8 @@
 outline = [
 	"introduction",
 	"blog",
-	"std",
-	"misc",
+	"archived",
 ]
 [names]
 blog = "博客"
-std = "标准化"
-misc = "杂项"
+archived = "已封存"
