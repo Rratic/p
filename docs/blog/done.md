@@ -3,8 +3,10 @@
 - [Julialang 中文导引](https://learn.juliacn.com)
 - [文档生成器](https://juliaroadmap.github.io/DoctreePages.jl/docs/index.html)
 
-还有一些废弃项目：
-- [Foam World](https://foamworld.github.io/) [^1]
+还有一些废弃项目：[^1]
+- [Foam World](https://foamworld.github.io/)
 - [Maze](https://github.com/Rratic/Maze)
+- [Luogu 3.0++ 解释器](https://github.com/Rratic/Luogu3.0plusplus) [^2]
 
 [^1]: 有大量 bug，懒得修
+[^2]: Luogu 3.0++ 是一次愚人节竞赛中[小粉兔](https://github.com/GitPinkRabbit)设计的语言
