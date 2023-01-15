@@ -1,4 +1,12 @@
-version = ">= 1.5.2"
+version = ">= 1.7"
+
+[giscus]
+repo = "Rratic/p"
+repo_id = "R_kgDOHtQy2g"
+category = "General"
+category_id = "DIC_kwDOHtQy2s4CTmdm"
+mapping = "title"
+lang = "zh-CN"
 
 [pages]
 lang = "zh"
