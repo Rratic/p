@@ -554,3 +554,17 @@ function dictparse(str){
 	if(str.endsWith(','))str=str.substring(0, str.length-1)
 	return JSON.parse("{"+str+"}")
 }
+let gsc=document.createElement("script")
+gsc.src="https://giscus.app/client.js"
+gsc.dataset.repo="Rratic/p"
+gsc.dataset.repoId="R_kgDOHtQy2g"
+gsc.dataset.category="General"
+gsc.dataset.categoryId="DIC_kwDOHtQy2s4CTmdm"
+gsc.dataset.mapping="title"
+gsc.dataset.reactionsEnabled="1"
+gsc.dataset.emitMetadata="0"
+gsc.dataset.inputPosition="top"
+gsc.dataset.theme=theme
+gsc.dataset.lang="zh-CN"
+gsc.crossOrigin="anonymous"
+document.body.append(gsc)
