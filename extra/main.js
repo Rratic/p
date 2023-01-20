@@ -56,9 +56,9 @@ pi.change(function(){
 })
 $(".content .docs-heading-anchor-permalink").click(function(ev){
 	let s=document.location.href
-	let id=ev.target.parentNode.id
+	let id=ev.currentTarget.parentNode.id
 	navigator.clipboard.writeText(s+"#"+id).then(
-		() => {}, () => window.alert("failed")
+		() => {}, () => window.alert("failed to copy to clipboard")
 	)
 })
 let hljs=window.hljs
@@ -70,16 +70,16 @@ for(let i of $("code.hljs")){
 	let header=i.parentElement.parentElement.firstElementChild
 	let copybut = document.createElement("span")
 	copybut.className = "codeblock-paste fa-solid fa-clipboard"
-	copybut.onclick = function(ev){
+	copybut.click(function(ev){
 		copycodeblock(ev)
-	}
+	})
 	header.append(copybut)
 	if(i.classList.contains("language-julia-repl")){
 		let purebut = document.createElement("span")
 		purebut.className = "codeblock-purepaste fa-solid fa-clipboard"
-		purebut.onclick = function(ev){
+		purebut.click(function(ev){
 			purecopycodeblock(ev)
-		}
+		})
 		header.append(purebut)
 	}
 }
@@ -90,23 +90,33 @@ for(let i of $(".checkis")){
 		i.style.display="block"
 	}
 }
-$(".submit-fill").click(function(ev){submit_fill(ev.target)})
+$(".submit-fill").click(function(ev){submit_fill(ev.currentTarget)})
 $(".ans-fill").click(function(ev){
-	let i=ev.target
+	let i=ev.currentTarget
 	i.parentNode.children[1].value=i.dataset["ans"]
 })
 $(".instruction-fill").click(function(ev){
-	let i=ev.target
+	let i=ev.currentTarget
 	i.parentNode.children[1].value=i.dataset["con"]
 })
-let marked=JSON.parse(localStorage.getItem("marked"))
-marked = marked==null ? (new Set()) : (new Set(marked))
-for(let it of $(".li-dir,.li-file")){
+for(let it of $(".content .li-dir,.li-file")){
 	let span=document.createElement("span")
-	span.onclick=function(){
-		span.classList.toggle("li-marked")
-		toggle_mark(it)
-	}
+	span.click(function(ev){
+		let tar = ev.currentTarget
+		tar.classList.toggle("li-marked")
+		let a = tar.nextSibling
+		let link = a.href.substring(oril)
+		let marked=JSON.parse(localStorage.getItem("marked"))
+		marked = marked==null ? new Set() : new Set(marked)
+		if(marked.has(link)){
+			marked.delete(link)
+		}
+		else{
+			marked.add(link)
+		}
+		localStorage.setItem("marked", JSON.stringify([...marked]))
+	})
+	let marked=JSON.parse(localStorage.getItem("marked"))
 	if(marked.has(it.firstElementChild.href.substring(oril)))span.className="li-marked"
 	it.prepend(span)
 }
@@ -205,7 +215,7 @@ for(let i of $(".select-is")){
 		if(localStorage.getItem(defkey)==null)localStorage.setItem(defkey, "false")
 	}
 	else if(localStorage.getItem(defkey)==null)localStorage.setItem(defkey, "true")
-	select.onchange=function(){
+	select.change(function(){
 		let v=select.value
 		let stk=store[v]
 		if(stk!=undefined){
@@ -218,7 +228,7 @@ for(let i of $(".select-is")){
 				upd_trigger(stk)
 			}
 		}
-	}
+	})
 	i.append(select)
 }
 for(let tag of $(".random-word")){
@@ -281,15 +291,8 @@ function unhide(ev){
 function boom(){
 	scrollTo(0, 0)
 }
-function toggle_mark(li){
-	let link=li.lastElementChild.href.substring(oril)
-	let marked=new Set(JSON.parse(localStorage.getItem("marked")))
-	if(marked.has(link))marked.delete(link)
-	else marked.add(link)
-	localStorage.setItem("marked", JSON.stringify([...marked]))
-}
 function copycodeblock(ev){
-	let tar=ev.target
+	let tar=ev.currentTarget
 	let body=tar.parentNode.nextSibling
 	let codes=body.querySelectorAll(".hljs-ln-code")
 	let s=""
@@ -329,7 +332,6 @@ function activate_token(node){
 		ul.className="internal"
 		par.appendChild(ul)
 	}
-	return flag
 }
 function submit_fill(i){
 	let inv=i.parentNode.children[1].value
@@ -378,9 +380,9 @@ function buildmenu(){
 		dm.appendChild(li)
 	}
 	let marked=JSON.parse(localStorage.getItem("marked"))
-	if(marked==null)marked=[]
+	marked = marked==null ? new Set() : new Set(marked)
 	$(".docs-chevron").bind("click", function(ev){
-		ev.target.parentElement.nextElementSibling.classList.toggle("collapsed")
+		ev.currentTarget.parentElement.nextElementSibling.classList.toggle("collapsed")
 	})
 	let loc=document.location
 	let active=undefined
@@ -389,45 +391,41 @@ function buildmenu(){
 		if(pathname==loc.pathname){
 			active=a
 		}
-		if(marked.includes(pathname)){
+		if(marked.has(pathname)){
 			a.parentNode.classList.add("li-marked")
 		}
 	}
 	if(active!=undefined){
-		if(activate_token(active)){
-			let sidebar=$(".docs-menu")[0]
-			sidebar.scrollTop = active.offsetTop - sidebar.offsetTop - 15;
-		}
+		activate_token(active)
+		let sidebar=$(".docs-menu")[0]
+		sidebar.scrollTop = active.offsetTop - sidebar.offsetTop - 15
 	}
 }
 function _buildmenu(vec, path, level){
 	let ans=[]
 	let l=vec.length
-	let spl = (str) => {
-		let pl=str.search('/')
-		return [str.substring(0, pl), str.substring(pl+1)]
-	}
 	for(let i=1;i<l;i++){
 		let e=vec[i]
 		if(typeof e == "string"){
-			let tup=spl(e)
+			let splitp=e.search('\\|')
 			let a=document.createElement("a")
 			a.className="tocitem"
-			a.href=`${tURL}${path}${tup[0]}${filesuffix}`
-			a.innerText=tup[1]
+			a.href=`${tURL}${path}${e.substring(0, splitp)}`
+			a.innerText=e.substring(splitp+1)
 			let li=document.createElement("li")
 			li.appendChild(a)
 			ans.push(li)
 		}
 		else{
-			let tup=spl(e[0])
+			let splitp=e[0].search('\\|')
+			let name=e[0].substring(0, splitp)
 			let a=document.createElement("a")
 			a.className="tocitem"
-			a.href=`${tURL}${path}${tup[0]}/index${filesuffix}`
-			a.innerText=tup[1]
+			a.href=`${tURL}${path}${name}/index${filesuffix}`
+			a.innerText=e[0].substring(splitp+1)
 			let li=document.createElement("li")
 			if(level==1){
-				let iden=`menu-${path}${tup[0]}`
+				let iden=`menu-${path}${name}`
 				let input=document.createElement("input")
 				input.type="checkbox"
 				input.className="collapse-toggle"
@@ -443,7 +441,7 @@ function _buildmenu(vec, path, level){
 				li.appendChild(label)
 			}
 			else li.appendChild(a)
-			let clis=_buildmenu(e, `${path}${tup[0]}/`, level+1)
+			let clis=_buildmenu(e, `${path}${name}/`, level+1)
 			let ul=document.createElement("ul")
 			for(let cli of clis)ul.appendChild(cli)
 			if(level==1)ul.className="collapsed"
@@ -528,7 +526,7 @@ function calc_test(node){
 	node.firstElementChild.children[1].innerText=" "+sum+"/"+node.dataset["fs"]
 }
 function purecopycodeblock(ev){
-	let tar = ev.target
+	let tar = ev.currentTarget
 	let body = tar.parentNode.nextSibling
 	let codes = body.querySelectorAll(".hljs-ln-code")
 	let s = ""
