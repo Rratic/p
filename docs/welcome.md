@@ -45,10 +45,6 @@ text = "无限是神的专利，人生因有限而重要。"
 source = "Oliver Burkeman <em>Four Thousand Weeks：Time Management for Mortals</em>（《四千周》）"
 
 [[pool]]
-text = "我渴望有人暴烈地爱我至死不渝，明白爱和死一样强大，并永远站在我身边。我渴望有人毁灭我并被我毁灭。"
-source = "《橘子不是唯一的水果》"
-
-[[pool]]
 text = "要期待日出和黎明，但如果可以的话，也要对大自然本身充满期待！"
 source = "亨利·戴维·梭罗《瓦尔登湖》"
 
@@ -190,6 +186,10 @@ source = "屈原《离骚》"
 [[pool]]
 text = "天行有常，不为尧存，不为桀亡。"
 source = "《荀子》"
+
+[[pool]]
+text = "木犹如此，人何以堪。"
+source = "《世说新语·言语》"
 
 plan = ["史铁生"]
 ```
