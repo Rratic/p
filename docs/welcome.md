@@ -45,10 +45,6 @@ text = "无限是神的专利，人生因有限而重要。"
 source = "Oliver Burkeman <em>Four Thousand Weeks：Time Management for Mortals</em>（《四千周》）"
 
 [[pool]]
-text = "要期待日出和黎明，但如果可以的话，也要对大自然本身充满期待！"
-source = "亨利·戴维·梭罗《瓦尔登湖》"
-
-[[pool]]
 text = "那长眠的不朽者未必永恒死去，在那奇迹的移涌中，纵然死亡本身，亦将消逝。"
 source = "H.P. 洛夫克拉夫特"
 

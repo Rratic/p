@@ -85,6 +85,17 @@ int main(){
 ```
 
 ## 2
+思路：
+```jl
+分割 64×64 区域
+for 区块 in 所有区域
+    横竖阻隔
+    挖三个洞
+    对四块递归
+end
+```
+
+代码：
 ```jl
 macro rd(l, r)
 	return :(wrand_even_q(world, $l, $r))
