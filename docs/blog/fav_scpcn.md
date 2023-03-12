@@ -26,6 +26,7 @@
 | [青鸟](https://scp-wiki-cn.wikidot.com/scp-cn-1559) | “欢迎点燃人类自己的历史” |
 | [神农棺](https://scp-wiki-cn.wikidot.com/scp-cn-1600) | “行医一生，救人万世；以万人传之，亦可救人千代万代” |
 | [解脱](https://scp-wiki-cn.wikidot.com/scp-cn-2470) | “如果加个信息危害的 tag…” |
+| [无罪论](https://scp-wiki-cn.wikidot.com/scp-cn-002) | / |
 | [缓行电车](https://scp-wiki-cn.wikidot.com/scp-cn-797) | 竟然有清新风格 |
 | [嘉陵浊浪](https://scp-wiki-cn.wikidot.com/jialingjiang) | “一个理想，和它的破灭” |
 | [ＩＮＴＥＲＮＥＴ](https://scp-wiki-cn.wikidot.com/scp-cn-2091) | |

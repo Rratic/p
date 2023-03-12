@@ -8,6 +8,6 @@
 - [Maze](https://github.com/Rratic/Maze)
 - [Luogu 3.0++ 解释器](https://github.com/Rratic/Luogu3.0plusplus) [^3]
 
-[^1]: <https://github.com/docsbuild-dev/DocsBuilder.jl>
+[^1]: 新项目在 <https://github.com/docsbuild-dev/DocsBuilder.jl>
 [^2]: 有大量 bug，懒得修
 [^3]: Luogu 3.0++ 是一次愚人节竞赛中[小粉兔](https://github.com/GitPinkRabbit)设计的语言
