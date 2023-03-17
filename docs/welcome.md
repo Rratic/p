@@ -210,6 +210,9 @@ text = "Think twice before you think the third time."
 
 [[pool]]
 text = "水至清则为纯净物。"
+
+[[pool]]
+text = "人的价值来源于稀缺性。"
 ```
 
 ## 鸣谢
@@ -226,5 +229,8 @@ text = "水至清则为纯净物。"
 
 !!! warn
 	当前由于上游（CommonMark）bug 仍未解决，表格解析可能存在问题
+
+## 导航
+缺失
 
 [^1]: 不准确性可能存在于用词、句子是否是原文等处
