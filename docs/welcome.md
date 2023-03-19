@@ -2,7 +2,7 @@
 ## 欢迎
 欢迎来到我的主页，非常抱歉，这里只整理了一些零零散散的内容。
 
-这是一个随机句子展示器，不保证准确性 [^1]；有些内容可能是矛盾的，但这不妨碍它们的**装饰性**。
+这是一个**随机句子展示器**，不保证准确性 [^1]；有些内容可能是矛盾的，但这不妨碍它们的**装饰性**。
 
 ```random-word
 id = "main_display"
@@ -19,8 +19,8 @@ text = "绝望之为虚妄，正与希望相同。"
 source = "鲁迅《野草》"
 
 [[pool]]
-text = "人无常态必有鬼，事出反常必有妖。"
-source = "纪晓岚"
+text = "物之反常者为妖。"
+source = "纪晓岚《阅微草堂笔记》"
 
 [[pool]]
 text = "人们习惯了求而不得，最终连自己原本想要什么都忘却了。"
@@ -35,7 +35,7 @@ license = "CC BY-SA 3.0"
 [[pool]]
 text = "人为刀俎，我为鱼肉。"
 original = "如今人方为刀俎，我为鱼肉，何辞为。"
-source = "樊哙"
+source = "樊哙（自 司马迁《史记》）"
 
 [[pool]]
 text = "所有的模型都是错的，只不过有的更有用一些。"
@@ -46,7 +46,8 @@ source = "Oliver Burkeman <em>Four Thousand Weeks：Time Management for Mortals<
 
 [[pool]]
 text = "那长眠的不朽者未必永恒死去，在那奇迹的移涌中，纵然死亡本身，亦将消逝。"
-source = "H.P. 洛夫克拉夫特"
+original = "That is not dead which can eternal lie, and with strange aeons even death may die."
+source = "H.P. 洛夫克拉夫特（Howard Phillips Lovecraft）"
 
 [[pool]]
 text = "当你们的时代过去，请继续送出信息，好让下一个声音响起来对抗黑暗。"
@@ -193,10 +194,10 @@ source = "茨威格"
 
 [[pool]]
 text = "后生可畏，焉知来者之不如今也。"
-source = "《论语》（9·23）"
+source = "《论语·子罕》（9·23）"
 
 [[pool]]
-text = "我纵茕茕孑立，难避漫漫长夜。然长夜终尽，天将启明......"
+text = "我纵茕茕孑立，难避漫漫长夜。然长夜终尽，天将启明……"
 source = "月亮计划"
 
 plan = ["史铁生"]
@@ -204,7 +205,7 @@ plan = ["史铁生"]
 
 ---
 
-一些随机怪话（按照 CC BY-NC-SA 协议许可）：
+一些**随机怪话**（按照 CC BY-NC-SA 协议许可）：
 ```random-word
 id = "display_01"
 [[pool]]
@@ -224,10 +225,10 @@ text = "人类想建造巴别塔，但上帝觉得这个名字不好听，于是
 感谢全人类的努力，使基准现实发展到了恰当的状态。
 
 ## 关于
-Q：为什么要用 Github Pages 这样的静态网页？\
+Q：为什么要用 Github Pages 这样的静态网页？  
 A：因为买&维护域名、租服务器**要钱**。
 
-Q：为什么这个东西看起来像说明文档一样，为什么不用 <a href='https://github.com/hexojs/hexo'>Hexo</a> 等现成博客模板？\
+Q：为什么这个东西看起来像说明文档一样，为什么不用 <a href='https://github.com/hexojs/hexo'>Hexo</a> 等现成博客模板？  
 A：主要原因是不想装 Node.js 这套东西，次要原因是希望用自己做的文档生成器，这样可以自由调节、随时添加新功能。
 
 !!! warn
