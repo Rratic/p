@@ -122,8 +122,9 @@ text = "庭有枇杷树，吾妻死之年所手植也，今已亭亭如盖矣。
 source = "《项脊轩志》"
 
 [[pool]]
-text = "生如夏花之绚烂，死如秋叶之静美"
+text = "生如夏花之绚烂，死如秋叶之静美。"
 original = "Let life be beautiful like summer flowers, and death like autumn leaves."
+source = "泰戈尔《飞鸟集》（郑振铎译）"
 
 [[pool]]
 text = "春燕归，巢于林木。"
@@ -208,6 +209,9 @@ plan = ["史铁生"]
 一些**随机怪话**（按照 CC BY-NC-SA 协议许可）：
 ```random-word
 id = "display_01"
+[[pool]]
+text = "人们总是愿意相信他们愿意相信的东西。"
+
 [[pool]]
 text = "Think twice before you think the third time."
 
