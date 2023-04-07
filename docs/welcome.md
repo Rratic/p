@@ -209,6 +209,11 @@ source = "Albert Schweitzer"
 [[pool]]
 text = "嘲笑、轻蔑、愤怒、报复……这些情绪，都与恨有关或者含有因恨而起的成分，不能成为善。<br>……<br>希望和失望也绝不能是善。因为恐惧是一种痛苦，希望不能脱离恐惧而存在，所以希望和失望都表示知识的缺乏，和心灵的软弱无力。"
 source = "Baruch de Spinoza <em>Die Ethik</em>（斯宾诺莎《伦理学》）"
+
+[[pool]]
+text = "我们必须知道，我们必将知道。"
+original = "Wir müssen wissen. Wir werden wissen."
+source = "David Hilbert 墓志铭"
 ```
 
 ---
