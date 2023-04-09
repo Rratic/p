@@ -6,7 +6,6 @@
 
 ```random-word
 id = "main_display"
-comment = "好了，我知道你在看源文件了"
 
 [[pool]]
 text = "龙曾在此。"
@@ -80,7 +79,7 @@ license = "CC BY-NC-SA 4.0"
 
 [[pool]]
 text = "如无必要，勿增实体。"
-source = "奥卡姆剃刀"
+source = "William of Occam 奥卡姆剃刀（Occam's Razor，Ockham's Razor）"
 
 [[pool]]
 text = "我们的征途是星辰大海，也是字里行间，所有的故事，不过是人生的隐喻。"
@@ -213,7 +212,11 @@ source = "Baruch de Spinoza <em>Die Ethik</em>（斯宾诺莎《伦理学》）"
 [[pool]]
 text = "我们必须知道，我们必将知道。"
 original = "Wir müssen wissen. Wir werden wissen."
-source = "David Hilbert 墓志铭"
+source = "David Hilbert（希尔伯特）墓志铭"
+
+[[pool]]
+text = "Talk is cheap, show me the code."
+source = "Linus Torvalds"
 ```
 
 ---
