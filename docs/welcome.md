@@ -217,6 +217,10 @@ source = "David Hilbert（希尔伯特）墓志铭"
 [[pool]]
 text = "Talk is cheap, show me the code."
 source = "Linus Torvalds"
+
+[[pool]]
+text = "夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。"
+source = "唐太宗（自《旧唐书·魏徵传》）"
 ```
 
 ---
@@ -238,6 +242,9 @@ text = "人的价值来源于稀缺性。"
 
 [[pool]]
 text = "人类想建造巴别塔，但上帝觉得这个名字不好听，于是创造了诸多语言。"
+
+[[pool]]
+text = "猫不能从一个地方移到另一个地方，只能凭空出现和凭空消失。"
 ```
 
 ## 鸣谢
