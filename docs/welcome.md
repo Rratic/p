@@ -221,6 +221,11 @@ source = "Linus Torvalds"
 [[pool]]
 text = "夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。"
 source = "唐太宗（自《旧唐书·魏徵传》）"
+
+[[pool]]
+text = "我们都是星尘。"
+original = "The amazing thing is that every atom in your body came from a star that exploded. And, the atoms in your left hand probably came from a different star than your right hand. It really is the most poetic thing I know about physics: You are all stardust. You couldn’t be here if stars hadn't exploded, because the elements - the carbon, nitrogen, oxygen, iron, all the things that matter for evolution - weren't created at the beginning of time. They were created in the nuclear furnaces of stars, and the only way they could get into your body is if those stars were kind enough to explode. So, forget Jesus. The stars died so that you could be here today."
+source = "Lawrence M. Krauss"
 ```
 
 ---
@@ -256,9 +261,6 @@ A：因为买&维护域名、租服务器**要钱**。
 
 Q：为什么这个东西看起来像说明文档一样，为什么不用 <a href='https://github.com/hexojs/hexo'>Hexo</a> 等现成博客模板？  
 A：主要原因是不想装 Node.js 这套东西，次要原因是希望用自己做的文档生成器，这样可以自由调节、随时添加新功能。
-
-!!! warn
-	当前由于上游（CommonMark）bug 仍未解决，表格解析可能存在问题
 
 ## 导航
 欢迎四处参观！
