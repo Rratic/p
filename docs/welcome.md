@@ -73,11 +73,6 @@ text = "每个人都是依据他在世界上的使命拟定自己的计划。他
 source = "Immanuel Kant"
 
 [[pool]]
-text = "在太阳西斜的这个世界，置身天上之森。等这场战争结束后，不归之人与望眼欲穿的众人，人人本着正义之名，长存不灭的过去、逐渐消逝的未来。我回来了，纵使日薄西山，即使看不见未来，此时此刻的光辉，盼君勿忘。"
-source = "https://wiki.sukasuka.cn/%E9%A6%96%E9%A1%B5"
-license = "CC BY-NC-SA 4.0"
-
-[[pool]]
 text = "如无必要，勿增实体。"
 source = "William of Occam 奥卡姆剃刀（Occam's Razor，Ockham's Razor）"
 
@@ -192,10 +187,6 @@ source = "茨威格"
 [[pool]]
 text = "后生可畏，焉知来者之不如今也。"
 source = "《论语·子罕》（9·23）"
-
-[[pool]]
-text = "我纵茕茕孑立，难避漫漫长夜。然长夜终尽，天将启明……"
-source = "月亮计划"
 
 [[pool]]
 text = "就命运而言，休论公道。"
