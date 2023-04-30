@@ -2,8 +2,10 @@ outline = [
 	"welcome",
 	"about",
 	"blog",
+	"notes",
 	"archived",
 ]
 [names]
 blog = "博客"
 archived = "已封存"
+notes = "笔记"

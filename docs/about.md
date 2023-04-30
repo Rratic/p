@@ -36,8 +36,6 @@
 2. 完全基于语法树/表达式建立模拟世界
 3. 一套更好地刻画文学的结构
 
----
-
 [^1]: 新项目在 <https://github.com/docsbuild-dev/DocsBuilder.jl>
 [^2]: 有大量 bug，懒得修
 [^3]: `Luogu 3.0++` 是一次愚人节竞赛中[小粉兔](https://github.com/GitPinkRabbit)设计的语言
