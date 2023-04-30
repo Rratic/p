@@ -5,6 +5,5 @@ outline = [
 	"archived",
 ]
 [names]
-about = "关于"
 blog = "博客"
 archived = "已封存"
