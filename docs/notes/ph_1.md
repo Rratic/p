@@ -57,3 +57,9 @@
 * 薅了篇文章 <https://zhuanlan.zhihu.com/p/51235829> 来看。
 
 ## 柏拉图：申辩
+研究一下时间 [^1]
+* 苏格拉底（Socrates）前 469 - 前 399
+* 柏拉图（Plato）前 427 - 前 347
+* 亚里士多德（Aristotle）前 383 - 前 322
+
+[^1]: https://zhuanlan.zhihu.com/p/349800119
