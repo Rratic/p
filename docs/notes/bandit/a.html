@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bandit/To Level - Rratic</title>
+	<meta name="tURL" id="tURL" content="../../../">
+	<meta name="description" content="bandit/To Level - Rratic">
+	<script src="../../../extra/info.js"></script>
+	<link id="theme-href" rel="stylesheet" type="text/css" href="../../../css/light.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../extra/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/general.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
+</head>
+<body>
+	<div id="documenter">
+		<nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">Rratic</span></div><ul class="docs-menu"></ul></nav>
+		<div class="docs-main">
+			<header class="docs-navbar">
+				<nav class="breadcrumb"><ul><li class="is-active">bandit / To Level</li></ul></nav>
+				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/notes/bandit/a.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
+					<a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="设置"></a>
+					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
+				</div>
+			</header>
+			<article class="content"><h1 id='header-to-level'>To Level<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-level-0'>Level 0<a class='docs-heading-anchor-permalink'></a></h2><p>游玩 <a href='https://overthewire.org/wargames/bandit' target='_blank'>https://overthewire.org/wargames/bandit</a> 笔记</p><p>让我看看 git bash 能不能当 ssh 用</p><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>$ ssh bandit0@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit0@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+...
+
+  Enjoy your stay!
+</code></pre></div><br /><h2 id='header-to-level-1'>To Level 1<a class='docs-heading-anchor-permalink'></a></h2><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit0@bandit:~$ ls
+readme
+bandit0@bandit:~$ cat readme
+</code></pre></div><br /><p>用 <code>logout</code> / <code>exit</code> 可以退出远程登录</p><h2 id='header-to-level-2'>To Level 2<a class='docs-heading-anchor-permalink'></a></h2><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit1@bandit:~$ cat ./-
+</code></pre></div><br /><p>因为一开始调了 <code>cat -</code> 把它 <code>Ctrl+Z</code> 停掉，所以退出时遇到 <code>There are stopped jobs.</code>，用了 <code>jobs -l</code> 再 <code>kill</code>。</p><h2 id='header-to-level-3'>To Level 3<a class='docs-heading-anchor-permalink'></a></h2><p>用 <code>cat spaces\ in\ this\ filename</code></p><h2 id='header-to-level-4'>To Level 4<a class='docs-heading-anchor-permalink'></a></h2><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit3@bandit:~$ ls inhere -a
+.  ..  .hidden
+bandit3@bandit:~$ cd inhere
+bandit3@bandit:~/inhere$ cat .hidden
+</code></pre></div><br /><h2 id='header-to-level-5'>To Level 5<a class='docs-heading-anchor-permalink'></a></h2><p><code>inhere</code> 下有 <code>-file01</code> - <code>-file09</code>，依次读一遍即可。 屏幕太乱了 <code>clear</code> 一遍。</p><h2 id='header-to-level-6'>To Level 6<a class='docs-heading-anchor-permalink'></a></h2><p>好像有可执行文件，是会骗过去？ 拿 <code>du</code> 依次查一遍。</p><p>算了太多了，用 <code>find . -size 1033c</code>。</p><h2 id='header-to-level-7'>To Level 7<a class='docs-heading-anchor-permalink'></a></h2><h2 id='header-keys-(save)'>Keys (Save)<a class='docs-heading-anchor-permalink'></a></h2><div class='box-hide'><button class='button-hide' onclick='unhide(event)'><span>click to reveal hidden text</span></button><div class='display-hide'><ul><li><p>6: <code>P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU</code></p></li></ul></div></div><div id='rocket' onclick='boom()'></div></article>
+			<nav class="docs-footer"><a class="docs-footer-prevpage" href="index.html">« 索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
+			<div class='giscus'></div>
+		</div>
+	</div>
+</body>
+</html>
