@@ -1,4 +1,4 @@
-# To Level
+# To Level 9
 ## Level 0
 游玩 <https://overthewire.org/wargames/bandit> 笔记
 
@@ -77,8 +77,20 @@ bandit3@bandit:~/inhere$ cat .hidden
 算了太多了，用 `find . -size 1033c`。
 
 ## To Level 7
+`find / -user bandit7 -group bandit6 -size 33c`
+
+一堆文件中只有一个是有权限的，打开即可。
+
+## To Level 8
+`grep millionth data.txt`
+
+## To Level 9
+`sort data.txt | uniq -u`
 
 ## Keys (Save)
 ```hide
 * 6: `P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU`
+* 7: `z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S`
+* 8: `TESKZC0XvTetK0S9xNwm25STk5iWrBvP`
+* 9: `EN632PlfYiZbn3PhVK3XOGSlNInNE00t`
 ```
