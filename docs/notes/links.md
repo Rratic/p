@@ -36,6 +36,10 @@
 - [molbase](https://www.molbase.com/) - 搜索与分享
 - [kingdraw](http://kingdraw.cn/) - 结构式编辑器
 
+## 生物
+- [ensembl](http://asia.ensembl.org/index.html)
+- [ncbi](https://www.ncbi.nlm.nih.gov/)
+
 ## 计算机科学
 ### 泛
 - [stackoverflow](https://stackoverflow.com/) - 提问
