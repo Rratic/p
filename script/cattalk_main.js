@@ -1,3 +1,6 @@
+$("#submit").click(function (event) {
+	commander(event.target.prevSibling.value)
+})
 function commander(command) {
 }
 function _cat(attributes, text) {
