@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bandit/To Level 19 - Rratic</title>
+	<meta name="tURL" id="tURL" content="../../../">
+	<meta name="description" content="bandit/To Level 19 - Rratic">
+	<script src="../../../extra/info.js"></script>
+	<link id="theme-href" rel="stylesheet" type="text/css" href="../../../css/light.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../extra/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/general.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.4/katex.min.css">
+</head>
+<body>
+	<div id="documenter">
+		<nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">Rratic</span></div><ul class="docs-menu"></ul></nav>
+		<div class="docs-main">
+			<header class="docs-navbar">
+				<nav class="breadcrumb"><ul><li class="is-active">bandit / To Level 19</li></ul></nav>
+				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/notes/bandit/b.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
+					<a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="设置"></a>
+					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
+				</div>
+			</header>
+			<article class="content"><h1 id='header-to-level-19'>To Level 19<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-to-level-10'>To Level 10<a class='docs-heading-anchor-permalink'></a></h2><p><code>strings data.txt | grep ^=</code></p><h2 id='header-to-level-11'>To Level 11<a class='docs-heading-anchor-permalink'></a></h2><p><code>base64 -d data.txt</code></p><h2 id='header-to-level-12'>To Level 12<a class='docs-heading-anchor-permalink'></a></h2><p><code>cat data.txt | tr [a-zA-Z] [n-za-mN-ZA-M]</code></p><h2 id='header-to-level-13'>To Level 13<a class='docs-heading-anchor-permalink'></a></h2><p>先用 <code>mktemp -d</code> 在 <code>/tmp/</code> 下创建临时目录，然后 <code>xxd -r data.txt /tmp/tmp.../1</code>，切到临时目录去处理。 为什么这些解压器只能识别特定后缀呢？</p><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit12@...$ file 1
+1: gzip compressed data, was "data2.bin", last modified: Sun Apr 23 18:04:23 2023, max compression, from Unix, original size modulo 2^32 581
+bandit12@...$ gzip -d 1
+gzip: 1: unknown suffix -- ignored
+bandit12@...$ gzip -d ./1
+gzip: ./1: unknown suffix -- ignored
+bandit12@...$ mv 1 1.gz
+bandit12@...$ gzip -d 1.gz
+bandit12@...$ ls
+1
+bandit12@...$ file 1
+1: bzip2 compressed data, block size = 900k
+bandit12@...$ mv 1 1.bz2
+bandit12@...$ bzip2 -d 1.bz2
+bandit12@...$ file 1
+1: gzip compressed data, was "data4.bin", last modified: Sun Apr 23 18:04:23 2023, max compression, from Unix, original size modulo 2^32 20480
+bandit12@...$ mv 1 1.gz
+bandit12@...$ gzip -d 1.gz
+bandit12@...$ file 1
+1: POSIX tar archive (GNU)
+bandit12@...$ mv 1 1.tar
+bandit12@...$ tar -xvf 1.tar
+data5.bin
+</code></pre></div><br /><p>这个 <code>tar</code> 解压出来结果还和别的名字不一样。</p><p>……</p><p>反复操作。</p><p>最后 <code>rm -r</code> 把临时目录干掉。</p><h2 id='header-to-level-14'>To Level 14<a class='docs-heading-anchor-permalink'></a></h2><h2 id='header-keys-(save)'>Keys (Save)<a class='docs-heading-anchor-permalink'></a></h2><div class='box-hide'><button class='button-hide' onclick='unhide(event)'><span>click to reveal hidden text</span></button><div class='display-hide'><ul><li><p>10: <code>G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s</code></p></li><li><p>11: <code>6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM</code></p></li><li><p>12: <code>JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv</code></p></li><li><p>13: <code>wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw</code></p></li></ul></div></div><div id='rocket' onclick='boom()'></div></article>
+			<nav class="docs-footer"><a class="docs-footer-prevpage" href="index.html">« 索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
+			<div class='giscus'></div>
+		</div>
+	</div>
+</body>
+</html>
