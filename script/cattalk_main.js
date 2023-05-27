@@ -1,3 +1,4 @@
+var catreply = null
 function userspeak(text) {
 	let div = document.createElement("div")
 	let p = document.createElement("p")
@@ -6,12 +7,27 @@ function userspeak(text) {
 	div.className = "message-box"
 	div.style.backgroundColor = "#95ec69"
 	document.getElementById("dialog-box").append(div)
+	if (catreply != null){
+		catreply(text)
+	}
 }
-$(document).ready(function () {
-	$("#submit").click(function (event) {
-		commander(event.target.previousSibling.value)
-	})
-})
+function catspeak(text, html = false) {
+	let div = document.createElement("div")
+	let p = document.createElement("p")
+	if (html) p.innerHTML = text
+	else p.innerText = text
+	div.append(p)
+	div.className = "message-box"
+	div.style.backgroundColor = "#fff"
+	document.getElementById("dialog-box").append(div)
+}
+
+catspeak("欢迎来到「和猫说话」。<br>我是一只虚拟的猫，且不具有智能，但您可以使用指令控制我说的话！<br>您可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+
+function submit(event) {
+	commander(event.target.previousSibling.value)
+	event.target.previousSibling.value = ""
+}
 
 function commander(command) {
 	if (command == "") return
