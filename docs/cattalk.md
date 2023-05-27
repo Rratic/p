@@ -3,8 +3,8 @@
 ```insert-html
 <script src="../script/cattalk_main.js"></script>
 <link rel="stylesheet" type="text/css" href="../assets/css/cattalk.css">
-<div class='main-box'>
-<div class='dialog-box'></div>
-<div class='send-box'><input><button id="submit"></button></div>
+<div id='main-box'>
+<div id='dialog-box'></div>
+<div id='send-box'><input style="width: 90%;" /><button id="submit" text="提交"></button></div>
 </div>
 ```
