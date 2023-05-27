@@ -85,7 +85,7 @@ bandit3@bandit:~/inhere$ cat .hidden
 `grep millionth data.txt`
 
 ## To Level 9
-`sort data.txt | uniq -u`
+由于 `uniq` 只会上下比对，需要先用 `sort`。`sort data.txt | uniq -u`
 
 ## Keys (Save)
 ```hide
