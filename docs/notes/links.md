@@ -4,6 +4,7 @@
 ## 工作
 ### 引擎
 - [开发者搜索](https://kaifa.baidu.com/)
+- [书籍信息](https://zbook.lol/)
 
 ### 排版
 - [PDF 处理](https://smallpdf.com/cn)
@@ -27,6 +28,7 @@
 
 ## 物理
 - [NIST](https://www.nist.gov/pml)
+- [damtp](www.damtp.cam.ac.uk)
 
 ## 化学
 - [ptable](https://ptable.com/) - 元素周期表
