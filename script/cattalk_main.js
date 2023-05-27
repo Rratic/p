@@ -1,7 +1,24 @@
-$("#submit").click(function (event) {
-	commander(event.target.prevSibling.value)
+function userspeak(text) {
+	let div = document.createElement("div")
+	let p = document.createElement("p")
+	p.innerText = text
+	div.append(p)
+	div.className = "message-box"
+	div.style.backgroundColor = "#95ec69"
+	document.getElementById("dialog-box").append(div)
+}
+$(document).ready(function () {
+	$("#submit").click(function (event) {
+		commander(event.target.previousSibling.value)
+	})
 })
+
 function commander(command) {
+	if (command == "") return
+	if (command[0] != '/') {
+		userspeak(command)
+		return
+	}
 }
 function _cat(attributes, text) {
 	if (attributes["b"]) userspeak(text)
