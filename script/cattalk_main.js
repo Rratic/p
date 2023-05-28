@@ -1,5 +1,5 @@
-var catreply = null
-function userspeak(text) {
+var catreact = null
+function userspeak(text, react = true) {
 	let div = document.createElement("div")
 	let p = document.createElement("p")
 	p.innerText = text
@@ -7,8 +7,8 @@ function userspeak(text) {
 	div.className = "message-box"
 	div.style.backgroundColor = "#95ec69"
 	document.getElementById("dialog-box").append(div)
-	if (catreply != null){
-		catreply(text)
+	if (react && catreact != null) {
+		catreact(text)
 	}
 }
 function catspeak(text, html = false) {
@@ -22,7 +22,7 @@ function catspeak(text, html = false) {
 	document.getElementById("dialog-box").append(div)
 }
 
-catspeak("欢迎来到「和猫说话」。<br>我是一只虚拟的猫，且不具有智能，但您可以使用指令控制我说的话！<br>您可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+catspeak("欢迎和我说话~ 我是一只虚拟的猫，且不具有智能，但您可以使用指令控制我说的话！<br>您可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
 
 function submit(event) {
 	commander(event.target.previousSibling.value)
@@ -35,13 +35,25 @@ function commander(command) {
 		userspeak(command)
 		return
 	}
+	let attributes = {}
+}
+
+function _autoreply(_, level) {
+	if (level == 0) catreact = null
+	else if (level == 1) catreact = function (_) { catspeak("喵呜") }
 }
 function _cat(attributes, text) {
-	if (attributes["b"]) userspeak(text)
+	if (attributes["b"]) userspeak(text, false)
 	catspeak(text)
 }
+function _clear(_) {
+	document.getElementById("dialog-box").replaceChildren()
+}
+function _discuss(_) {
+	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
+}
 function _say(_, text) {
-	userspeak(text)
+	userspeak(text, false)
 }
 const questions = [
 	[0.7, "人们总是想要成为什么，但或许，我们真正需要思考的是自己真正想要什么。所以……您认为，您真正想要什么？"],

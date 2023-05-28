@@ -221,6 +221,10 @@ source = "Lawrence M. Krauss"
 [[pool]]
 text = "天地不仁，以万物为刍狗"
 source = "老子《道德经》"
+
+[[pool]]
+text = "I could be bounded in a nutshell and count myself a king of infinite space."
+source = "William Shakespare <em>Hamlet</em>"
 ```
 
 ---
