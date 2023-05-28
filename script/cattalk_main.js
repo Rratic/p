@@ -8,7 +8,7 @@ function userspeak(text, react = true) {
 	div.style.backgroundColor = "#95ec69"
 	document.getElementById("dialog-box").append(div)
 	if (react && catreact != null) {
-		catreact(text)
+		catreact.call(text)
 	}
 }
 function catspeak(text, html = false) {
@@ -22,7 +22,7 @@ function catspeak(text, html = false) {
 	document.getElementById("dialog-box").append(div)
 }
 
-catspeak("欢迎和我说话~ 我是一只虚拟的猫，且不具有智能，但您可以使用指令控制我说的话！<br>您可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的猫，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
 
 function submit(event) {
 	commander(event.target.previousSibling.value)
@@ -35,15 +35,24 @@ function commander(command) {
 		userspeak(command)
 		return
 	}
-	let attributes = {}
+	let v = command.substring(1).split(' ')
+	let l = v.length
+	let arguments = [], attributes = {}
+	for (let i = 1; i < l; i++) {
+		let x = v[i]
+		if (x[0] == '-') attributes[x.substring(1)] = true
+		else arguments.push(x)
+	}
+	let f = window["_" + v[0]]
+	f.call(null, attributes, ...arguments)
 }
 
 function _autoreply(_, level) {
-	if (level == 0) catreact = null
-	else if (level == 1) catreact = function (_) { catspeak("喵呜") }
+	if (level == "0") catreact = null
+	else if (level == "1") catreact = function (_) { catspeak("喵呜") }
 }
 function _cat(attributes, text) {
-	if (attributes["b"]) userspeak(text, false)
+	if (attributes["b"] == true) userspeak(text, false)
 	catspeak(text)
 }
 function _clear(_) {
@@ -52,14 +61,33 @@ function _clear(_) {
 function _discuss(_) {
 	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
 }
+function _feed(_, food = "猫粮") {
+	catspeak(food.concat("好吃，喵呜"))
+}
+function _kill(_) {
+	catspeak("喵——呜——")
+	document.getElementById("input").disabled = true
+}
+function _help(_) {
+	catspeak(`当前支持的命令有：<ul style='font-size:75%'>
+	<li><code>/autoreply mode</code>&nbsp;设置自动回复模式，0 表示关闭，1 表示每次回复“喵呜”</li>
+	<li><code>/cat text [-b]</code>&nbsp;让我说指定的话，设置 <code>-b</code> 时你会在我之前也说这句话</li>
+	<li><code>/clear</code>&nbsp;清屏</li>
+	<li><code>/discuss</code>&nbsp;让我提出一个值得讨论的问题</li>
+	<li><code>/feed [food = 猫粮]</code>&nbsp;投喂</li>
+	<li><code>/kill</code>&nbsp;杀死猫猫……真的吗</li>
+	<li><code>/help</code>&nbsp;显示这个帮助</li>
+	<li><code>/say text</code>&nbsp;说话，但不触发自动回复</li>
+	</ul>`, true)
+}
 function _say(_, text) {
 	userspeak(text, false)
 }
 const questions = [
-	[0.7, "人们总是想要成为什么，但或许，我们真正需要思考的是自己真正想要什么。所以……您认为，您真正想要什么？"],
-	[0.7, "如果我们在一场大梦中，如何才能醒来？"],
-	[0.6, "一个「庞加莱回归」后，我们能否再相见？"],
-	[0.32, "爱"],
-	[0.3, "您明天打算吃什么"],
-	[0.3, "对本项目，您有/还有什么建议吗？（请写在 issue 里喵）"],
+	[0.7, "人们总是想要成为什么，但或许，我们真正需要思考的是自己真正想要什么。所以……你认为，你真正想要什么？"],
+	[0.7, "如果我们在一场大梦中，那么如何才能醒来？"],
+	[0.6, "一个「庞加莱回归」之后，我们能否再次相见？"],
+	[0.32, "如果没有人爱你，那么锂可以爱你！"],
+	[0.3, "明天打算吃什么？"],
+	[0.3, "对于本项目，有/还有什么建议吗？（请写在 issue 里喵）"],
 ]
