@@ -58,6 +58,9 @@ function _cat(attributes, text) {
 function _clear(_) {
 	document.getElementById("dialog-box").replaceChildren()
 }
+function _color(_, color) {
+	document.getElementById("dialog-box").style.backgroundColor = color
+}
 function _discuss(_) {
 	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
 }
@@ -73,12 +76,26 @@ function _help(_) {
 	<li><code>/autoreply mode</code>&nbsp;设置自动回复模式，0 表示关闭，1 表示每次回复“喵呜”</li>
 	<li><code>/cat text [-b]</code>&nbsp;让我说指定的话，设置 <code>-b</code> 时你会在我之前也说这句话</li>
 	<li><code>/clear</code>&nbsp;清屏</li>
+	<li><code>/color color</code>&nbsp;设置背景色</li>
 	<li><code>/discuss</code>&nbsp;让我提出一个值得讨论的问题</li>
 	<li><code>/feed [food = 猫粮]</code>&nbsp;投喂</li>
 	<li><code>/kill</code>&nbsp;杀死猫猫……真的吗</li>
 	<li><code>/help</code>&nbsp;显示这个帮助</li>
+	<li><code>/quote</code>&nbsp;从随机引用库（与欢迎页一致）中引用一句</li>
 	<li><code>/say text</code>&nbsp;说话，但不触发自动回复</li>
 	</ul>`, true)
+}
+function _quote(_) {
+	fetch(`../extra/data_random_word/main_display.json`)
+		.then(response => {
+			if (!response.ok) throw new Error("HTTP error " + response.status);
+			return response.json()
+		})
+		.then(data => {
+			let ind = Math.floor(Math.random() * data.length)
+			let chosen = data[ind]
+			catspeak(chosen)
+		})
 }
 function _say(_, text) {
 	userspeak(text, false)
