@@ -6,7 +6,9 @@ function userspeak(text, react = true) {
 	div.append(p)
 	div.className = "message-box"
 	div.style.backgroundColor = "#95ec69"
-	document.getElementById("dialog-box").append(div)
+	let db = document.getElementById("dialog-box")
+	db.append(div)
+	db.scrollTo({ top: db.scrollHeight })
 	if (react && catreact != null) {
 		catreact.call(text)
 	}
@@ -19,7 +21,9 @@ function catspeak(text, html = false) {
 	div.append(p)
 	div.className = "message-box"
 	div.style.backgroundColor = "#fff"
-	document.getElementById("dialog-box").append(div)
+	let db = document.getElementById("dialog-box")
+	db.append(div)
+	db.scrollTo({ top: db.scrollHeight, behavior: "smooth" })
 }
 
 catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的猫，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
@@ -88,13 +92,18 @@ function _help(_) {
 function _quote(_) {
 	fetch(`../extra/data_random_word/main_display.json`)
 		.then(response => {
-			if (!response.ok) throw new Error("HTTP error " + response.status);
+			if (!response.ok) {
+				let msg = "HTTP error " + response.status
+				catspeak(msg)
+				throw new Error(msg)
+				return
+			}
 			return response.json()
 		})
 		.then(data => {
 			let ind = Math.floor(Math.random() * data.length)
 			let chosen = data[ind]
-			catspeak(chosen)
+			catspeak(chosen.text)
 		})
 }
 function _say(_, text) {
