@@ -103,7 +103,7 @@ function _quote(_) {
 		.then(data => {
 			let ind = Math.floor(Math.random() * data.length)
 			let chosen = data[ind]
-			catspeak(chosen)
+			catspeak(chosen.text)
 		})
 }
 function _say(_, text) {
