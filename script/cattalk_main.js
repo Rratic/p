@@ -1,3 +1,4 @@
+const version = "v0.1.0"
 var catreact = null
 function userspeak(text, react = true) {
 	let div = document.createElement("div")
@@ -26,7 +27,14 @@ function catspeak(text, html = false) {
 	db.scrollTo({ top: db.scrollHeight, behavior: "smooth" })
 }
 
-catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的猫，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+let storeVersion = localStorage.getItem("cattalk")["version"]
+if (storeVersion == undefined) {
+	catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的猫，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+	storeVersion = version
+}
+else {
+	catspeak("欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！")
+}
 
 function submit(event) {
 	commander(event.target.previousSibling.value)
@@ -62,8 +70,10 @@ function _cat(attributes, text) {
 function _clear(_) {
 	document.getElementById("dialog-box").replaceChildren()
 }
-function _color(_, color) {
-	document.getElementById("dialog-box").style.backgroundColor = color
+function _color(attributes, color) {
+	let div = document.getElementById("dialog-box")
+	if (attributes["f"] == true) div.style.color = color
+	else div.style.backgroundColor = color
 }
 function _discuss(_) {
 	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
@@ -80,7 +90,7 @@ function _help(_) {
 	<li><code>/autoreply mode</code>&nbsp;设置自动回复模式，0 表示关闭，1 表示每次回复“喵呜”</li>
 	<li><code>/cat text [-b]</code>&nbsp;让我说指定的话，设置 <code>-b</code> 时你会在我之前也说这句话</li>
 	<li><code>/clear</code>&nbsp;清屏</li>
-	<li><code>/color color</code>&nbsp;设置背景色</li>
+	<li><code>/color color [-f]</code>&nbsp;设置颜色，无 -f 为背景色，否则为前景色</li>
 	<li><code>/discuss</code>&nbsp;让我提出一个值得讨论的问题</li>
 	<li><code>/feed [food = 猫粮]</code>&nbsp;投喂</li>
 	<li><code>/kill</code>&nbsp;杀死猫猫……真的吗</li>
@@ -103,7 +113,9 @@ function _quote(_) {
 		.then(data => {
 			let ind = Math.floor(Math.random() * data.length)
 			let chosen = data[ind]
-			catspeak(chosen.text)
+			let text = chosen.text
+			if (chosen["source"] != undefined) text += "<br>来源：" + chosen["source"]
+			catspeak(text, true)
 		})
 }
 function _say(_, text) {
