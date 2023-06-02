@@ -27,10 +27,10 @@ function catspeak(text, html = false) {
 	db.scrollTo({ top: db.scrollHeight, behavior: "smooth" })
 }
 
-let storeVersion = localStorage.getItem("cattalk")["version"]
-if (storeVersion == undefined) {
-	catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的猫，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
-	storeVersion = version
+let store = localStorage.getItem("cattalk")
+if (store == undefined) {
+	catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+	localStorage.setItem("cattalk", { "version": version })
 }
 else {
 	catspeak("欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！")
