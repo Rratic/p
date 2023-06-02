@@ -2,6 +2,7 @@ const version = "v0.1.0"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
 const welcome1 = "欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！"
 const welcome2 = "欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！"
+const help1 = "指令的基本格式为 <code>/命令名 参数 -辅助参数 --赋值参数=值</code>。对于具体的命令，可以使用 <code>/help 该命令名</code> 查看其帮助。"
 var catreact = null
 function userspeak(text, react = true) {
 	let div = document.createElement("div")
@@ -48,8 +49,12 @@ else {
 	if (regi == undefined) catspeak(welcome2, true)
 	else {
 		if (!regi["force"]) catspeak(welcome2, true)
-		catspeak(regi[text])
+		catspeak(regi["text"])
 	}
+}
+
+function random_select(list) {
+	return list[Math.floor(Math.random() * list.length)]
 }
 
 function submit(event) {
@@ -78,6 +83,10 @@ function commander(command) {
 		else arguments.push(x)
 	}
 	let f = window["_" + v[0]]
+	if (f == undefined) {
+		catspeak("该命令不存在，请重新检查")
+		return
+	}
 	f(attributes, ...arguments)
 }
 
@@ -142,7 +151,7 @@ function _clear(_) {
 	document.getElementById("dialog-box").replaceChildren()
 }
 function _discuss(_) {
-	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
+	catspeak(random_select(questions))
 }
 function _feed(_, food = "猫粮") {
 	catspeak(food.concat("好吃，喵呜"))
@@ -153,13 +162,39 @@ function _kill(_) {
 }
 function _help(_, command = "") {
 	if (command == "") {
+		let p = document.createElement("p")
+		p.innerHTML = help1
 		let ul = document.createElement("ul")
 		ul.style.fontSize = "75%"
+		for (let i of Object.keys(help_text)) {
+			let li = document.createElement("li")
+			let code = document.createElement("code")
+			code.innerText = "/" + i
+			li.append(code)
+			li.innerHTML += " " + help_text[i]["description"]
+			ul.append(li)
+		}
+		catspeakwith(function (e) {
+			e.append(p)
+			e.append(ul)
+		})
 	}
 	else {
+		if (help_text[command] == undefined) {
+			catspeak("该命令不存在")
+			return
+		}
 	}
 }
 function _register(attributes, text) {
+	if (attributes["r"] == true) {
+		delete localStorage.getItem("cattalk")["register"]
+	}
+	if (attributes["rand"] == true) text = random_select(registertexts)
+	localStorage.getItem("cattalk")["register"] = {
+		text: text,
+		force: attributes["f"] == true,
+	}
 }
 function _quote(_) {
 	fetch(`../extra/data_random_word/main_display.json`)
@@ -168,7 +203,6 @@ function _quote(_) {
 				let msg = "HTTP error " + response.status
 				catspeak(msg)
 				throw new Error(msg)
-				return
 			}
 			return response.json()
 		})
@@ -185,10 +219,15 @@ function _say(_, text) {
 }
 function style(attributes) {
 	let div = document.getElementById("dialog-box")
-	for (let key in Object.keys(attributes)) {
+	for (let key of Object.keys(attributes)) {
 		div[key] = attributes[key]
 	}
 }
+
+const registertexts = [
+	"愿你安好",
+	"今日快乐！"
+]
 const questions = [
 	[0.7, "人们总是想要成为什么，但或许，我们真正需要思考的是自己真正想要什么。所以……你认为，你真正想要什么？"],
 	[0.7, "如果我们在一场大梦中，那么如何才能醒来？"],
