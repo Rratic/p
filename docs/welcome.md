@@ -225,6 +225,10 @@ source = "老子《道德经》"
 [[pool]]
 text = "I could be bounded in a nutshell and count myself a king of infinite space."
 source = "William Shakespare <em>Hamlet</em>"
+
+[[pool]]
+text = "通过沉浸于痛苦来获得满足，体现了这样一种普遍原则，即通过让自己迷失在某种更巨大的东西中，通过消解自己的个性，通过放弃自我以及它所拥有的一切怀疑、冲突、痛苦、局限和孤独，来获得满足。"
+source = "Karen Horney 《我们时代的神经症人格》"
 ```
 
 ---
