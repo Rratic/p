@@ -1,12 +1,14 @@
 const version = "v0.1.0"
+const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
+const welcome1 = "欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！"
+const welcome2 = "欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！"
 var catreact = null
 function userspeak(text, react = true) {
 	let div = document.createElement("div")
 	let p = document.createElement("p")
 	p.innerText = text
 	div.append(p)
-	div.className = "message-box"
-	div.style.backgroundColor = "#95ec69"
+	div.classList = ["message-box", "user-speak"]
 	let db = document.getElementById("dialog-box")
 	db.append(div)
 	db.scrollTo({ top: db.scrollHeight })
@@ -20,8 +22,17 @@ function catspeak(text, html = false) {
 	if (html) p.innerHTML = text
 	else p.innerText = text
 	div.append(p)
-	div.className = "message-box"
-	div.style.backgroundColor = "#fff"
+	div.classList = ["message-box", "cat-speak"]
+	let db = document.getElementById("dialog-box")
+	db.append(div)
+	db.scrollTo({ top: db.scrollHeight, behavior: "smooth" })
+}
+function catspeakwith(f) {
+	let div = document.createElement("div")
+	let p = document.createElement("p")
+	f(p)
+	div.append(p)
+	div.classList = ["message-box", "cat-speak"]
 	let db = document.getElementById("dialog-box")
 	db.append(div)
 	db.scrollTo({ top: db.scrollHeight, behavior: "smooth" })
@@ -29,11 +40,16 @@ function catspeak(text, html = false) {
 
 let store = localStorage.getItem("cattalk")
 if (store == undefined) {
-	catspeak("欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！", true)
+	catspeak(welcome1, true)
 	localStorage.setItem("cattalk", { "version": version })
 }
 else {
-	catspeak("欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！")
+	let regi = store["register"]
+	if (regi == undefined) catspeak(welcome2, true)
+	else {
+		if (!regi["force"]) catspeak(welcome2, true)
+		catspeak(regi[text])
+	}
 }
 
 function submit(event) {
@@ -52,11 +68,66 @@ function commander(command) {
 	let arguments = [], attributes = {}
 	for (let i = 1; i < l; i++) {
 		let x = v[i]
-		if (x[0] == '-') attributes[x.substring(1)] = true
+		if (x[0] == '-') {
+			if (x[0] == '-') {
+				let split = x.search('=')
+				attributes[x.substring(2, split)] = x.substring(split + 1)
+			}
+			else attributes[x.substring(1)] = true
+		}
 		else arguments.push(x)
 	}
 	let f = window["_" + v[0]]
-	f.call(null, attributes, ...arguments)
+	f(attributes, ...arguments)
+}
+
+const help_text = {
+	"autoreply": {
+		description: "设置自动回复模式",
+		args: { level: { 0: "关闭", 1: "每次回复“喵呜”" } },
+	},
+	"cat": {
+		description: "让猫猫我说指定的话",
+		args: { text: null },
+		attributes: { "b": "你会在我之前也说这句话" },
+	},
+	"clear": {
+		description: "清屏",
+	},
+	"discuss": {
+		description: "让我提出一个值得思考的问题",
+	},
+	"feed": {
+		description: "投喂食物",
+		args: { "food": "默认为猫粮" }
+	},
+	"kill": {
+		description: "杀死猫猫……真的吗",
+	},
+	"help": {
+		description: "显示帮助",
+		args: { "command": "帮助的特定指令名称" }
+	},
+	"quote": {
+		description: "从随机引用库（与欢迎页一致）中引用一句",
+	},
+	"register": {
+		description: "设置我每次的第一句话",
+		args: { text: "可留空" },
+		attributes: {
+			f: "覆盖原来的话",
+			r: "删除已注册的话，不会设置新的",
+			rand: "随机挑选一句，会覆盖 <code>text</code> 中值",
+		},
+	},
+	"say": {
+		description: "说话，但不触发自动回复",
+		args: { text: null },
+	},
+	"style": {
+		description: "设置本框中的 CSS 样式",
+		assigns: { "stylename": "对特定的 style 键设置值，如 <code>backgroundColor = black</code>" }
+	},
 }
 
 function _autoreply(_, level) {
@@ -70,11 +141,6 @@ function _cat(attributes, text) {
 function _clear(_) {
 	document.getElementById("dialog-box").replaceChildren()
 }
-function _color(attributes, color) {
-	let div = document.getElementById("dialog-box")
-	if (attributes["f"] == true) div.style.color = color
-	else div.style.backgroundColor = color
-}
 function _discuss(_) {
 	catspeak(questions[Math.floor(Math.random() * questions.length)][1])
 }
@@ -85,19 +151,15 @@ function _kill(_) {
 	catspeak("喵——呜——")
 	document.getElementById("input").disabled = true
 }
-function _help(_) {
-	catspeak(`当前支持的命令有：<ul style='font-size:75%'>
-	<li><code>/autoreply mode</code>&nbsp;设置自动回复模式，0 表示关闭，1 表示每次回复“喵呜”</li>
-	<li><code>/cat text [-b]</code>&nbsp;让我说指定的话，设置 <code>-b</code> 时你会在我之前也说这句话</li>
-	<li><code>/clear</code>&nbsp;清屏</li>
-	<li><code>/color color [-f]</code>&nbsp;设置颜色，无 -f 为背景色，否则为前景色</li>
-	<li><code>/discuss</code>&nbsp;让我提出一个值得讨论的问题</li>
-	<li><code>/feed [food = 猫粮]</code>&nbsp;投喂</li>
-	<li><code>/kill</code>&nbsp;杀死猫猫……真的吗</li>
-	<li><code>/help</code>&nbsp;显示这个帮助</li>
-	<li><code>/quote</code>&nbsp;从随机引用库（与欢迎页一致）中引用一句</li>
-	<li><code>/say text</code>&nbsp;说话，但不触发自动回复</li>
-	</ul>`, true)
+function _help(_, command = "") {
+	if (command == "") {
+		let ul = document.createElement("ul")
+		ul.style.fontSize = "75%"
+	}
+	else {
+	}
+}
+function _register(attributes, text) {
 }
 function _quote(_) {
 	fetch(`../extra/data_random_word/main_display.json`)
@@ -120,6 +182,12 @@ function _quote(_) {
 }
 function _say(_, text) {
 	userspeak(text, false)
+}
+function style(attributes) {
+	let div = document.getElementById("dialog-box")
+	for (let key in Object.keys(attributes)) {
+		div[key] = attributes[key]
+	}
 }
 const questions = [
 	[0.7, "人们总是想要成为什么，但或许，我们真正需要思考的是自己真正想要什么。所以……你认为，你真正想要什么？"],
