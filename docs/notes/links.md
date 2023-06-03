@@ -8,6 +8,7 @@
 
 ### 排版
 - [PDF 处理](https://smallpdf.com/cn)
+- [PDF 翻译](https://deepl.com)
 - [Typst](https://typst.app/)
 
 ## 学习

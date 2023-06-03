@@ -1,7 +1,6 @@
 outline = [
 	"welcome",
 	"about",
-	"cattalk",
 	"blog",
 	"notes",
 	"archived",
