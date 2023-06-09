@@ -1,4 +1,4 @@
-const version = "v0.2.0"
+const version = "v0.3.0"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
 const welcome1 = "欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！"
 const welcome2 = "欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！"
@@ -117,6 +117,10 @@ const help_text = {
 	"clear": {
 		description: "清屏",
 	},
+	"delete": {
+		description: "清除数据",
+		type: "dangerous",
+	},
 	"discuss": {
 		description: "让我提出一个值得思考的问题",
 	},
@@ -164,6 +168,9 @@ function _cat(attributes, text) {
 function _clear(_) {
 	document.getElementById("dialog-box").replaceChildren()
 }
+function _delete(_) {
+	localStorage.removeItem("cattalk")
+}
 function _discuss(_) {
 	catspeak(random_select(questions))
 }
@@ -186,6 +193,9 @@ function _help(_, command = "") {
 			code.innerText = "/" + i
 			li.append(code)
 			li.innerHTML += " " + help_text[i]["description"]
+			if (help_text[i]["type"] == "dangerous") {
+				li.style.color = "red"
+			}
 			ul.append(li)
 		}
 		catspeakwith(function (e) {
