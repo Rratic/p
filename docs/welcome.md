@@ -233,6 +233,11 @@ source = "Karen Horney 《我们时代的神经症人格》"
 [[pool]]
 text = "一切有为法，如梦幻泡影，如露亦如电，应作如是观。"
 source = "《金刚经》（鸠摩罗什译）"
+
+[[pool]]
+text = "人是目的，而不是手段。"
+original = "Nun sage ich: der Mensch und überhaupt jedes vernünftige<br>Wesen existiert als Zweck an sich selbst, nicht bloß als Mittel zum<br>beliebigen Gebrauche für diesen oder jenen Willen, sondern muß<br>in allen seinen sowohl auf sich selbst, als auch auf andere vernünftige<br>Wesen gerichteten Handlungen jederzeit zugleich als Zweck betrachtet werden."
+source = "康德《实践理性批判》"
 ```
 
 ---
