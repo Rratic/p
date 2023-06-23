@@ -8,12 +8,6 @@
 id = "main_display"
 
 [[pool]]
-text = "龙曾在此。"
-original = "DRAGONS WERE HERE"
-source = "scp-1762"
-license = "CC BY-SA 3.0"
-
-[[pool]]
 text = "绝望之为虚妄，正与希望相同。"
 source = "鲁迅《野草》"
 
@@ -52,7 +46,8 @@ source = "H.P. 洛夫克拉夫特（Howard Phillips Lovecraft）"
 
 [[pool]]
 text = "当你们的时代过去，请继续送出信息，好让下一个声音响起来对抗黑暗。"
-source = "scp-1283"
+original = "And if this finds you too late, and your time is also passing, please send this message on, so the next voice can speak against the darkness."
+source = "scp-1281"
 license = "CC BY-SA 3.0"
 
 [[pool]]
@@ -219,7 +214,7 @@ original = "The amazing thing is that every atom in your body came from a star t
 source = "Lawrence M. Krauss"
 
 [[pool]]
-text = "天地不仁，以万物为刍狗"
+text = "天地不仁，以万物为刍狗。"
 source = "老子《道德经》"
 
 [[pool]]
