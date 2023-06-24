@@ -50,12 +50,19 @@
 - [Unicode](https://home.unicode.org/)
 - [Project Euler](http://pe-cn.github.io/) - Challenge
 - [esolangs](https://esolangs.org/wiki/Main_Page)
+- [Advent of Code](https://adventofcode.com/)
+- [open standards](https://www.open-std.org/)
+- [HTML Standard](https://html.spec.whatwg.org/multipage/)
+- [The little book about OS development](https://littleosbook.github.io/)
+- [Web GPU](https://gpuweb.github.io/gpuweb/)
 
 ## 算法
 - [oi-wiki](https://oi-wiki.org/)
 
 ### C 族
-- [cppreference](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+- [C++ Standard Draft](https://eel.is/c++draft/)
+- [C/C++ reference](https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5)
+- [Compiler Explorer](https://godbolt.org/)
 - [ioccc](https://www.ioccc.org/)
 
 ### 安全

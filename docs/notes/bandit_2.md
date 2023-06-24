@@ -1,4 +1,4 @@
-# To Level 19
+# BANDIT. 2
 ## To Level 10
 `strings data.txt | grep ^=`
 

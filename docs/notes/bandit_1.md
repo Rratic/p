@@ -1,4 +1,4 @@
-# To Level 9
+# BANDIT. 1
 ## Level 0
 游玩 <https://overthewire.org/wargames/bandit> 笔记
 
