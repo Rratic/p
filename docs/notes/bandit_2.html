@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>bandit/To Level 19 - Rratic</title>
-	<meta name="tURL" id="tURL" content="../../../">
-	<meta name="description" content="bandit/To Level 19 - Rratic">
-	<script src="../../../extra/info.js"></script>
-	<link id="theme-href" rel="stylesheet" type="text/css" href="../../../css/light.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../extra/main.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../../css/general.css">
+	<title>笔记/BANDIT. 2 - Rratic</title>
+	<meta name="tURL" id="tURL" content="../../">
+	<meta name="description" content="笔记/BANDIT. 2 - Rratic">
+	<script src="../../extra/info.js"></script>
+	<link id="theme-href" rel="stylesheet" type="text/css" href="../../css/light.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../extra/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/general.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
@@ -20,13 +20,13 @@
 		<nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">Rratic</span></div><ul class="docs-menu"></ul></nav>
 		<div class="docs-main">
 			<header class="docs-navbar">
-				<nav class="breadcrumb"><ul><li class="is-active">bandit / To Level 19</li></ul></nav>
-				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/notes/bandit/b.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
+				<nav class="breadcrumb"><ul><li class="is-active">笔记 / BANDIT. 2</li></ul></nav>
+				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/notes/bandit_2.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
 					<a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="设置"></a>
 					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
 				</div>
 			</header>
-			<article class="content"><h1 id='header-to-level-19'>To Level 19<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-to-level-10'>To Level 10<a class='docs-heading-anchor-permalink'></a></h2><p><code>strings data.txt | grep ^=</code></p><h2 id='header-to-level-11'>To Level 11<a class='docs-heading-anchor-permalink'></a></h2><p><code>base64 -d data.txt</code></p><h2 id='header-to-level-12'>To Level 12<a class='docs-heading-anchor-permalink'></a></h2><p><code>cat data.txt | tr [a-zA-Z] [n-za-mN-ZA-M]</code></p><h2 id='header-to-level-13'>To Level 13<a class='docs-heading-anchor-permalink'></a></h2><p>先用 <code>mktemp -d</code> 在 <code>/tmp/</code> 下创建临时目录，然后 <code>xxd -r data.txt /tmp/tmp.../1</code>，切到临时目录去处理。 为什么这些解压器只能识别特定后缀呢？</p><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit12@...$ file 1
+			<article class="content"><h1 id='header-bandit.-2'>BANDIT. 2<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-to-level-10'>To Level 10<a class='docs-heading-anchor-permalink'></a></h2><p><code>strings data.txt | grep ^=</code></p><h2 id='header-to-level-11'>To Level 11<a class='docs-heading-anchor-permalink'></a></h2><p><code>base64 -d data.txt</code></p><h2 id='header-to-level-12'>To Level 12<a class='docs-heading-anchor-permalink'></a></h2><p><code>cat data.txt | tr [a-zA-Z] [n-za-mN-ZA-M]</code></p><h2 id='header-to-level-13'>To Level 13<a class='docs-heading-anchor-permalink'></a></h2><p>先用 <code>mktemp -d</code> 在 <code>/tmp/</code> 下创建临时目录，然后 <code>xxd -r data.txt /tmp/tmp.../1</code>，切到临时目录去处理。 为什么这些解压器只能识别特定后缀呢？</p><div data-lang='shell'><div class='codeblock-header'></div><pre class='codeblock-body language-shell'><code>bandit12@...$ file 1
 1: gzip compressed data, was "data2.bin", last modified: Sun Apr 23 18:04:23 2023, max compression, from Unix, original size modulo 2^32 581
 bandit12@...$ gzip -d 1
 gzip: 1: unknown suffix -- ignored
