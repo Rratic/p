@@ -75,6 +75,7 @@
 
 ## 哲学
 - [foxinhub?](https://pedantries.com/) - 有趣的文章与交流平台
+- [ctext](https://ctext.org/zhs) - 中国哲学书电子化计划
 
 ## 语言
 - [New Ithkuil](http://www.ithkuil.net/) - 可能是信息密度最高的语言
