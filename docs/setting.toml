@@ -6,6 +6,6 @@ outline = [
 	"archived",
 ]
 [names]
-blog = "博客"
+blog = "想法"
 archived = "已封存"
 notes = "笔记"
