@@ -96,53 +96,86 @@ end
 ```
 
 代码：
-```jl
-macro rd(l, r)
-	return :(wrand_even_q(world, $l, $r))
-end
-function _infmaze_zone_maze(c::Chunk, world, lx, ly, rx, ry, delta)
-	if rx-lx<delta || ry-ly<delta
-		c.blks[lx:rx, ly:ry] .= B_Air()
-		return
-	end
-	mx=@rd lx+1 rx-1
-	my=@rd ly+1 ry-1
-	c.blks[lx:rx, my] .= B_StarRock()
-	c.blks[mx, ly:ry] .= B_StarRock()
-	_infmaze_zone_maze(c, world, lx, ly, mx-1, my-1, delta)
-	_infmaze_zone_maze(c, world, mx+1, ly, rx, my-1, delta)
-	_infmaze_zone_maze(c, world, lx, my+1, mx-1, ry, delta)
-	_infmaze_zone_maze(c, world, mx+1, my+1, rx, ry, delta)
-	dir=wrand_q(world)&0x3
-	if dir==0x0
-		c.blks[mx, @rd(my+1, ry)]=B_Air()
-		c.blks[@rd(lx, mx-1), my]=B_Air()
-		c.blks[@rd(mx+1, rx), my]=B_Air()
-	elseif dir==0x1
-		c.blks[mx, @rd(ly, my-1)]=B_Air()
-		c.blks[@rd(lx, mx-1), my]=B_Air()
-		c.blks[@rd(mx+1, rx), my]=B_Air()
-	elseif dir==0x2
-		c.blks[mx, @rd(ly, my-1)]=B_Air()
-		c.blks[mx, @rd(my+1, ry)]=B_Air()
-		c.blks[@rd(mx+1, rx), my]=B_Air()
-	else
-		c.blks[mx, @rd(ly, my-1)]=B_Air()
-		c.blks[mx, @rd(my+1, ry)]=B_Air()
-		c.blks[@rd(lx, mx-1), my]=B_Air()
-	end
-end
-function (gen::InfMazeGenerator)(c::Chunk, world, idx, idy)
-	c.blks[1, 1:64] .= B_StarRock()
-	c.blks[2:64, 1] .= B_StarRock()
-	wsrand(world, xor(idx<<15+idy, world.seed))
-	distance = idx^2+idy^2
-	_infmaze_zone_maze(c, world, 2, 2, 64, 64,
-		gen.plain || distance>25 ? 0 :
-		distance<11 ? 4 : 2)
-	b1 = (wrand_q(world)&0x1f)<<1
-	b2 = (wrand_q(world)&0x1f)<<1
-	c.blks[1, b1] = B_Air()
-	c.blks[b2, 1] = B_Air()
-end
+```js
+// C-flavour random
+let gsrand = 0
+function srand(x) { gsrand = x }
+function rand() {
+    gsrand = (gsrand*1103515245+12345)&0xffffffff
+    return gsrand>>16 & 32767
+}
+
+class Chunk{
+    matrix
+    constructor() {
+        // suppose the map is divided into 64×64 chunks
+        this.matrix = new Uint8Array(4096)
+    }
+}
+
+Chunk.prototype.put = function(x, y, type) {
+    this.matrix[x<<6|y] = type == 'space' ? 0 : 1
+}
+
+/* * * Core * * */
+Chunk.prototype.generate__infmaze_4 = function(lx, ly, rx, ry) { // split the map recursively
+    let x0 = rx - lx
+    let y0 = ry - ly
+    // room small enough (width = 1)
+    if(x0==0 || y0==0) {
+        for(let i = lx; i <= rx; i++) {
+            for(let j = ly; j <= ry; j++) this.put(i, j, 'space')
+        }
+        return
+    }
+    let mx = lx+2*(rand()%(x0>>1))+1
+    let my = ly+2*(rand()%(y0>>1))+1
+    for(let i = lx; i <= rx; i++) this.put(i, my, 'wall')
+    for(let i = ly; i <= ry; i++) this.put(mx, i, 'wall')
+    // split the map into four smaller rooms
+    this.generate__infmaze_4(lx, ly, mx-1, my-1)
+    this.generate__infmaze_4(lx, my+1, mx-1, ry)
+    this.generate__infmaze_4(mx+1, ly, rx, my-1)
+    this.generate__infmaze_4(mx+1, my+1, rx, ry)
+    // three exits serve as passages through rooms
+    let d = rand()%4
+    let myl = (my-ly+1) >> 1
+    let myr = (ry-my+1) >> 1
+    let mxl = (mx-lx+1) >> 1
+    let mxr = (rx-mx+1) >> 1
+    if(d == 0) {
+        this.put(rx - 2*(rand()%mxr), my, 'space')
+        this.put(mx, ly + 2*(rand()%myl), 'space')
+        this.put(mx, ry - 2*(rand()%myr), 'space')
+    }
+    else if(d == 1) {
+        this.put(lx + 2*(rand()%mxl), my, 'space')
+        this.put(mx, ly + 2*(rand()%myl), 'space')
+        this.put(mx, ry - 2*(rand()%myr), 'space')
+    }
+    else if(d == 2) {
+        this.put(lx + 2*(rand()%mxl), my, 'space')
+        this.put(rx - 2*(rand()%mxr), my, 'space')
+        this.put(mx, ry - 2*(rand()%myr), 'space')
+    }
+    else {
+        this.put(lx + 2*(rand()%mxl), my, 'space')
+        this.put(rx - 2*(rand()%mxr), my, 'space')
+        this.put(mx, ly + 2*(rand()%myl), 'space')
+    }
+}
+Chunk.prototype.generate__infmaze = function(x, y) {
+    // chunks are isolated at first
+    for(let i = 0; i < 64; i++) {
+        this.put(i, 0, 'wall')
+        this.put(0, i, 'wall')
+    }
+    // use the seed
+    srand((x<<15 + y) ^ seed<<3)
+    this.generate__infmaze_4(1, 1, 63, 63)
+    // break the isolation between chunks
+    let r1 = rand()%32
+    this.put(2*(rand()%32) + 1, 0, 'space')
+    this.put(0, 2*(rand()%32) + 1, 'space')
+}
 ```
