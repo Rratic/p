@@ -2,7 +2,7 @@
 ## 欢迎
 欢迎来到我的（site 的）主页！
 
-这是一个**随机引用展示器**；有些内容可能是矛盾的且可能过分浅薄；信息不能保证准确性 [^1]，但这不妨碍它们的**装饰性**。[^2]
+这是一个**随机引用展示器**；有些内容可能是矛盾的且可能过分浅薄；信息不能保证准确性 [^1]，但这不妨碍它们的**装饰性**。[^2] [^3]
 
 ```random-word
 id = "main_display"
@@ -37,7 +37,7 @@ source = "George E. P. Box"
 
 [[pool]]
 text = "无限是神的专利，人生因有限而重要。"
-source = "Oliver Burkeman <em>Four Thousand Weeks：Time Management for Mortals</em>（《四千周》）"
+source = "Oliver Burkeman <em>Four Thousand Weeks: Time Management for Mortals</em>（《四千周》）"
 
 [[pool]]
 text = "那长眠的不朽者未必永恒死去，在那奇迹的移涌中，纵然死亡本身，亦将消逝。"
@@ -280,3 +280,4 @@ A：主要原因是不想装 `Node.js` 这套东西，次要原因是希望用�
 
 [^1]: 不准确性可能存在于用词、句子是否是原文等处
 [^2]: 最好是结合全文去读，但是这里放不下 & 有版权问题
+[^3]: 没有给出中文可能是因为没有足够好的翻译
