@@ -179,7 +179,11 @@ function _feed(_, food = "猫粮") {
 	catspeak(food.concat("好吃，喵呜"))
 }
 function _kill(_) {
-	catspeak("喵——呜——")
+	catspeak(`
+	　／l、
+	（x､ x ７
+	　l、 ~ヽ
+	　じしf_, )ノ `)
 	document.getElementById("input").disabled = true
 }
 function _help(_, command = "") {
