@@ -130,6 +130,7 @@ const help_text = {
 	},
 	"kill": {
 		description: "杀死猫猫……真的吗",
+		type: "dangerous",
 	},
 	"help": {
 		description: "显示帮助",
@@ -191,11 +192,11 @@ function _help(_, command = "") {
 			let li = document.createElement("li")
 			let code = document.createElement("code")
 			code.innerText = "/" + i
+			let dang = help_text[i]["type"] == "dangerous"
+			if (dang) code.style.color = "darkred"
 			li.append(code)
 			li.innerHTML += " " + help_text[i]["description"]
-			if (help_text[i]["type"] == "dangerous") {
-				li.style.color = "red"
-			}
+			if (dang) li.style.color = "red"
 			ul.append(li)
 		}
 		catspeakwith(function (e) {
