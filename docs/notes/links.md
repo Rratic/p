@@ -4,7 +4,6 @@
 ## 工作
 ### 引擎
 - [开发者搜索](https://kaifa.baidu.com/)
-- [书籍信息](https://zbook.lol/)
 
 ### 排版
 - [PDF 处理](https://smallpdf.com/cn)
