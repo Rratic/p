@@ -26,7 +26,7 @@
 					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
 				</div>
 			</header>
-			<article class="content"><h1 id='header-迷宫生成算法'>迷宫生成算法<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-1'>1<a class='docs-heading-anchor-permalink'></a></h2><p>思路：</p><div data-lang='jl'><div class='codeblock-header'></div><pre class='codeblock-body language-jl'><code>初始全部为墙
+			<article class="content"><h1 id='header-迷宫生成算法'>迷宫生成算法<a class='docs-heading-anchor-permalink'></a></h1><h2 id='header-1'>1<a class='docs-heading-anchor-permalink'></a></h2><p>思路：</p><div data-lang='plain'><div class='codeblock-header'></div><pre class='codeblock-body language-plain'><code>初始全部为墙
 随机选一格，标记一下，加入列表
 while 列表非空
     随机从列表中挑一格
@@ -37,45 +37,55 @@ while 列表非空
         将周围4面墙加入列表
     end
 end
-</code></pre></div><br /><p>上代码</p><div data-lang='cpp'><div class='codeblock-header'></div><pre class='codeblock-body language-cpp'><code>#include&lt;bits/stdc++.h&gt;
+</code></pre></div><br /><p>上代码</p><div data-lang='cpp'><div class='codeblock-header'></div><pre class='codeblock-body language-cpp'><code>#include &lt;bits/stdc++.h&gt;
 using namespace std;
-#define isin(x,y) (x&gt;=0&amp;&amp;y&gt;=0&amp;&amp;x&lt;m&amp;&amp;y&lt;n)
+#define isin(x,y) (x&gt;=0 &amp;&amp; y&gt;=0 &amp;&amp; x&lt;m &amp;&amp; y&lt;n)
 template&lt;unsigned short l=15,unsigned short w=15&gt;
-void prim(unsigned short maze_len,unsigned short maze_wid,array&lt;array&lt;unsigned short,l&gt;,w&gt;&amp;a){
-    int m=maze_len,n=maze_wid;
-    short mox[4]={0,0,1,-1},moy[4]={1,-1,0,0};
+void prim(unsigned short maze_len, unsigned short maze_wid, array&lt;array&lt;unsigned short,l&gt;,w&gt;&amp;a){
+    int m = maze_len;
+    int n = maze_wid;
+    short mox[4] = {0,0,1,-1}
+    short moy[4] = {1,-1,0,0};
     vector&lt;pair&lt;unsigned short,unsigned short&gt;&gt;li;
     bool was[21][21];
-    for(int i=0;i&lt;m;++i)for(int j=0;j&lt;n;++j){a[i][j]='#';was[i][j]=0;}
+    for(int i=0;i&lt;m;++i){
+        for(int j=0;j&lt;n;++j){
+            a[i][j]='#';
+            was[i][j]=0;
+        }
+    }
     unsigned short stx,sty,enx,eny;
-    stx=rand()%m;sty=rand()%n;
-    a[stx][sty]='.';li.push_back(make_pair(stx,sty));
+    stx = rand()%m;
+    sty = rand()%n;
+    a[stx][sty] = '.';
+    li.push_back(make_pair(stx, sty));
     while(!li.empty()){
-        auto rr=rand()%li.size();
-        auto r=li[rr];
+        auto rr = rand()%li.size();
+        auto r = li[rr];
         li.erase(li.begin()+rr);
         if(was[r.first][r.second])continue;
         was[r.first][r.second]=1;
         unsigned short c=0;
-        for(int i=0;i&lt;4;++i)if(isin(r.first+mox[i],r.second+moy[i])&amp;&amp;a[r.first+mox[i]][r.second+moy[i]]=='.')++c;
+        for(int i=0;i&lt;4;++i){
+            if(isin(r.first+mox[i], r.second+moy[i]) &amp;&amp; a[r.first+mox[i]][r.second+moy[i]]=='.')++c;
+        }
         if(c&lt;=1){
-            a[r.first][r.second]='.';
+            a[r.first][r.second] = '.';
             for(int i=0;i&lt;4;++i){
-                if(!was[r.first+mox[i]][r.second+moy[i]]&amp;&amp;isin(r.first+mox[i],r.second+moy[i])){
-                    li.push_back(make_pair(r.first+mox[i],r.second+moy[i]));
+                if(!was[r.first+mox[i]][r.second+moy[i]] &amp;&amp; isin(r.first+mox[i], r.second+moy[i])){
+                    li.push_back(make_pair(r.first+mox[i], r.second+moy[i]));
                 }
             }
         }
-        enx=r.first;
-        eny=r.second;
+        enx = r.first;
+        eny = r.second;
     }
     a[stx][sty]='@';
     a[enx][eny]='%';
 }
 int main(){
-    //srand(123456);
     array&lt;array&lt;unsigned short,15&gt;,15&gt;a;
-    prim&lt;15,15&gt;(15,15,a);
+    prim&lt;15, 15&gt;(15, 15, a);
     for(int i=0;i&lt;15;++i){
         for(int j=0;j&lt;15;++j){
             cout&lt;&lt;char(a[i][j]);
@@ -98,7 +108,7 @@ int main(){
 #....##..#.##..
 .@#.#...#....#.
 .#..#.##..#.#..
-</code></pre></div><br /><h2 id='header-2'>2<a class='docs-heading-anchor-permalink'></a></h2><p>思路：</p><div data-lang='jl'><div class='codeblock-header'></div><pre class='codeblock-body language-jl'><code>分割 64×64 区域
+</code></pre></div><br /><h2 id='header-2'>2<a class='docs-heading-anchor-permalink'></a></h2><p>思路：</p><div data-lang='plain'><div class='codeblock-header'></div><pre class='codeblock-body language-plain'><code>分割 64×64 区域
 for 区块 in 所有区域
     横竖阻隔
     挖三个洞
