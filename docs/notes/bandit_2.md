@@ -46,6 +46,10 @@ data5.bin
 最后 `rm -r` 把临时目录干掉。
 
 ## To Level 14
+` ssh bandit14@bandit.labs.overthewire.org -p 2220 -i sshkey.private`
+
+## To Level 15
+`nc localhost 30000`
 
 ## Keys (Save)
 ```hide
@@ -53,4 +57,6 @@ data5.bin
 * 11: `6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM`
 * 12: `JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv`
 * 13: `wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw`
+* 14: `fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq`
+* 15: `jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt`
 ```

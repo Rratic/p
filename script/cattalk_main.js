@@ -1,10 +1,18 @@
 const version = "v0.3.0"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
-const welcome1 = "欢迎和我聊天~ 你可以叫我「锂」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！"
-const welcome2 = "欢迎回来！当你输入 <code>/help</code> 时，锂始终会给你帮助！"
 const help1 = "指令的基本格式为 <code>/命令名 参数 -辅助参数 --赋值参数=值</code>。对于具体的命令，可以使用 <code>/help 该命令名</code> 查看其帮助。"
 var catreact = null
 var store = undefined
+class Cat {
+	name
+	welcome1() {
+		return `欢迎和我聊天~ 你可以叫我「${this.name}」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！`
+	}
+	welcome2() {
+		return `欢迎回来！当你输入 <code>/help</code> 时，${this.name}始终会给你帮助！`
+	}
+}
+var ccat = new Cat("锂")
 function userspeak(text, react = true) {
 	let div = document.createElement("div")
 	let p = document.createElement("p")
@@ -54,15 +62,15 @@ function catspeak_v(v) {
 store = JSON.parse(localStorage.getItem("cattalk"))
 function save() { localStorage.setItem("cattalk", JSON.stringify(store)) }
 if (store == undefined) {
-	catspeak(welcome1, true)
+	catspeak(ccat.welcome1(), true)
 	store = { "version": version }
 	save()
 }
 else {
 	let regi = store["register"]
-	if (regi == undefined) catspeak(welcome2, true)
+	if (regi == undefined) catspeak(ccat.welcome2(), true)
 	else {
-		if (!regi["force"]) catspeak(welcome2, true)
+		if (!regi["force"]) catspeak(ccat.welcome2(), true)
 		catspeak(regi["text"])
 	}
 }
