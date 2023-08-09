@@ -5,6 +5,9 @@ var catreact = null
 var store = undefined
 class Cat {
 	name
+	constructor(n) {
+		this.name = n
+	}
 	welcome1() {
 		return `欢迎和我聊天~ 你可以叫我「${this.name}」，我是一只虚拟的衔蝉，且不具有智能，但你可以使用指令控制我说的话！<br>你可以输入：<code>/help</code> 以阅读更多关于指令的内容！`
 	}
