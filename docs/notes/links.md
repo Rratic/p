@@ -54,6 +54,7 @@
 - [HTML Standard](https://html.spec.whatwg.org/multipage/)
 - [The little book about OS development](https://littleosbook.github.io/)
 - [Web GPU](https://gpuweb.github.io/gpuweb/)
+- [IPIP](https://www.ipip.net/)
 
 ## 算法
 - [oi-wiki](https://oi-wiki.org/)
