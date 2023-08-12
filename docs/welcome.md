@@ -122,7 +122,7 @@ source = "《圣女贞德》"
 
 [[pool]]
 text = "以我观物，故物皆著我之色彩。"
-source = "<a href='https://space.bilibili.com/39597640'>拣尽南枝@bilibili</a>"
+source = "王国维"
 
 [[pool]]
 text = "一个时代结束的标志就是它开始被浪漫化。"
@@ -233,6 +233,9 @@ source = "《金刚经》（鸠摩罗什译）"
 text = "人是目的，而不是手段。"
 original = "Nun sage ich: der Mensch und überhaupt jedes vernünftige<br>Wesen existiert als Zweck an sich selbst, nicht bloß als Mittel zum<br>beliebigen Gebrauche für diesen oder jenen Willen, sondern muß<br>in allen seinen sowohl auf sich selbst, als auch auf andere vernünftige<br>Wesen gerichteten Handlungen jederzeit zugleich als Zweck betrachtet werden."
 source = "康德《实践理性批判》"
+
+[[pool]]
+text = "Ad Astra Per Aspera"
 ```
 
 ---
