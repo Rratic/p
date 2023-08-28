@@ -31,3 +31,4 @@
 | [缓行电车](https://scp-wiki-cn.wikidot.com/scp-cn-797) | 竟然有清新风格 |
 | [嘉陵浊浪](https://scp-wiki-cn.wikidot.com/jialingjiang) | “一个理想，和它的破灭” |
 | [ＩＮＴＥＲＮＥＴ](https://scp-wiki-cn.wikidot.com/scp-cn-2091) | / |
+| [超形上学导论](https://scp-wiki-cn.wikidot.com/introduction-to-pataphysics) | 挺专业的 |
