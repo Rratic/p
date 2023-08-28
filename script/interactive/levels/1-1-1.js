@@ -1,5 +1,5 @@
 function level1_1_1(){
-	setT2title("秩序")
+	setT2title("秩序") // system.speak("秩序的天平偏向秩序"); announcement
 	setT3title("设置")
 	h1 = passerby("Salt")
 	h1.speak("欢迎来到……呃……你先把这个戴上")
@@ -24,9 +24,8 @@ function level1_1_1(){
 	i2.reveal()
 	// 允许打破墙（关闭浏览器/删除 div）
 	i2.vanish()
-	// 说明 分级、威胁等级
+	// 说明 收容等级、扰动等级、风险等级、威胁等级、机密等级
 	// 泄露
-	// 机密等级
-	// 引入诡术？
+	// 引入诡术？《橘颂》
 	h3.speak("据说我们 有一个可以向过去发送消息的") // 711, l5
 }
