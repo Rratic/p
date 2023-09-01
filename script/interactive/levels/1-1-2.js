@@ -1,5 +1,5 @@
 Levels.prototype.load_1_1_2 = function(){
-	chatbox.announce("第二节 招魂", "逐步蚕食的曙光")
+	chatbox.announce("第二节 招魂", "黎明也可以折断羽翼")
 	chatbox.speak("Eros", "欢迎来到……呃……你先把这个戴上")
 	give(item("认知危害过滤器", "1-1-1 staff-2", {
 		"wearable": true,
@@ -20,6 +20,15 @@ Levels.prototype.load_1_1_2 = function(){
 	give(i2)
 	i2.reveal()
 	// 允许打破墙（.fire([system])）；同名攻击
+	/*
+	无限复生恶灵
+	可以趁乱
+	黑暗房间
+	25 蜡烛附身
+	噪音
+	非本体 添加幻象
+	本体隐形
+	*/
 	i2.vanish()
 	// 说明 收容等级、扰动等级、风险等级、威胁等级、机密等级
 	// 泄露

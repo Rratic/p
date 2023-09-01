@@ -238,33 +238,6 @@ source = "康德《实践理性批判》"
 text = "Ad Astra Per Aspera"
 ```
 
----
-
-一些**随机怪话**（按照 CC BY-NC-SA 协议许可）：
-```random-word
-id = "display_01"
-[[pool]]
-text = "人们总是愿意相信他们愿意相信的东西。"
-
-[[pool]]
-text = "Think twice before you think the third time."
-
-[[pool]]
-text = "水至清则为纯净物。"
-
-[[pool]]
-text = "人的价值来源于稀缺性。"
-
-[[pool]]
-text = "人类想建造巴别塔，但上帝觉得这个名字不好听，于是创造了诸多语言。"
-
-[[pool]]
-text = "猫不能从一个地方移到另一个地方，只能凭空出现和凭空消失。"
-
-[[pool]]
-text = "当你跳起后会下落，这是由于 Le Chatelier 原理。"
-```
-
 ## 关于
 Q：为什么要用 `Github Pages` 这样的静态网页？  
 A：因为买 & 维护域名、租服务器要钱。
