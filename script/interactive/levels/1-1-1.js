@@ -1,31 +1,39 @@
-function level1_1_1(){
-	setT2title("秩序") // system.speak("秩序的天平偏向秩序"); announcement
-	setT3title("设置")
-	h1 = passerby("Salt")
-	h1.speak("欢迎来到……呃……你先把这个戴上")
-	i1 = item("认知危害过滤器", "1-1-1 staff-1", {
-		"wearable": true,
+Levels.prototype.load_1_1_1 = function () {
+	chatbox.announce("第一章 秩序", "秩序的天平倒向秩序")
+	chatbox.announce("第一节 仪式", "神灵是否是诡术的仆从")
+	// sunset description:
+	chatbox.introduce("你走在公园的小路上，太阳已行将就木，你似乎感受到太阴的躁动。忽然，你发现前方隐隐约约有阴绿的火光，伴随阵阵压抑的呢喃。")
+	options.t_add([ // wait 单独处理
+		"investigate",
+		"runaway",
+		"callpolice",
+	])
+	options.ask()
+	if (options.option == 1) {
+		chatbox.introduce("你转身逃离、奔跑……")
+		while (true) {
+			player.sanity.drop(0.1)
+			chatbox.alert("理智降低")
+		}
+	}
+	if (options.option == 0) {
+		chatbox.introduce("")
+	}
+	else if (options.option == 2) { }
+	// 电话监听
+	chatbox.divine_word("汝是否接受我的恩典？")
+	options.t_add({ // #yes, #no
+		yes: function () {
+			give(item("橘颂", "1-1-1 staff-1", {
+				type: "典籍",
+				read: function () {
+					player.sanity.drop(5)
+					chatbox.help(`使用 <code>/pray([东皇太一], "橘颂")</code> 施展神术，可以以理智为代价`)
+				}
+			}))
+			chatbox.help("使用 <code>[橘颂].read()</code> 开始修炼")
+			pause()
+		},
+		no: null
 	})
-	give(i1)
-	// 摔坏，换新，纸条？
-	waituntil
-	// █ 按照正常时间读出，可按照原字扭曲
-	// 可丧失实时性
-	// Mekhane（μηχανή） 给出可读方式？
-	h1.speak("……呃……你叫什么来着？")
-	EGO.name = EGO.input() // + end 不可妄称祂的名
-	h1.speak("，欢迎来到█████████，Area-██ 参加测试，它是一个█████，因此不用在意安全问题。")
-	h1.speak("如果测试未通过，我们会")
-	h2 = passerby("Fox")
-	box = new box("房间", [])
-	h1.speak(`第一项测试，请用此枪杀死${h2.text_direct()}`)
-	i2
-	give(i2)
-	i2.reveal()
-	// 允许打破墙（关闭浏览器/删除 div）
-	i2.vanish()
-	// 说明 收容等级、扰动等级、风险等级、威胁等级、机密等级
-	// 泄露
-	// 引入诡术？《橘颂》
-	h3.speak("据说我们 有一个可以向过去发送消息的") // 711, l5
 }
