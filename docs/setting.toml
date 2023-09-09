@@ -3,7 +3,6 @@ outline = [
 	"about",
 	"blog",
 	"notes",
-	"archived",
 ]
 [names]
 blog = "想法"

@@ -239,6 +239,18 @@ text = "Ad Astra Per Aspera"
 ```
 
 ## 关于
+Q：如何找到所有的页面列表？  
+A：`sitemap` 是没有的，但你可以参照[主页索引](https://rratic.github.io/p/docs/index.html)。
+
+Q：这个站点的定位是什么？  
+A：尚待观察。
+
+Q：这个站点未来有什么变更计划？  
+A：按照实情合理裁决。
+
+Q：这里的文本/图像等使用怎样的许可？  
+A：除特殊说明外，均按照[署名—非商业性使用—相同方式共享 4.0 协议（CC BY-NC-SA 4.0）](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)许可。
+
 Q：为什么要用 `Github Pages` 这样的静态网页？  
 A：因为买 & 维护域名、租服务器要钱。
 
