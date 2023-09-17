@@ -79,6 +79,7 @@
 
 ## 语言
 - [New Ithkuil](http://www.ithkuil.net/) - 可能是信息密度最高的语言
+- [Ancient Symbols](https://www.ancient-symbols.com/)
 
 ## 天文
 - [spaceweather](https://spaceweather.com/)
