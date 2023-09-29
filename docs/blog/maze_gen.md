@@ -15,7 +15,7 @@ while 列表非空
 end
 ```
 
-上代码
+代码：
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
