@@ -236,6 +236,10 @@ source = "康德《实践理性批判》"
 
 [[pool]]
 text = "Ad Astra Per Aspera"
+
+[[pool]]
+text = "我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。"
+source = "<a href='https://www.zhihu.com/question/41098497'>2016 万人续作</a>"
 ```
 
 ## 关于
