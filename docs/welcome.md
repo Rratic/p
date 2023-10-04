@@ -240,6 +240,10 @@ text = "Ad Astra Per Aspera"
 [[pool]]
 text = "我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。"
 source = "<a href='https://www.zhihu.com/question/41098497'>2016 万人续作</a>"
+
+[[pool]]
+text = "十年饮冰，难凉热血。"
+source = "梁启超《饮冰室文集》"
 ```
 
 ## 关于
