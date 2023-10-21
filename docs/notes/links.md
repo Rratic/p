@@ -1,4 +1,4 @@
-# 链接整理
+# LINKS
 以下是一些链接的整理，不保证可用性
 
 ## 工作
@@ -55,6 +55,7 @@
 - [The little book about OS development](https://littleosbook.github.io/)
 - [Web GPU](https://gpuweb.github.io/gpuweb/)
 - [IPIP](https://www.ipip.net/)
+- [js libs](https://js13kgames.github.io/resources/)
 
 ## 算法
 - [oi-wiki](https://oi-wiki.org/)
