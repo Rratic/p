@@ -1,4 +1,4 @@
-const version = "v0.3.0"
+const version = "v0.3.1"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
 const help1 = "指令的基本格式为 <code>/命令名 参数 -辅助参数 --赋值参数=值</code>。对于具体的命令，可以使用 <code>/help 该命令名</code> 查看其帮助。"
 var catreact = null
@@ -82,9 +82,14 @@ function random_select(list) {
 	return list[Math.floor(Math.random() * list.length)]
 }
 
-function submit(event) {
-	commander(event.target.previousSibling.value)
-	event.target.previousSibling.value = ""
+function keypress(ev) {
+	if (ev.key == "Enter")
+		submit()
+}
+function submit() {
+	let putbox = document.getElementById("input")
+	commander(putbox.value)
+	putbox.value = ""
 }
 
 function commander(command) {

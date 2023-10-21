@@ -35,10 +35,14 @@
 }
 
 #input {
-	width: 90%;
 	flex: 1;
-	height: 30px;
-	font-size: 24px;
+	height: 45px;
+	font-size: 1rem;
+	font-weight: 400;
+	font-family: open sans, sans-serif;
+	color: #525f7f;
+	border-radius: 20px;
+	padding: 15px;
 }
 
 #submit {
