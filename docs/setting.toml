@@ -8,3 +8,6 @@ outline = [
 blog = "想法"
 archived = "已封存"
 notes = "笔记"
+
+[method]
+ink = "copy"
