@@ -10,5 +10,7 @@
 
 ![](../../assets/images/note-ps-1-3.jpg)
 
+![](../../assets/images/note-ps-1-4.jpg)
+
 ## 荣格：红书
 大概还是摘录句子比较好.
