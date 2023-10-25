@@ -260,3 +260,59 @@ body.dark {
 .dark #controls {
     background: black;
 }
+
+/* * * * Special * * * */
+.distort {
+    font-style: italic;
+    text-shadow: 0 2px;
+    filter: blur(1.5px);
+}
+
+.help {
+    background-color: whitesmoke;
+    border-left: 5px solid skyblue;
+    padding: 1.25em 1.5em;
+}
+
+@keyframes shining-cyan {
+    from {
+        text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
+    }
+
+    to {
+        text-shadow: 0 0 5px lightblue, 0 0 10px lightblue, 0 0 15px lightblue, 0 0 20px skyblue, 0 0 25px skyblue, 0 0 30px skyblue;
+    }
+}
+
+.shine-cyan {
+    -webkit-animation: shining-cyan 0.5s alternate infinite;
+    animation: shining-cyan 0.5s alternate infinite;
+}
+
+.warning {
+    background-color: whitesmoke;
+    border-left: 5px solid red;
+    padding: 1.25em 1.5em;
+}
+
+.common-end,
+.unusual-end,
+.rare-end {
+    font-weight: bold;
+    text-align: center;
+}
+
+.common-end::before {
+    color: green;
+    content: "Common END ";
+}
+
+.unusual-end::before {
+    color: yellow;
+    content: "Unusual END ";
+}
+
+.rare-end::before {
+    color: blue;
+    content: "Rare END";
+}
