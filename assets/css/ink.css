@@ -284,7 +284,7 @@ body.dark {
     }
 }
 
-.shine-cyan {
+.neon {
     -webkit-animation: shining-cyan 0.5s alternate infinite;
     animation: shining-cyan 0.5s alternate infinite;
 }
