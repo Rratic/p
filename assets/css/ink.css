@@ -274,6 +274,11 @@ body.dark {
     padding: 1.25em 1.5em;
 }
 
+.holy {
+    color: goldenrod;
+    text-shadow: 0 0 10px gold;
+}
+
 @keyframes shining-cyan {
     from {
         text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
