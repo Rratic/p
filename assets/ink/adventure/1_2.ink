@@ -5,6 +5,7 @@
 -> introduction
 
 = introduction
+你来到一座
 Dgeros：“欢迎来到……呃……你先把这个戴上。”
 - (opts)
 	* (explanation) [◇认知危害过滤器]
@@ -31,3 +32,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 
 = conversation
 未完待续
+-> done
+
+= done
+-> END
