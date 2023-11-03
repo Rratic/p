@@ -50,14 +50,20 @@ VAR player_sanity = "10"
 		-> r_end_god_name
 	}
 + [调节文本出现速度]
-	+ + [手动]
 	+ + [慢]
+		#SET: textSpeed 400.0
 	+ + [普通]
+		#SET: textSpeed 200.0
 	+ + [快]
+		#SET: textSpeed 100.0
 	+ + [瞬间]
+		#SET: textSpeed "instant"
 + [调节选项出现速度]
 	+ + [普通]
+		#SET: optionSpeed 200.0
 	+ + [瞬间]
+		#SET: optionSpeed "instant"
+	-
 + [返回] -> menu
 -> setting
 

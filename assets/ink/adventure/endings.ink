@@ -2,9 +2,9 @@
 = choice
 + [重新开始]
 	#RESTART
-	-> DONE
+	-> menu
 + [结束] ->
-	结束会抹除所有统计数据，确定继续吗？
+	结束会抹除所有统计数据，确定继续吗？ #CLASS: warning
 	+ + [确定] -> END
 	+ + [取消] -> choice
 

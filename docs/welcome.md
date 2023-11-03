@@ -244,6 +244,14 @@ source = "<a href='https://www.zhihu.com/question/41098497'>2016 万人续作</a
 [[pool]]
 text = "十年饮冰，难凉热血。"
 source = "梁启超《饮冰室文集》"
+
+[[pool]]
+text = "已有的事后必再有；已行的事后必再行。日光之下并无新事。"
+source = "《圣经·传道书》"
+
+[[pool]]
+text = "凡是过往，皆为序章。"
+source = "莎士比亚《暴风雨》"
 ```
 
 ## 关于
