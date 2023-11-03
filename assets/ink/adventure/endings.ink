@@ -1,8 +1,10 @@
 == ending ==
 = choice
-+ [回到菜单] -> menu
++ [重新开始]
+	#RESTART
+	-> DONE
 + [结束] ->
-	结束会抹除所有未存档数据，确定继续吗？
+	结束会抹除所有统计数据，确定继续吗？
 	+ + [确定] -> END
 	+ + [取消] -> choice
 
@@ -28,9 +30,9 @@
 你高估了自己的承受能力。 #CLASS: help
 -> ending
 
-== u_end_a_dream ==
+== u_end_dream ==
 #CLEAR // 清除记忆得到
-浮生一梦 #END: unusual
+【梦】浮生一梦 #END: unusual
 不失为一个选择。又或许，有办法继续推进？ #CLASS: help
 -> ending
 
