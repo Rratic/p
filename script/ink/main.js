@@ -43,6 +43,12 @@
         }
     }
 
+    // 可设置数据
+    var contactVar = {
+        optionSpeed: 200.0,
+        textSpeed: 200.0,
+    }
+
     // Set initial save point
     savePoint = story.state.toJson();
 
@@ -103,8 +109,7 @@
                     imageElement.src = splitTag.val;
                     storyContainer.appendChild(imageElement);
 
-                    showAfter(delay, imageElement);
-                    delay += 200.0;
+                    delay += complexDelay(delay, paragraphElement)
                 }
 
                 // LINK: url
@@ -156,6 +161,16 @@
                 // INPUT: varname
                 else if (splitTag && splitTag.property == "INPUT") {
                 }
+
+                // DISPLAY: varname
+                else if (splitTag && splitTag.property == "DISPLAY") {
+                }
+
+                // SET: varname
+                else if (splitTag && splitTag.property == "SET") {
+                    let vec = splitTag.val.split(' ', 2)
+                    contactVar[vec[0]] = JSON.parse(vec[1])
+                }
             }
 
             // Create paragraph element (initially hidden)
@@ -169,9 +184,8 @@
             for (var i = 0; i < customClasses.length; i++)
                 paragraphElement.classList.add(customClasses[i]);
 
-            // Fade in paragraph after a short delay
-            showAfter(delay, paragraphElement);
-            delay += 200.0;
+            // delay
+            delay += complexDelay(delay, paragraphElement)
         }
 
         // Create HTML choices from ink choices
@@ -183,9 +197,11 @@
             choiceParagraphElement.innerHTML = `<a href='#'>${choice.text}</a>`
             storyContainer.appendChild(choiceParagraphElement);
 
-            // Fade choice in after a short delay
-            showAfter(delay, choiceParagraphElement);
-            delay += 200.0;
+            // delay
+            if (contactVar["optionSpeed"] != "instant") {
+                showAfter(delay, choiceParagraphElement)
+                delay += contactVar["optionSpeed"]
+            }
 
             // Click on choice
             var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
@@ -234,6 +250,16 @@
     // -----------------------------------
     // Various Helper functions
     // -----------------------------------
+
+    function complexDelay(delay, el) {
+        let del = contactVar["textSpeed"]
+        if (del == "instant")
+            return 0.0
+        else {
+            showAfter(delay, el)
+            return del
+        }
+    }
 
     // Fades in an element after a specified delay
     function showAfter(delay, el) {
