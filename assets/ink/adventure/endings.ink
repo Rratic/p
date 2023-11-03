@@ -2,7 +2,7 @@
 = choice
 + [重新开始]
 	#RESTART
-	-> menu
+	-> DONE // won't run
 + [结束] ->
 	结束会抹除所有统计数据，确定继续吗？ #CLASS: warning
 	+ + [确定] -> END
@@ -32,9 +32,10 @@
 
 == u_end_dream ==
 #CLEAR // 清除记忆得到
-【梦】浮生一梦 #END: unusual
+浮生一梦 #END: unusual
 不失为一个选择。又或许，有办法继续推进？ #CLASS: help
 -> ending
+// + 梦、幻、泡、影结局
 
 == u_end_why ==
 为什么 #END: unusual

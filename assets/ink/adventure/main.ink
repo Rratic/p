@@ -63,8 +63,8 @@ VAR player_sanity = "10"
 		#SET: optionSpeed 200.0
 	+ + [瞬间]
 		#SET: optionSpeed "instant"
-	-
 + [返回] -> menu
+-
 -> setting
 
 == statistics ==
@@ -77,6 +77,7 @@ VAR player_sanity = "10"
 本作品按照 CC BY-SA 协议许可。使用的资源包括：
 <h3>来自 Wikidot（scp-cn）的设定参考（CC BY-SA）</h3>
 注：作者信息可见于对应的页面中 #CLASS: help
-> scp-cn-2458 - 曲奇就是这样碎的；在 1-2 中出现； #LINK: scp-wiki-cn.wikidot.com/scp-cn-2458
-> 异常分类系统（ACS）指南；#LINK: scp-wiki-cn.wikidot.com/anomaly-classification-system-guide
+> 【scp-cn-2458 - 曲奇就是这样碎的】（在 1-2 中出现）#LINK: scp-wiki-cn.wikidot.com/scp-cn-2458
+> 【异常分类系统（ACS）指南】#LINK: scp-wiki-cn.wikidot.com/anomaly-classification-system-guide
+> 【超形上学导论】#LINK: scp-wiki-cn.wikidot.com/introduction-to-pataphysics
 + [返回] -> menu

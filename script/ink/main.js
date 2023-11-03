@@ -164,6 +164,8 @@
 
                 // DISPLAY: varname
                 else if (splitTag && splitTag.property == "DISPLAY") {
+                    if (splitTag.val == "statistics")
+                        display_statistics(appendList)
                 }
 
                 // SET: varname
@@ -198,10 +200,9 @@
             storyContainer.appendChild(choiceParagraphElement);
 
             // delay
-            if (contactVar["optionSpeed"] != "instant") {
-                showAfter(delay, choiceParagraphElement)
+            showAfter(delay, choiceParagraphElement)
+            if (contactVar["optionSpeed"] != "instant")
                 delay += contactVar["optionSpeed"]
-            }
 
             // Click on choice
             var choiceAnchorEl = choiceParagraphElement.querySelectorAll("a")[0];
@@ -259,6 +260,32 @@
             showAfter(delay, el)
             return del
         }
+    }
+
+    function describe_set(set) {
+        let l = set.size
+        if (l == 0)
+            return "无"
+        let v = "", count = 0
+        for (let i of set.values()) {
+            count += 1
+            v = v + i
+            if (count != l)
+                v += "，"
+        }
+        return v
+    }
+
+    function display_statistics(container) {
+        let endings = statistics["end"]
+        let ul = document.createElement("ul")
+        for (let key in endings) {
+            let keyname = { "common": "普通", "unusual": "正常", "rare": "稀有", "epic": "史诗", "legendary": "传奇", "mythic": "神话", "bad": "坏", "good": "好", "true": "真" }[key] + "结局："
+            let li = document.createElement("li")
+            li.innerText = keyname + describe_set(endings[key])
+            ul.append(li)
+        }
+        container.push(ul)
     }
 
     // Fades in an element after a specified delay
