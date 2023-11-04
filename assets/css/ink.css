@@ -279,6 +279,18 @@ body.dark {
     text-shadow: 0 0 10px gold;
 }
 
+.input {
+    margin: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 20px;
+    line-height: 1.8;
+    font-family: open sans, sans-serif;
+    border: 1px dashed #999;
+}
+
 @keyframes shining-cyan {
     from {
         text-shadow: 0 0 10px lightblue, 0 0 20px lightblue, 0 0 30px lightblue, 0 0 40px skyblue, 0 0 50px skyblue, 0 0 60px skyblue;
@@ -292,6 +304,34 @@ body.dark {
 .neon {
     -webkit-animation: shining-cyan 0.5s alternate infinite;
     animation: shining-cyan 0.5s alternate infinite;
+}
+
+.quote {
+    border: 1px dashed #999;
+    padding: 0 1em;
+    background-color: #f4f4f4;
+}
+
+.record {
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rt {
+    display: table-header-group;
+    font-size: .6em;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.ruby {
+    display: inline-table;
+    text-align: center;
+    line-height: 1;
+    height: 1em;
+    vertical-align: text-bottom;
 }
 
 .warning {
@@ -319,5 +359,15 @@ body.dark {
 
 .rare-end::before {
     color: blue;
-    content: "Rare END";
+    content: "Rare END ";
+}
+
+.dark .record {
+    color: white;
+}
+
+.dark .help,
+.dark .quote,
+.dark .warning {
+    background-color: #222;
 }

@@ -40,11 +40,15 @@
             epic: new Set(),
             legendary: new Set(),
             mythic: new Set(),
+            bad: new Set(),
+            good: new Set(),
+            true: new Set(),
         }
     }
 
     // 可设置数据
     var contactVar = {
+        displayImage: true,
         optionSpeed: 200.0,
         textSpeed: 200.0,
     }
@@ -65,6 +69,8 @@
         // Don't over-scroll past new content
         var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
+        var prependChoices = []
+        var choiceAfter = []
         // Generate story text - loop through available content
         while (story.canContinue) {
 
@@ -104,7 +110,7 @@
                 }
 
                 // IMAGE: src
-                if (splitTag && splitTag.property == "IMAGE") {
+                if (splitTag && splitTag.property == "IMAGE" && contactVar["displayImage"]) {
                     var imageElement = document.createElement('img');
                     imageElement.src = splitTag.val;
                     storyContainer.appendChild(imageElement);
@@ -160,6 +166,14 @@
 
                 // INPUT: varname
                 else if (splitTag && splitTag.property == "INPUT") {
+                    let input = document.createElement("input")
+                    input.type = "text"
+                    input.className = "input"
+                    input.placeholder = story.state._variablesState._globalVariables.get(splitTag.val).value
+                    prependChoices.push(input)
+                    choiceAfter.push(function () {
+                        story.state._variablesState._globalVariables.get(splitTag.val).value = input.value
+                    })
                 }
 
                 // DISPLAY: varname
@@ -172,6 +186,21 @@
                 else if (splitTag && splitTag.property == "SET") {
                     let vec = splitTag.val.split(' ', 2)
                     contactVar[vec[0]] = JSON.parse(vec[1])
+                }
+
+                // UPCOMMENT: text
+                else if (splitTag && splitTag.property == "UPCOMMENT") {
+                    let t1 = paragraphText
+                    let t2 = splitTag.val
+                    paragraphText = ""
+                    let span = document.createElement("span")
+                    span.className = "ruby"
+                    span.innerText = t1
+                    let rt = document.createElement("span")
+                    rt.className = "rt"
+                    rt.innerText = t2
+                    span.append(rt)
+                    appendList.push(span)
                 }
             }
 
@@ -189,6 +218,9 @@
             // delay
             delay += complexDelay(delay, paragraphElement)
         }
+
+        for (let i of prependChoices)
+            storyContainer.appendChild(i)
 
         // Create HTML choices from ink choices
         story.currentChoices.forEach(function (choice) {
@@ -219,6 +251,8 @@
 
                 // This is where the save button will save from
                 savePoint = story.state.toJson();
+                for (let f of choiceAfter)
+                    f()
 
                 // Aaand loop
                 continueStory();

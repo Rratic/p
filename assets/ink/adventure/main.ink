@@ -46,9 +46,10 @@ VAR player_sanity = "10"
 #CLEAR
 + [命名]
 	#INPUT: player_name
-	{player_name == "Rratic":
-		-> r_end_god_name
-	}
+	+ + [确定]
+		{player_name == "Rratic":
+			-> r_end_god_name
+		}
 + [调节文本出现速度]
 	+ + [慢]
 		#SET: textSpeed 400.0
@@ -63,6 +64,11 @@ VAR player_sanity = "10"
 		#SET: optionSpeed 200.0
 	+ + [瞬间]
 		#SET: optionSpeed "instant"
++ [调节图片显示]
+	+ + [显示]
+		#SET: displayImage true
+	+ + [不显示]
+		#SET: displayImage false
 + [返回] -> menu
 -
 -> setting
