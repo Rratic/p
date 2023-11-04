@@ -38,6 +38,8 @@ VAR player_sanity = "10"
 	确定要使用名称“Anonymous”吗？
 	+ [前往设置] -> setting
 	+ [确定] -> jump
+- else:
+	-> jump
 }
 = jump
 + [故事就此开始……] -> 1_1

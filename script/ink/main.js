@@ -303,6 +303,7 @@
         let v = "", count = 0
         for (let i of set.values()) {
             count += 1
+            i.trimEnd()
             v = v + i
             if (count != l)
                 v += "，"
@@ -403,9 +404,9 @@
     // Loads save state if exists in the browser memory
     function loadSavePoint() {
         try {
-            let savedState = window.localStorage.getItem('save-state');
+            let savedState = getItem('save-state')
             if (savedState) {
-                story.state.LoadJson(savedState);
+                story.state.LoadJson(savedState)
                 return true;
             }
         }
