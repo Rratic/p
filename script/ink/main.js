@@ -7,21 +7,7 @@
 
     let globalTagTheme;
 
-    // Global tags - those at the top of the ink file
-    var globalTags = story.globalTags;
-    if (globalTags) {
-        for (var i = 0; i < story.globalTags.length; i++) {
-            var globalTag = story.globalTags[i];
-            var splitTag = splitPropertyTag(globalTag);
-            if (splitTag && splitTag.property == "theme") {
-                globalTagTheme = splitTag.val;
-            }
-            else if (splitTag && splitTag.property == "author") {
-                var byline = document.querySelector('.byline');
-                byline.innerHTML = "by " + splitTag.val;
-            }
-        }
-    }
+    // var globalTags = story.globalTags
 
     var storyContainer = document.querySelector('#story');
     var outerScrollContainer = document.querySelector('.outerContainer');
@@ -86,8 +72,20 @@
                 // Detect tags of the form "X: Y"
                 var splitTag = splitPropertyTag(tag);
 
+                // APPEAR: situation
+                if (splitTag && splitTag.property == "APPEAR") {
+                    if (splitTag.val == "main-title") {
+                        let div = createQElement("div", { className: "header" })
+                        div.append(
+                            createQElement("h1", { innerText: "Adventure" }),
+                            createQElement("h2", { className: "byline", innerText: "by Rratic" })
+                        )
+                        storyContainer.prepend(div)
+                    }
+                }
+
                 // AUDIO: src
-                if (splitTag && splitTag.property == "AUDIO") {
+                else if (splitTag && splitTag.property == "AUDIO") {
                     if ('audio' in this) {
                         this.audio.pause();
                         this.audio.removeAttribute('src');
@@ -160,6 +158,7 @@
 
                 // END: type
                 else if (splitTag && splitTag.property == "END") {
+                    storyContainer.replaceChildren()
                     customClasses.push(splitTag.val + "-end")
                     statistics.end[splitTag.val].add(paragraphText)
                 }
@@ -223,6 +222,8 @@
             storyContainer.appendChild(i)
 
         // Create HTML choices from ink choices
+        let choiceNum = story.currentChoices.length
+        let isInstant = contactVar["optionSpeed"] == "instant" || choiceNum > 8
         story.currentChoices.forEach(function (choice) {
 
             // Create paragraph with anchor element
@@ -233,7 +234,7 @@
 
             // delay
             showAfter(delay, choiceParagraphElement)
-            if (contactVar["optionSpeed"] != "instant")
+            if (isInstant)
                 delay += contactVar["optionSpeed"]
 
             // Click on choice
@@ -296,6 +297,12 @@
         }
     }
 
+    function createQElement(tagname, deco) {
+        let tag = document.createElement(tagname)
+        for (let k of Object.keys(deco)) tag[k] = deco[k]
+        return tag
+    }
+
     function describe_set(set) {
         let l = set.size
         if (l == 0)
@@ -303,7 +310,7 @@
         let v = "", count = 0
         for (let i of set.values()) {
             count += 1
-            i.trimEnd()
+            i.trim()
             v = v + i
             if (count != l)
                 v += "，"

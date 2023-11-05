@@ -1,20 +1,17 @@
-#title: Adventure
-#author: Rratic
+CONST VERSION = "v"
 
 INCLUDE 1_1.ink
 INCLUDE 1_2.ink
 INCLUDE endings.ink
 
-CONST VERSION = "v"
-
 VAR chapter = ""
 VAR player_name = "Anonymous"
 VAR player_sanity = "10"
 
-* [主菜单] -> menu
-
+-> menu
 == menu ==
 #CLEAR
+#APPEAR: main-title
 + [新的开始] -> beginning
 + [章节选择]
 	+ + [1-1] -> 1_1
@@ -36,22 +33,21 @@ VAR player_sanity = "10"
 注意多存档；非导出存档储存在浏览器中，请勿清理 #CLASS: help
 {player_name == "Anonymous":
 	确定要使用名称“Anonymous”吗？
-	+ [前往设置] -> setting
+	+ [前往设置] -> setting.name
 	+ [确定] -> jump
 - else:
 	-> jump
 }
 = jump
+第壹章 秩序：秩序的天平倒向秩序 #CLASS: help
 + [故事就此开始……] -> 1_1
 
 == setting ==
+-> main
+
+= main
 #CLEAR
-+ [命名]
-	#INPUT: player_name
-	+ + [确定]
-		{player_name == "Rratic":
-			-> r_end_god_name
-		}
++ [命名] -> name
 + [调节文本出现速度]
 	+ + [慢]
 		#SET: textSpeed 400.0
@@ -73,7 +69,15 @@ VAR player_sanity = "10"
 		#SET: displayImage false
 + [返回] -> menu
 -
--> setting
+-> main
+
+= name
+#INPUT: player_name
++ [确定]
+{player_name == "Rratic":
+	-> r_end_god_name
+}
+-> main
 
 == statistics ==
 #CLEAR

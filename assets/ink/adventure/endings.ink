@@ -1,4 +1,6 @@
 == ending ==
+#APPEAR: main-title
+-> choice
 = choice
 + [重新开始]
 	#RESTART
@@ -31,7 +33,7 @@
 -> ending
 
 == u_end_dream ==
-#CLEAR // 清除记忆得到
+// 触发：清除记忆
 浮生一梦 #END: unusual
 不失为一个选择。又或许，有办法继续推进？ #CLASS: help
 -> ending
