@@ -158,7 +158,7 @@
 
                 // END: type
                 else if (splitTag && splitTag.property == "END") {
-                    storyContainer.replaceChildren()
+                    // storyContainer.replaceChildren()
                     customClasses.push(splitTag.val + "-end")
                     statistics.end[splitTag.val].add(paragraphText)
                 }
