@@ -2,7 +2,7 @@
 ## 欢迎
 欢迎来到我的（site 的）主页！
 
-这是一个**随机引用展示器**；有些内容可能是矛盾的且可能过分浅薄；信息不能保证准确性 [^1]，但这不妨碍它们的**装饰性**。[^2] [^3]
+这是一个**随机引用展示器**；有些内容可能是矛盾的且可能过分浅薄；信息不能保证准确性 [^1]，但这不妨碍它们的**装饰性**；翻译选取装饰性最好的。[^2] [^3]
 
 ```random-word
 id = "main_display"
@@ -230,7 +230,7 @@ text = "一切有为法，如梦幻泡影，如露亦如电，应作如是观。
 source = "《金刚经》（鸠摩罗什译）"
 
 [[pool]]
-text = "人是目的，而不是手段。"
+text = "人是目的，不是手段。"
 original = "Nun sage ich: der Mensch und überhaupt jedes vernünftige<br>Wesen existiert als Zweck an sich selbst, nicht bloß als Mittel zum<br>beliebigen Gebrauche für diesen oder jenen Willen, sondern muß<br>in allen seinen sowohl auf sich selbst, als auch auf andere vernünftige<br>Wesen gerichteten Handlungen jederzeit zugleich als Zweck betrachtet werden."
 source = "康德《实践理性批判》"
 
@@ -250,7 +250,7 @@ text = "已有的事后必再有；已行的事后必再行。日光之下并无
 source = "《圣经·传道书》"
 
 [[pool]]
-text = "凡是过往，皆为序章。"
+text = "凡所过往，皆为序章。"
 source = "莎士比亚《暴风雨》"
 ```
 
