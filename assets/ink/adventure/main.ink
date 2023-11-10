@@ -22,7 +22,7 @@ VAR player_sanity = "10"
 + [作品信息]
 	+ + [关于]
 		作者：Rratic
-		使用工具：Ink #LINK: www.inklestudios.com/ink
+		使用工具：<a href="https:\/\/www.inklestudios.com/ink">Ink</a>
 		当前版本：{VERSION}
 		当前更新至：1-2
 		+ + + [返回] -> menu
@@ -31,13 +31,10 @@ VAR player_sanity = "10"
 == beginning ==
 #CLEAR
 注意多存档；非导出存档储存在浏览器中，请勿清理 #CLASS: help
-{player_name == "Anonymous":
-	确定要使用名称“Anonymous”吗？
-	+ [前往设置] -> setting.name
-	+ [确定] -> jump
-- else:
-	-> jump
-}
+确定要使用名称“{player_name}”吗？
++ [前往设置] -> setting.name
++ [确定] -> jump
+
 = jump
 第壹章 秩序：秩序的天平倒向秩序 #CLASS: help
 + [故事就此开始……] -> 1_1
@@ -74,6 +71,9 @@ VAR player_sanity = "10"
 = name
 #INPUT: player_name
 + [确定]
+{player_name == "":
+	~ player_name = "Anonymous"
+}
 {player_name == "Rratic":
 	-> r_end_god_name
 }
@@ -89,7 +89,8 @@ VAR player_sanity = "10"
 本作品按照 CC BY-SA 协议许可。使用的资源包括：
 <h3>来自 Wikidot（scp-cn）的设定参考（CC BY-SA）</h3>
 注：作者信息可见于对应的页面中 #CLASS: help
-> 【scp-cn-2458 - 曲奇就是这样碎的】（在 1-2 中出现）#LINK: scp-wiki-cn.wikidot.com/scp-cn-2458
-> 【异常分类系统（ACS）指南】#LINK: scp-wiki-cn.wikidot.com/anomaly-classification-system-guide
-> 【超形上学导论】#LINK: scp-wiki-cn.wikidot.com/introduction-to-pataphysics
+> <a href="https:\/\/scp-wiki-cn.wikidot.com/scp-cn-2458">scp-cn-2458 - 曲奇就是这样碎的</a>（在 1-2 中出现）
+> <a href="https:\/\/scp-wiki-cn.wikidot.com/anomaly-classification-system-guide">异常分类系统（ACS）指南</a>
+> <a href="https:\/\/scp-wiki-cn.wikidot.com/introduction-to-pataphysics">超形上学导论</a>
+> <a href="https:\/\/scp-wiki-cn.wikidot.com/dr-host">模因学入门讲座\(2020-9-15\)</a>
 + [返回] -> menu

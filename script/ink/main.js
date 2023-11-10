@@ -159,6 +159,7 @@
                 // END: type
                 else if (splitTag && splitTag.property == "END") {
                     // storyContainer.replaceChildren()
+                    storyContainer.appendChild(document.createElement("hr"))
                     customClasses.push(splitTag.val + "-end")
                     statistics.end[splitTag.val].add(paragraphText)
                 }
@@ -168,7 +169,8 @@
                     let input = document.createElement("input")
                     input.type = "text"
                     input.className = "input"
-                    input.placeholder = story.state._variablesState._globalVariables.get(splitTag.val).value
+                    input.value = story.state._variablesState._globalVariables.get(splitTag.val).value
+                    input.placeholder = "input"
                     prependChoices.push(input)
                     choiceAfter.push(function () {
                         story.state._variablesState._globalVariables.get(splitTag.val).value = input.value
