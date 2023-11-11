@@ -33,7 +33,9 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	-> conversation
 
 = conversation
-未完待续
+如果测试未通过，我们会
+第一项测试，请用此枪杀死
+你举起枪，对准
 -> done
 
 = done
