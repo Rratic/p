@@ -37,11 +37,14 @@
 浮生一梦 #END: unusual
 不失为一个选择。又或许，有办法继续推进？ #CLASS: help
 -> ending
-// + 梦、幻、泡、影结局
 
 == u_end_why ==
 为什么 #END: unusual
 为什么呢？ #CLASS: help
+-> ending
+
+== r_end_experimented ==
+成为实验品 #END: rare
 -> ending
 
 == r_end_god_name ==

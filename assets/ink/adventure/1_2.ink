@@ -33,10 +33,17 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	-> conversation
 
 = conversation
-如果测试未通过，我们会
-第一项测试，请用此枪杀死
-你举起枪，对准
+-> test1
+
+= test1
+如果测试未通过，我们会妥善处理
+进入一个房间第一项测试，这把枪可以塞入普通子弹，使用时思考见过名请用此枪杀死
+如果重名？
 -> done
+
+= caught_pataphysics
+<b>无限嵌入叙事层</b>、<b>回旋跨层（cyclical-transgression）</b>与<b>亚叙事层（sub-diegesis）</b>理论
+-> r_end_experimented
 
 = done
 -> END
