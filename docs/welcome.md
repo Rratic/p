@@ -256,6 +256,14 @@ source = "莎士比亚《暴风雨》"
 [[pool]]
 text = "此心光明，亦复何言？"
 source = "王阳明"
+
+[[pool]]
+text = "I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived."
+source = "梭罗"
+
+[[pool]]
+text = "无可云证，是立足境。无立足境，是方干净。"
+source = "《红楼梦》"
 ```
 
 ## 关于
