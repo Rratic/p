@@ -25,24 +25,39 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	}
 
 = break_wearable
-你用力一扯，带子断了。你惊讶地发现里面弹出了一块曲奇。
-* [告诉 Dgeros]
-	“”
+你用力一扯，带子断了。
+* [看向 Dgeros]
 	“这个能不能修一下。”
 	Dgeros 深深地看了你一眼。
+	然后打开了电脑
+	#RANDOM: uniform_int_distribution 1 3
+	{random == 1:
+		怔了一下，打开托盘
+		你惊讶地发现里面弹出了一块曲奇。
+	}
 	-> conversation
 
 = conversation
+你想问什么
+没问题
+你确定没问题
 -> test1
 
 = test1
-如果测试未通过，我们会妥善处理
-进入一个房间第一项测试，这把枪可以塞入普通子弹，使用时思考见过名请用此枪杀死
-如果重名？
+如果测试未通过，我们会妥善处理你的记忆。
+你进入了一个房间
+<hr>
+第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。
+请用此枪杀死
+* 那如果重名会发生什么？
+	你猜猜看。
 -> done
 
 = caught_pataphysics
-<b>无限嵌入叙事层</b>、<b>回旋跨层（cyclical-transgression）</b>与<b>亚叙事层（sub-diegesis）</b>理论
+<hr>
+“欢迎来到超形上学部。”
+“或许你会好奇为什么你没有杀死那位存在，现在的解释包括<b>无限嵌入叙事层</b>、<b>回旋跨层（cyclical-transgression）</b>与<b>亚叙事层（sub-diegesis）</b>理论。”
+“不过这都不重要，总之……”
 -> r_end_experimented
 
 = done
