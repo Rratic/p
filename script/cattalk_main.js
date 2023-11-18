@@ -1,4 +1,4 @@
-const version = "v0.3.1"
+const version = "v0.3.2"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
 const help1 = "指令的基本格式为 <code>/命令名 参数 -辅助参数 --赋值参数=值</code>。对于具体的命令，可以使用 <code>/help 该命令名</code> 查看其帮助。"
 var catreact = null
@@ -138,7 +138,7 @@ const help_text = {
 		type: "dangerous",
 	},
 	"discuss": {
-		description: "让我提出一个值得思考的问题",
+		description: "让我提出一个或许值得思考的问题",
 	},
 	"feed": {
 		description: "投喂食物",

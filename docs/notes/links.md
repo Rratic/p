@@ -78,9 +78,10 @@
 - [foxinhub?](https://pedantries.com/) - 有趣的文章与交流平台
 - [ctext](https://ctext.org/zhs) - 中国哲学书电子化计划
 
-## 语言
+## 文化
 - [New Ithkuil](http://www.ithkuil.net/) - 可能是信息密度最高的语言
 - [Ancient Symbols](https://www.ancient-symbols.com/)
+- [Artwc](https://zhangyongfeng.com/tools/color/) - 中国传统色彩
 
 ## 天文
 - [spaceweather](https://spaceweather.com/)
