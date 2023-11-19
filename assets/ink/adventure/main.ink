@@ -82,6 +82,7 @@ VAR player_sanity = "10"
 == statistics ==
 #CLEAR
 #DISPLAY: statistics
+#DISPLAY: awards
 + [返回] -> menu
 
 == permission ==
