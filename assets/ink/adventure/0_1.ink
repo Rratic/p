@@ -7,3 +7,4 @@
 
 = introduction
 #MAP: 0_1_street
+你一生的某一刻，你来到了这条街道

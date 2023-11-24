@@ -4,6 +4,7 @@
 	* 更改时间顺序
 * 鼠巢
 	* 锁过去时间
+	* 但丁《地狱》惩罚成为罪
 
 [ SCPs ]
 009 红冰
@@ -59,6 +60,12 @@
 * 216 两份藏在内部
 * 梦、幻、泡、影结局 + award
 * 电子锁 左、上发光 金属墙壁反射
+* 墓志铭
+	* William Shakespere:
+	> Good frend for Iesvs sake forbeare,
+	> To digg the dvst encloased heare.
+	> Bleste be ye man yt spares thes stones,
+	> And cvrst be he yt moves my bones.
 
 [ 1-1 ]
 一份用 038 复制的 066-DE（经过扭曲）

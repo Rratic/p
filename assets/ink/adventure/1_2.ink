@@ -40,6 +40,8 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 = conversation
 你想问什么
 - (opts)
+	(asked) *
+	TURNSAFTER
 	* 没问题
 - (loop)
 	{
@@ -53,7 +55,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 <hr>
 第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。
 请用此枪杀死
-* 那如果重名会发生什么？
+* (asked) 那如果重名会发生什么？
 	你猜猜看。
 #INPUT: t_target_name
 {t_target_name == ".*"
@@ -64,7 +66,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 = caught_pataphysics
 <hr>
 “欢迎来到超形上学部。”
-“或许你会好奇为什么你没有杀死那位存在，现在的解释包括<b>无限嵌入叙事层</b>、<b>回旋跨层（cyclical-transgression）</b>与<b>亚叙事层（sub-diegesis）</b>理论。”
+“或许你会好奇为什么你没有杀死那位存在，现在的解释包括无限嵌入叙事层、<span class="ruby">回旋跨层<span class="rt">cyclical-transgression</span></span>与<span class="ruby">亚叙事层<span class="rt">sub-diegesis</span></span>理论。”
 “不过这都不重要，总之……”
 -> r_end_experimented
 
