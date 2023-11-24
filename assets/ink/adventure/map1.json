@@ -1,0 +1,15 @@
+{
+	"areas": [
+		{
+			"name": "街道",
+			"shape": "rect"
+		},
+		{
+			"name": "算卦摊"
+		}
+	],
+	"root": 0,
+	"config": {
+		"moveable": false
+	}
+}
