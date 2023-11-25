@@ -63,6 +63,13 @@ VAR random = 0
 		#SET: optionSpeed 200.0
 	+ + [瞬间]
 		#SET: optionSpeed "instant"
++ [设置随机模式]
+	+ + [正常随机]
+		#SET: randomMode "normal"
+	+ + [显示随机发生位置]
+		#SET: randomMode "shiny"
+	+ + [自主设置随机结果]
+		#SET: randomMode "editable"
 + [调节图片显示]
 	+ + [显示]
 		#SET: displayImage true
