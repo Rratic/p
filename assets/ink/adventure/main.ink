@@ -8,6 +8,10 @@ VAR chapter = ""
 VAR player_name = "Anonymous"
 VAR player_sanity = "10"
 
+// 用 RANDOM 指令
+VAR random = 0
+
+// 流程
 -> menu
 == menu ==
 #CLEAR
@@ -30,7 +34,7 @@ VAR player_sanity = "10"
 
 == beginning ==
 #CLEAR
-注意多存档；非导出存档储存在浏览器中，请勿清理 #CLASS: help
+注意多存档；要保存的非导出存档储存在浏览器中，请勿清理 #CLASS: help
 确定要使用名称“{player_name}”吗？
 + [前往设置] -> setting.name
 + [确定] -> jump
