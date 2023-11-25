@@ -26,6 +26,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 
 = break_wearable
 你用力一扯，带子断了。
+……
 * [看向 Dgeros]
 	“这个能不能修一下。”
 	Dgeros 深深地看了你一眼。
@@ -38,19 +39,23 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	-> conversation
 
 = conversation
-你想问什么
+“在测试开始前，你想问些什么？我大体介绍一下，细节以后再说。”
 - (opts)
-	(asked) *
-	TURNSAFTER
-	* 没问题
+	* (asked) “我们这个组织叫什么？”
+		“<span class="ruby">特殊收容措施基金会（SCP 基金会）<span class="rt">Special Containment Procedures Foundation</span></span>我们以<span class="ruby">收容<span class="rt">Secure</span></span>、<span class="ruby">控制<span class="rt">Contain</span></span>、<span class="ruby">保护<span class="rt">Protect</span></span>为宗旨，其对象是被我们称之为 SCP 的……东西。”
+	* “有哪些同行组织？”
+		“我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>，其它暂时不用了解。”
+		“GOC 是 108 强项在于奇术。而我们比他们更加「超自然」。”
+	* “没问题了。”
+	* {player_awareness > 8} “你为什么回答像机器人？”
 - (loop)
-	{
-		你确定没问题
+	{asked != 1:
+		“你确定没问题？”
 	}
 -> test1
 
 = test1
-如果测试未通过，我们会妥善处理你的记忆。
+“如果测试未通过，我们会妥善处理你的记忆。”
 你进入了一个房间
 <hr>
 第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。

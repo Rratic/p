@@ -8,6 +8,10 @@ VAR chapter = ""
 VAR player_name = "Anonymous"
 VAR player_sanity = "10"
 
+// 用 RANDOM 指令
+VAR random = 0
+
+// 流程
 -> menu
 == menu ==
 #CLEAR
@@ -30,7 +34,7 @@ VAR player_sanity = "10"
 
 == beginning ==
 #CLEAR
-注意多存档；非导出存档储存在浏览器中，请勿清理 #CLASS: help
+注意多存档；要保存的非导出存档储存在浏览器中，请勿清理 #CLASS: help
 确定要使用名称“{player_name}”吗？
 + [前往设置] -> setting.name
 + [确定] -> jump
@@ -59,6 +63,13 @@ VAR player_sanity = "10"
 		#SET: optionSpeed 200.0
 	+ + [瞬间]
 		#SET: optionSpeed "instant"
++ [设置随机模式]
+	+ + [正常随机]
+		#SET: randomMode "normal"
+	+ + [显示随机发生位置]
+		#SET: randomMode "shiny"
+	+ + [自主设置随机结果]
+		#SET: randomMode "editable"
 + [调节图片显示]
 	+ + [显示]
 		#SET: displayImage true

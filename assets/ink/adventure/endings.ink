@@ -10,6 +10,11 @@
 	+ + [确定] -> END
 	+ + [取消] -> choice
 
+== c_end_a ==
+退场 #END: common
+<quote>我们生活在一个名为无知的平静小岛上，被无穷无尽的黑色海洋包围，而我们本就不该扬帆远航。——H.P.Lovecraft</quote>
+-> ending
+
 == c_end_give_up_halfway ==
 半途而废 #END: common
 -> ending
@@ -36,6 +41,11 @@
 // 触发：清除记忆
 浮生一梦 #END: unusual
 不失为一个选择。又或许，有办法继续推进？ #CLASS: help
+-> ending
+
+== u_end_too_observable ==
+你知道的太多了 #END: unusual
+不用说的话可以不说。#CLASS: help
 -> ending
 
 == u_end_why ==
