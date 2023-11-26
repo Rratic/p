@@ -6,10 +6,12 @@ INCLUDE endings.ink
 
 VAR chapter = ""
 VAR player_name = "Anonymous"
-VAR player_sanity = "10"
+VAR player_sanity = 10
+VAR player_awareness = 8
 
-// 用 RANDOM 指令
+// 辅助指令
 VAR random = 0
+VAR t_target_name = ""
 
 // 流程
 -> menu
@@ -101,10 +103,16 @@ VAR random = 0
 本作品按照 CC BY-SA 协议许可。使用的资源包括：
 <h3>来自 Wikidot（scp-cn）的设定参考（CC BY-SA）</h3>
 注：作者信息可见于对应的页面中 #CLASS: help
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/scp-cn-2458">scp-cn-2458 - 曲奇就是这样碎的</a>（在 1-2 分支中出现）
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/anomaly-classification-system-guide">异常分类系统（ACS）指南</a>
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/goc-supplemental-thaumatology">████████████教授的讲座摘要：关于应用奇术</a>
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/another-goddamn-magic-system">魔法指南</a>
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/introduction-to-pataphysics">超形上学导论</a>（在 1-2 分支中出现）
-> <a href="https:\/\/scp-wiki-cn.wikidot.com/dr-host">模因学入门讲座\(2020-9-15\)</a>
+#LIST: begin
+<a href="https:\/\/scp-wiki-cn.wikidot.com/goc-hub-page">全球超自然联盟档案</a>（1-2 中参考）
+<a href="https:\/\/scp-wiki-cn.wikidot.com/scp-cn-2458">scp-cn-2458 - 曲奇就是这样碎的</a>（在 1-2 概率分支中出现）
+<a href="https:\/\/scp-wiki-cn.wikidot.com/anomaly-classification-system-guide">异常分类系统（ACS）指南</a>
+<a href="https:\/\/scp-wiki-cn.wikidot.com/goc-supplemental-thaumatology">████████████教授的讲座摘要：关于应用奇术</a>
+<a href="https:\/\/scp-wiki-cn.wikidot.com/another-goddamn-magic-system">魔法指南</a>
+<a href="https:\/\/scp-wiki-cn.wikidot.com/introduction-to-pataphysics">超形上学导论</a>（在 1-2 分支中出现）
+<a href="https:\/\/scp-wiki-cn.wikidot.com/dr-host">模因学入门讲座\(2020-9-15\)</a>
+#LIST: end
+
+<h3>SCP Universe 相关其它来源的资料参考</h3>
+（在 1-2 中参考）
 + [返回] -> menu

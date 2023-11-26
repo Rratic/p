@@ -42,12 +42,16 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 “在测试开始前，你想问些什么？我大体介绍一下，细节以后再说。”
 - (opts)
 	* (asked) “我们这个组织叫什么？”
-		“<span class="ruby">特殊收容措施基金会（SCP 基金会）<span class="rt">Special Containment Procedures Foundation</span></span>我们以<span class="ruby">收容<span class="rt">Secure</span></span>、<span class="ruby">控制<span class="rt">Contain</span></span>、<span class="ruby">保护<span class="rt">Protect</span></span>为宗旨，其对象是被我们称之为 SCP 的……东西。”
-	* “有哪些同行组织？”
-		“我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>，其它暂时不用了解。”
-		“GOC 是 108 强项在于奇术。而我们比他们更加「超自然」。”
+		“<span class="ruby">特殊收容措施基金会（SCP 基金会）<span class="rt">Special Containment Procedures Foundation</span></span>”
+		<img src="https:\/\/scp-wiki-cn.wikidot.com/local--favicon/favicon.gif"/>
+		“我们以<span class="ruby">收容<span class="rt">Secure</span></span>、<span class="ruby">控制<span class="rt">Contain</span></span>、<span class="ruby">保护<span class="rt">Protect</span></span>为宗旨，其对象是被我们称之为 SCP 的……东西。”
+	* “我需要持有怎样的态度？”
+		“我们所做的被称作‘必要之恶’。”
+	* {asked} “我们有哪些同行组织？”
+		“其实还挺多……我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>，其它暂时不用了解。”
+		<img src="https:\/\/scp-wiki.wdfiles.com/local--files/goc-hub-page/GOC-Logo-v4.png"/>
+		“他们由 GOC 部门与 108 议会构成，游离在纯粹自由组织与个体政治组织之间；强项在于奇术。而我们比他们更加「超自然」。”
 	* “没问题了。”
-	* {player_awareness > 8} “你为什么回答像机器人？”
 - (loop)
 	{asked != 1:
 		“你确定没问题？”
@@ -63,7 +67,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 * (asked) 那如果重名会发生什么？
 	你猜猜看。
 #INPUT: t_target_name
-{t_target_name == ".*"
+{t_target_name == ".*":
 	#AWARD: 正则表达式大师
 }
 -> done
@@ -71,7 +75,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 = caught_pataphysics
 <hr>
 “欢迎来到超形上学部。”
-“或许你会好奇为什么你没有杀死那位存在，现在的解释包括无限嵌入叙事层、<span class="ruby">回旋跨层<span class="rt">cyclical-transgression</span></span>与<span class="ruby">亚叙事层<span class="rt">sub-diegesis</span></span>理论。”
+“或许你会好奇为什么你没有杀死那位存在，可能是因为无限嵌入叙事层、<span class="ruby">回旋跨层<span class="rt">cyclical-transgression</span></span>或者<span class="ruby">亚叙事层<span class="rt">sub-diegesis</span></span>理论，甚至，是因为「设定」中那个枪不可能做得很强大。”
 “不过这都不重要，总之……”
 -> r_end_experimented
 
