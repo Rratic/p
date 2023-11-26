@@ -36,6 +36,7 @@
     var contactVar = {
         displayImage: true,
         optionSpeed: 200.0,
+        randomMode: "normal",
         textSpeed: 200.0,
     }
 
@@ -66,6 +67,7 @@
 
             var customClasses = []
             var appendList = []
+            var activeList = null
             for (var i = 0; i < tags.length; i++) {
                 var tag = tags[i];
 
@@ -169,11 +171,11 @@
                     let input = document.createElement("input")
                     input.type = "text"
                     input.className = "input"
-                    input.value = story.state._variablesState._globalVariables.get(splitTag.val).value
+                    input.value = get_var(splitTag.val).value
                     input.placeholder = "input"
                     prependChoices.push(input)
                     choiceAfter.push(function () {
-                        story.state._variablesState._globalVariables.get(splitTag.val).value = input.value
+                        get_var(splitTag.val).value = input.value
                     })
                 }
 
@@ -181,6 +183,24 @@
                 else if (splitTag && splitTag.property == "DISPLAY") {
                     if (splitTag.val == "statistics")
                         display_statistics(appendList)
+                }
+
+                // LIST: begin/end
+                else if (splitTag && splitTag.property == "LIST") {
+                    if (splitTag.val == "begin") {
+                        activeList = createQElement("ul")
+                        storyContainer.appendChild(activeList)
+                    }
+                    else if (splitTag.val == "end")
+                        activeList = null
+                }
+
+                // RANDOM: type args...
+                else if (splitTag && splitTag.property == "RANDOM") {
+                    let args = splitTag.val.split(' ')
+                    let type = args.shift(1)
+                    if (type == "uniform_int_distribution")
+                        get_var("random").value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
                 }
 
                 // SET: varname
@@ -210,13 +230,15 @@
             paragraphElement.innerHTML = paragraphText
             for (let t of appendList)
                 paragraphElement.appendChild(t)
-            storyContainer.appendChild(paragraphElement)
 
-            // Add any custom classes derived from ink tags
             for (var i = 0; i < customClasses.length; i++)
-                paragraphElement.classList.add(customClasses[i]);
+                paragraphElement.classList.add(customClasses[i])
 
-            // delay
+            if (activeList == null)
+                storyContainer.appendChild(paragraphElement)
+            else
+                activeList.appendChild(paragraphElement)
+
             delay += complexDelay(delay, paragraphElement)
         }
 
@@ -330,6 +352,10 @@
             ul.append(li)
         }
         container.push(ul)
+    }
+
+    function get_var(name) {
+        return story.state._variablesState._globalVariables.get(name)
     }
 
     // Fades in an element after a specified delay

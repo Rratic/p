@@ -96,7 +96,7 @@
 -> u_end_why
 
 = ritual
-忽然，稠密至极的阴绿色的火焰从符文中喷涌出来。
+忽然，稠密至极的阴绿色火焰从符文中喷涌出来。
 -> c_end_time_limit_exceeded
 
 = action
