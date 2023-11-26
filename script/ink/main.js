@@ -57,6 +57,7 @@
         var previousBottomEdge = firstTime ? 0 : contentBottomEdgeY();
 
         var prependChoices = []
+        var activeList = null
         var choiceAfter = []
         // Generate story text - loop through available content
         while (story.canContinue) {
@@ -67,7 +68,6 @@
 
             var customClasses = []
             var appendList = []
-            var activeList = null
             for (var i = 0; i < tags.length; i++) {
                 var tag = tags[i];
 
@@ -197,10 +197,20 @@
 
                 // RANDOM: type args...
                 else if (splitTag && splitTag.property == "RANDOM") {
-                    let args = splitTag.val.split(' ')
-                    let type = args.shift(1)
-                    if (type == "uniform_int_distribution")
-                        get_var("random").value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
+                    let mode = contactVar["randomMode"]
+                    if (mode == "shiny") {
+                        let noti = createQElement("p", { className: "neon", innerText: "%RANDOM%" })
+                        noti.style.textAlign = "center"
+                        appendList.push(noti)
+                    }
+                    if (mode == "normal" || mode == "shiny") {
+                        let args = splitTag.val.split(' ')
+                        let type = args.shift(1)
+                        if (type == "uniform_int_distribution")
+                            get_var("random").value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
+                    }
+                    else if (mode == "editable") {
+                    }
                 }
 
                 // SET: varname
@@ -236,8 +246,11 @@
 
             if (activeList == null)
                 storyContainer.appendChild(paragraphElement)
-            else
-                activeList.appendChild(paragraphElement)
+            else {
+                let li = createQElement("li")
+                li.append(paragraphElement)
+                activeList.append(li)
+            }
 
             delay += complexDelay(delay, paragraphElement)
         }
@@ -321,7 +334,7 @@
         }
     }
 
-    function createQElement(tagname, deco) {
+    function createQElement(tagname, deco = {}) {
         let tag = document.createElement(tagname)
         for (let k of Object.keys(deco)) tag[k] = deco[k]
         return tag

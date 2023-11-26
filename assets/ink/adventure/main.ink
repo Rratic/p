@@ -9,8 +9,9 @@ VAR player_name = "Anonymous"
 VAR player_sanity = 10
 VAR player_awareness = 8
 
-// 用 RANDOM 指令
+// 辅助指令
 VAR random = 0
+VAR t_target_name = ""
 
 // 流程
 -> menu

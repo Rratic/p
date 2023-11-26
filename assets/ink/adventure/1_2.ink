@@ -67,7 +67,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 * (asked) 那如果重名会发生什么？
 	你猜猜看。
 #INPUT: t_target_name
-{t_target_name == ".*"
+{t_target_name == ".*":
 	#AWARD: 正则表达式大师
 }
 -> done
