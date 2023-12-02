@@ -52,7 +52,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 		“其实还挺多……我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>。”
 		<img src="https:\/\/scp-wiki.wdfiles.com/local--files/goc-hub-page/GOC-Logo-v4.png"/>
 		“他们由 GOC 部门与 108 议会构成，游离在纯粹自由组织与个体政治组织之间；强项在于奇术。而我们比他们更加「超自然」。”
-		“其它还有”
+		“其它还有蛇之手、欲肉教、破碎之神教会、地平线倡议、混沌分裂者等等。”
 	* “没问题了。”
 - (loop)
 	{asked != 1:
@@ -64,7 +64,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 
 = test1
 “如果测试未通过，我们会妥善处理你的记忆。”
-你进入了一个房间
+你进入了一个房间。唯一的光源是天花板上有些昏暗的灯光，房间中央有一张桌子，上面摆放了一套国际象棋。
 <hr>
 第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。
 请用此枪杀死
@@ -72,7 +72,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	你猜猜看。
 #INPUT: t_target_name
 {t_target_name == ".*":
-	#AWARD: 正则表达式大师
+	#AWARD: give regex_master
 }
 -> done
 
