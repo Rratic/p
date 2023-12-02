@@ -19,6 +19,8 @@
 
     // 统计数据
     var statistics = {
+        award: {
+        },
         end: {
             common: new Set(),
             unusual: new Set(),
@@ -163,7 +165,7 @@
                     // storyContainer.replaceChildren()
                     storyContainer.appendChild(document.createElement("hr"))
                     customClasses.push(splitTag.val + "-end")
-                    statistics.end[splitTag.val].add(paragraphText)
+                    statistics.end[splitTag.val].add(paragraphText.trim())
                 }
 
                 // INPUT: varname
@@ -347,7 +349,6 @@
         let v = "", count = 0
         for (let i of set.values()) {
             count += 1
-            i.trim()
             v = v + i
             if (count != l)
                 v += "，"

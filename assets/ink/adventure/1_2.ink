@@ -41,26 +41,30 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 = conversation
 “在测试开始前，你想问些什么？我大体介绍一下，细节以后再说。”
 - (opts)
-	* (asked) “我们这个组织叫什么？”
+	* (asked) “你们这个组织叫什么？”
 		“<span class="ruby">特殊收容措施基金会（SCP 基金会）<span class="rt">Special Containment Procedures Foundation</span></span>”
 		<img src="https:\/\/scp-wiki-cn.wikidot.com/local--favicon/favicon.gif"/>
-		“我们以<span class="ruby">收容<span class="rt">Secure</span></span>、<span class="ruby">控制<span class="rt">Contain</span></span>、<span class="ruby">保护<span class="rt">Protect</span></span>为宗旨，其对象是被我们称之为 SCP 的……东西。”
-	* “我需要持有怎样的态度？”
+	* “你们是做什么的”
+		“我们以<span class="ruby">收容<span class="rt">Secure</span></span>、<span class="ruby">控制<span class="rt">Contain</span></span>、<span class="ruby">保护<span class="rt">Protect</span></span>为宗旨，其对象是被我们称之为收容物/SCP 的……东西。”
+	* “你们对于世界持有怎样的态度？”
 		“我们所做的被称作‘必要之恶’。”
 	* {asked} “我们有哪些同行组织？”
-		“其实还挺多……我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>，其它暂时不用了解。”
+		“其实还挺多……我们最大的同行组织是<span class="ruby">全球超自然联盟（GOC）<span class="rt">Global Occult Coalition</span></span>。”
 		<img src="https:\/\/scp-wiki.wdfiles.com/local--files/goc-hub-page/GOC-Logo-v4.png"/>
 		“他们由 GOC 部门与 108 议会构成，游离在纯粹自由组织与个体政治组织之间；强项在于奇术。而我们比他们更加「超自然」。”
+		“其它还有蛇之手、欲肉教、破碎之神教会、地平线倡议、混沌分裂者等等。”
 	* “没问题了。”
 - (loop)
 	{asked != 1:
 		“你确定没问题？”
+		-> u_end_why
 	}
+	-> opts
 -> test1
 
 = test1
 “如果测试未通过，我们会妥善处理你的记忆。”
-你进入了一个房间
+你进入了一个房间。唯一的光源是天花板上有些昏暗的灯光，房间中央有一张桌子，上面摆放了一套国际象棋。
 <hr>
 第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。
 请用此枪杀死
@@ -68,7 +72,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	你猜猜看。
 #INPUT: t_target_name
 {t_target_name == ".*":
-	#AWARD: 正则表达式大师
+	#AWARD: give regex_master
 }
 -> done
 

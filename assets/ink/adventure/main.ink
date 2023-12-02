@@ -6,8 +6,11 @@ INCLUDE endings.ink
 
 VAR chapter = ""
 VAR player_name = "Anonymous"
+// points
 VAR player_sanity = 10
 VAR player_awareness = 8
+VAR player_manas
+VAR player_gnosis
 
 // 辅助指令
 VAR random = 0
@@ -20,8 +23,8 @@ VAR t_target_name = ""
 #APPEAR: main-title
 + [新的开始] -> beginning
 + [章节选择]
-	+ + [1-1] -> 1_1
-    + + [1-2] -> 1_2
+	+ + [1-1 仪式] -> 1_1
+    + + [1-2 招魂] -> 1_2
 	+ + [返回] -> menu
 + [游戏设置] -> setting
 + [统计数据] -> statistics
@@ -115,4 +118,7 @@ VAR t_target_name = ""
 
 <h3>SCP Universe 相关其它来源的资料参考</h3>
 （在 1-2 中参考）
+
+图片如无标注均以来源为链接，遵循相关站点的协议许可。
+#AWARD: give examine_permission
 + [返回] -> menu
