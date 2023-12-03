@@ -79,7 +79,10 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	-> fail
 }
 {t_target_name == "Dgeros":
-	// 走火入魔
+	{asked:
+		“好吧我告诉你，如果有重名，什么也不会发生。”
+	}
+	-> u_end_demonify
 }
 -> done
 
@@ -91,6 +94,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 -> r_end_experimented
 
 = fail
+-> u_end_fail
 
 = done
 -> END

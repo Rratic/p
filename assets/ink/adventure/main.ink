@@ -109,6 +109,7 @@ VAR t_target_name = ""
 #LIST: begin
 <a href="https:\/\/scp-wiki-cn.wikidot.com/goc-hub-page">全球超自然联盟档案</a>（1-2 中参考）
 <a href="https:\/\/scp-wiki-cn.wikidot.com/scp-cn-2458">scp-cn-2458 - 曲奇就是这样碎的</a>（在 1-2 概率分支中出现）
+<a href="https:\/\/scp-wiki-cn.wikidot.com/parawatch-hub">观谬维基中心页</a>（在 1-2 概率分支中使用该格式）
 <a href="https:\/\/scp-wiki-cn.wikidot.com/anomaly-classification-system-guide">异常分类系统（ACS）指南</a>
 <a href="https:\/\/scp-wiki-cn.wikidot.com/goc-supplemental-thaumatology">████████████教授的讲座摘要：关于应用奇术</a>
 <a href="https:\/\/scp-wiki-cn.wikidot.com/another-goddamn-magic-system">魔法指南</a>
