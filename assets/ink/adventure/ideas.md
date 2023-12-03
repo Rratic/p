@@ -80,6 +80,4 @@ https://scp-wiki-cn.wikidot.com/magierakademie-hub
 允许打破墙；同名攻击
 彩蛋：“没有 Regex 功能”
 [[1]] 猫猫棋 随机提示一条规则
-无限复生恶灵
-附身
 [[2]] 实操 电梯
