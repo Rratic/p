@@ -9,8 +9,8 @@ VAR player_name = "Anonymous"
 // points
 VAR player_sanity = 10
 VAR player_awareness = 8
-VAR player_manas
-VAR player_gnosis
+VAR player_gnosis = 1
+VAR player_manas = 1
 
 // 辅助指令
 VAR random = 0
