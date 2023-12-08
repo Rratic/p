@@ -118,7 +118,9 @@ VAR t_target_name = ""
 #LIST: end
 
 <h3>SCP Universe 相关其它来源的资料参考</h3>
-（在 1-2 中参考）
+
+<h3>其它资料参考</h3>
+<a href="https:\/\/space.bilibili.com/23191782/channel/seriesdetail?sid=1424248">未明子视频合集【主义主义】</a>（在 1-2 分支中参考）
 
 图片如无标注均以来源为链接，遵循相关站点的协议许可。
 #AWARD: give examine_permission

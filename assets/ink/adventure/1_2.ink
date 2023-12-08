@@ -90,7 +90,11 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 <hr>
 “欢迎来到超形上学部。”
 “或许你会好奇为什么你没有杀死那位存在，可能是因为无限嵌入叙事层、<span class="ruby">回旋跨层<span class="rt">cyclical-transgression</span></span>或者<span class="ruby">亚叙事层<span class="rt">sub-diegesis</span></span>理论，甚至，是因为「设定」中那个枪不可能做得很强大。”
-“不过这都不重要，总之……”
++ “你这‘超形上学’明明是实在论，是前反思的！……”
+	“……”
++ “……”
+	“不过这都不重要，总之……”
+-
 -> r_end_experimented
 
 = fail
