@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>笔记索引 - Rratic</title>
+	<title>已封存/猫猫棋 - Rratic</title>
 	<meta name="tURL" id="tURL" content="../../">
-	<meta name="description" content="笔记索引 - Rratic">
+	<meta name="description" content="已封存/猫猫棋 - Rratic">
 	<script src="../../extra/info.js"></script>
 	<link id="theme-href" rel="stylesheet" type="text/css" href="../../css/light.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../extra/main.js"></script>
@@ -20,14 +20,19 @@
 		<nav class="docs-sidebar"><a class='docs-logo'><img src='../../assets/images/icon.png' alt='logo' height='96' width='144'></a><div class="docs-package-name"><span class="docs-autofit">Rratic</span></div><ul class="docs-menu"></ul></nav>
 		<div class="docs-main">
 			<header class="docs-navbar">
-				<nav class="breadcrumb"><ul><li class="is-active">笔记索引</li></ul></nav>
-				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/notes/' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
+				<nav class="breadcrumb"><ul><li class="is-active">已封存 / 猫猫棋</li></ul></nav>
+				<div class="docs-right"><a class='docs-edit-link' href='https://github.com/Rratic/mine/tree/master/docs/archived/catchess.md' target='_blank'><span class='docs-label is-hidden-touch'>编辑此页面</span></a>
 					<a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="设置"></a>
 					<a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a>
 				</div>
 			</header>
-			<article class="content"><ul><li class='li-file'><a href='bandit_1.html'>BANDIT. 1</a></li><li class='li-file'><a href='bandit_2.html'>BANDIT. 2</a></li><li class='li-file'><a href='links.html'>LINKS</a></li><li class='li-file'><a href='ph_1.html'>PH. 1</a></li><li class='li-file'><a href='ph_2.html'>PH. 2</a></li><li class='li-file'><a href='ph_t2_1.html'>PH. Tier2. 1</a></li><li class='li-file'><a href='ph_t2_2.html'>PH. Tier2. 2</a></li><li class='li-file'><a href='ps_1.html'>PS. 1</a></li><li class='li-file'><a href='se_1.html'>SE. 1</a></li></ul><div id='rocket' onclick='boom()'></div></article>
-			<nav class="docs-footer"><a class='docs-footer-prevpage' href='../index.html'>« 上层索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
+			<article class="content"><h1 id='header-猫猫棋'>猫猫棋<a class='docs-heading-anchor-permalink'></a></h1><p>规则：</p><ul><li><p>【白猫】类似跳棋，在周围 8 个方向若有棋子、跳过棋子是空格则可以跳过，会改变跳过棋子的毛色（白=&gt;黑=&gt;橘=&gt;白）</p></li><li><p>【黑猫】类似国际象棋的兵，处于开始状态可以向前两步；可以向前走一步；只能向侧前方吃；没有【吃过路兵】规则</p></li><li><p>【橘猫】可以向周围 4 个方向移动/吃</p></li><li><p>棋盘的上下边界是循环的</p></li></ul><script src="../../script/chess/chess_base.js"></script>
+<script src="../../assets/ink/adventure/catchess.js"></script>
+<canvas id="cat_game" width="512" height="512" style="background-color:#C19B6F"></canvas>
+<br/>
+<button onclick="initialize_chess('cat_game')">初始化</button>
+<div id='rocket' onclick='boom()'></div></article>
+			<nav class="docs-footer"><a class="docs-footer-prevpage" href="index.html">« 索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
 			<div class='giscus'></div>
 		</div>
 	</div>
