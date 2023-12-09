@@ -26,17 +26,23 @@ class Board {
 		this.setindex(src, { id: config.ctrans["void"].id })
 		this.setindex(dest, x)
 	}
-	isInbounds(pos) {
-		return 0 <= pos.x && pos.x < this.length && 0 <= pos.y && pos.y < this.height
-	}
-	isReachable(pos) {
+	tryMoveBy(pos, delta) { return this.config.move(pos, delta) }
+	isVoid(pos) { return this.config.cells[this.getindex(pos).id].type == "v" }
+	isPiece(pos) { return this.config.cells[this.getindex(pos).id].type == "p" }
+	isAlly(pos, me) {
 		let x = this.getindex(pos)
-		return this.isInbounds(pos) && !this.config.cells[x.id].block
+		return this.config.cells[x.id].type == "p" && !this.config.rival(x.ownership, me)
 	}
-	isReachable2(pos, me) {
-		if (!this.isInbounds(pos)) return false
+	isEnemy(pos, me) {
 		let x = this.getindex(pos)
-		let cd = this.config.cells[x.id]
-		return !cd.block || (cd.type == "p" && this.config.rival(x.ownership, me))
+		return this.config.cells[x.id].type == "p" && this.config.rival(x.ownership, me)
 	}
+}
+
+function initialize_chess(cvsid) {
+	let board = __init__()
+	let canvas = document.getElementById(cvsid)
+	let context = canvas.getContext("2d")
+	let xw = Math.floor(canvas.width / board.length)
+	let yw = Math.floor(canvas.height / board.height)
 }

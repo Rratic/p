@@ -7,7 +7,7 @@ function moveWhiteCat(b, pos) {
 			let np = b.tryMoveBy(pos, pos(rx, ry))
 			if (np == null)
 				continue
-			if (b.isPiece(np, me)) {
+			if (b.isPiece(np)) {
 				let np2 = b.tryMoveBy(pos, pos(rx * 2, ry * 2))
 				if (np2 == null)
 					continue
@@ -26,9 +26,38 @@ function moveWhiteCat(b, pos) {
 	return list
 }
 function moveBlackCat(b, pos) {
-	let flag = b.getIndex(pos).flag == "true"
+	let me = b.getIndex(pos).ownership
+	let list = []
+	let front = b.config.front(me)
+	let np = b.tryMoveBy(pos, pos(0, front))
+	if (np != null && b.isVoid(np)) // front
+		list.push({ target: np })
+	np = b.tryMoveBy(pos, pos(1, front)) // front-l
+	if (np != null && b.isEnemy(np))
+		list.push({ target: np })
+	np = b.tryMoveBy(pos, pos(-1, front)) // front-r
+	if (np != null && b.isEnemy(np))
+		list.push({ target: np })
+	let flag = b.getIndex(pos).flag == true
 	if (flag) {
+		np = b.tryMoveBy(pos, pos(0, front * 2))
+		if (np != null && b.isVoid(np))
+			list.push({ target: np })
 	}
+	return list
+}
+function moveOrangeCat(b, pos) {
+	let me = b.getIndex(pos).ownership
+	let list = []
+	for (let i = 0; i < 4; i++) {
+		let rx = [0, 0, 1, -1][i]
+		let ry = [1, -1, 0, 0][i]
+		let np = b.tryMoveBy(pos, pos(rx, ry))
+		if (np == null || b.isAlly(np, me))
+			continue
+		list.push({ target: np })
+	}
+	return list
 }
 function __init__() {
 	let board = new Board()
@@ -38,10 +67,10 @@ function __init__() {
 	board.config = {
 		"ctrans": { "void": 0, "white": 1, "black": 2, "orange": 3 },
 		"cells": [
-			{ type: "e", block: false },
-			{ type: "p", block: true, moves: moveWhiteCat },
-			{ type: "p", block: true, },
-			{ type: "p", block: true, },
+			{ type: "v", },
+			{ type: "p", moves: moveWhiteCat },
+			{ type: "p", moves: moveBlackCat },
+			{ type: "p", moves: moveOrangeCat },
 		],
 		"rival": function (a, b) { a != b },
 		"move": function (pos, delta) {
@@ -50,6 +79,8 @@ function __init__() {
 			if (np.y >= 8) np.y -= 8
 			if (np.y < 0) np.y += 8
 			return np
-		}
+		},
+		"front": function (ownership) { ownership == 0 ? 1 : -1 }
 	}
+	return board
 }
