@@ -2,6 +2,9 @@
 以下是一些链接的整理，不保证可用性
 
 ## 工作
+### 泛
+- [工具书总库](https://gongjushu.cnki.net/)
+
 ### 引擎
 - [开发者搜索](https://kaifa.baidu.com/)
 
@@ -16,6 +19,7 @@
 
 ## 数学
 ## 泛
+- [MathWorld](https://link.zhihu.com/?target=http%3A//mathworld.wolfram.com/)
 - [MetaMath](https://us.metamath.org/index.html)
 
 ### 工具
@@ -76,12 +80,14 @@
 
 ## 哲学
 - [foxinhub?](https://pedantries.com/) - 有趣的文章与交流平台
+- [Stanford Encyclopedia](https://plato.stanford.edu/)
 - [ctext](https://ctext.org/zhs) - 中国哲学书电子化计划
 
 ## 文化
 - [New Ithkuil](http://www.ithkuil.net/) - 可能是信息密度最高的语言
 - [Ancient Symbols](https://www.ancient-symbols.com/)
 - [Artwc](https://zhangyongfeng.com/tools/color/) - 中国传统色彩
+- [(English)](https://www.merriam-webster.com/)
 
 ## 天文
 - [spaceweather](https://spaceweather.com/)
