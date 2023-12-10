@@ -36,10 +36,10 @@ function moveBlackCat(b, pos) {
 		list.push({ target: np })
 	}
 	np = b.tryMoveBy(pos, cpos(1, front)) // front-l
-	if (np != null && b.isEnemy(np))
+	if (np != null && b.isEnemy(np, me))
 		list.push({ target: np })
 	np = b.tryMoveBy(pos, cpos(-1, front)) // front-r
-	if (np != null && b.isEnemy(np))
+	if (np != null && b.isEnemy(np, me))
 		list.push({ target: np })
 	let flag = b.getIndex(pos).flag == undefined
 	if (flag && flag2) {
@@ -133,7 +133,7 @@ function __init__() {
 			ctx.fillRect(pos.x * xw, pos.y * yw, xw, yw)
 		},
 		"draw_target": function (ctx, pos, xw, yw) {
-			ctx.fillStyle = "#0000FF4F"
+			ctx.fillStyle = "#0000FF20"
 			ctx.fillRect(pos.x * xw, pos.y * yw, xw, yw)
 		},
 	}
