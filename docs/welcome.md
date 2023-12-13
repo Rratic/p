@@ -264,6 +264,26 @@ source = "梭罗"
 [[pool]]
 text = "无可云证，是立足境。无立足境，是方干净。"
 source = "《红楼梦》"
+
+[[pool]]
+text = "Writing at its best is a lonely life. Organizations for writers palliate the writer's loneliness, but I doubt if they improve his writing. He grows in public stature as he sheds his loneliness and often his work deteriorates. For he does his work alone, and if he is a good enough writer, he must face eternity or the lack of it each day.<br>For a true writer, each book should be a new beginning where he tries again for something that is beyond attainment. He should always try for something that has never been done or that others have tried and failed. Then sometimes, with good luck, he will succeed.<br>How simple the writing of literature would be if it were only necessary to write in another way what has been well written. It is because we have had such great writers in the past that a writer is driven far out past where he can go, out to where no one can help him."
+source = "海明威诺奖致辞"
+
+[[pool]]
+text = "打断你的腿，再给你一副拐杖，然后告诉你，没有我，你连路都走不了，所以你要懂得感恩。"
+source = "鲁迅《华盖集·杂感》"
+
+[[pool]]
+text = "不要因为睡懒觉而感到自责，因为你起来也创造不了什么价值。能从浪费时间中获得乐趣，就不是浪费时间。"
+source = "罗素"
+
+[[pool]]
+text = "很多人觉得他们在思考，而实际上他们只是在重新整理自己的偏见。"
+source = "威廉·詹姆斯"
+
+[[pool]]
+text = "Everything we hear is a opinion, not a fact. Everything we see is a perspective, not the truth."
+source = "未找到真实来源"
 ```
 
 ## 关于

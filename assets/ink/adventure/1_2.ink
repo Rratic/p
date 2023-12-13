@@ -72,7 +72,9 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 “请用此枪杀死附身在对方棋子上的恶灵。”
 * (asked) 那如果重名会发生什么？
 	你猜猜看。
+#SCRIPT: catchess_test init
 #INPUT: t_target_name
+#SCRIPT: catchess_test check
 {t_target_name == ".*":
 	#AWARD: give regex_master
 	“你为什么会觉得它支持正则表达式呢？”
@@ -84,7 +86,11 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	}
 	-> u_end_demonify
 }
--> done
+{t_target_name == livevar_password:
+	#LOAD:
+	-> done
+}
+-> fail
 
 = caught_pataphysics
 <hr>
