@@ -100,7 +100,7 @@ extern "C":{
 ```
 表示该部分代码适用于 C++11 之前
 
-使用 time, srand, rand 创建随机数已经过时了！C++11 中加入了新的头文件 `random`，示例代码：
+使用 `time`, `srand`, `rand` 创建随机数已经过时了！C++11 中加入了新的头文件 `random`，示例代码：
 ```cpp
 #include <random>
 #include <iostream>
@@ -118,7 +118,8 @@ int main()
 ## 2020 carlini
 井字棋
 
-**注意：windows不支持**
+!!! warn
+	一些编译环境下可能不支持
 ```cpp
 #include <stdio.h>
 
@@ -184,8 +185,8 @@ cout<<"\033[33mYELLOW";
 
 在 linux 下可以直接显出效果，但在 windows 中，你需要先执行一次 system，例如将 `system("");` 放在控制符使用前，控制符才有效
 
-## 面向printf编程
-虽然 printf 的主要作用是输出，但它是「图灵完备」的，简单来说，你可以使用 printf 的参数实现分支和循环：
+## 面向 printf 编程
+虽然 `printf` 的主要作用是输出，但它是「图灵完备」的，简单来说，你可以使用 `printf` 的参数实现分支和循环：
 
 众所周知，
 * `%d` 接受一个整数参数并输出它
@@ -213,8 +214,8 @@ printf("%1$.*2$d%3$hhn",5,10,&x);
 * I/O 控制的伪代码：
 ```cpp
 while(*ok){
-  scanf();
-  printf();
+	scanf();
+	printf();
 }
 ```
 
@@ -313,7 +314,7 @@ s),s=S+30;(clock()-c)*10<i*CLOCKS_PER_SEC;);}return 0;}/*Nevertellmetheodds*/
 
 C++ 还包含了关键字 `and`、`bitor`、`or`、`xor`、`compl`、`bitand`、`and_eq`、`or_eq`、`xor_eq`、`not` 与 `not_eq`
 
-你可以使用 `FILE *` 方式操作文件，使用函数 `fopen(文件名, 模式)`，`fclose(指针)`，`fgetc(指针)`，还有 `fputc`，`fprintf`，`fscanf` 等等
+你可以使用 `FILE *` 方式操作文件，使用函数 `fopen(filename, mode)`，`fclose(pointer)`，`fgetc(pointer)`，还有 `fputc`，`fprintf`，`fscanf` 等等
 
 [^1]: https://www.ioccc.org/years.html
 [^2]: https://blog.csdn.net/paulkg12/article/details/85233310
