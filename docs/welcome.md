@@ -284,6 +284,10 @@ source = "威廉·詹姆斯"
 [[pool]]
 text = "Everything we hear is a opinion, not a fact. Everything we see is a perspective, not the truth."
 source = "未找到真实来源"
+
+[[pool]]
+text = "吾不识青天高，黄地厚。唯见月寒日暖，来煎人寿。"
+source = "李贺《苦昼短》"
 ```
 
 ## 关于
