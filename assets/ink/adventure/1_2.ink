@@ -69,12 +69,13 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 你进入了一个房间。唯一的光源是天花板上有些昏暗的灯光，房间中央有一张桌子，上面摆放了一个棋盘和几排棋子。
 <hr>
 “第一项测试，这把枪可以塞入普通子弹，在使用时思考你见过的生物的名字，就可以杀死它。”
-“请用此枪杀死附身在对方棋子上的恶灵。”
+“请用此枪杀死附身在棋子上的恶灵。”
 * (asked) 那如果重名会发生什么？
 	你猜猜看。
 #SCRIPT: catchess_test init
 #INPUT: t_target_name
 #SCRIPT: catchess_test check
+// RANDOM EVENT: 恶灵决定附身你 ⇒ 殉道
 {t_target_name == ".*":
 	#AWARD: give regex_master
 	“你为什么会觉得它支持正则表达式呢？”
@@ -87,10 +88,18 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 	-> u_end_demonify
 }
 {t_target_name == livevar_password:
-	#LOAD:
-	-> done
+	#SCRIPT: catchess_test check2
+	{script_check:
+		-> test2
+	}
+	恶灵附身在了另一颗棋子上。
+	你失败了。
+	-> fail
 }
 -> fail
+
+= test2
+-> done
 
 = caught_pataphysics
 <hr>
