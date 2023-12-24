@@ -1,6 +1,7 @@
 const version = "v0.3.2"
 const catnames = ["锂", "征途", "时光", "墨", "星辰", "馈赠"]
 const help1 = "指令的基本格式为 <code>/命令名 参数 -辅助参数 --赋值参数=值</code>。对于具体的命令，可以使用 <code>/help 该命令名</code> 查看其帮助。"
+var catnum = 0
 var catreact = null
 var store = undefined
 class Cat {
@@ -15,7 +16,7 @@ class Cat {
 		return `欢迎回来！当你输入 <code>/help</code> 时，${this.name}始终会给你帮助！`
 	}
 }
-var ccat = new Cat("锂")
+var ccat = new Cat(catnames[catnum])
 function userspeak(text, react = true) {
 	let div = document.createElement("div")
 	let p = document.createElement("p")
