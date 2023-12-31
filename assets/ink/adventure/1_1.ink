@@ -68,7 +68,12 @@
             “东皇太一” #CLASS: distort
             “打开天国的” #CLASS: distort
             “理智降低。” #CLASS: warning
-            -> u_end_why
+            #RANDOM: uniform_int_distribution 1 2
+            {random == 1:
+                -> u_end_why
+            - else:
+                -> u_end_martyrdom
+            }
         * * [触碰符文] -> bitten
         + + (throw) {stone} [朝符文扔石头]
             “攻击生效。” #CLASS: help
