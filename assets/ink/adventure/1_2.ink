@@ -75,7 +75,7 @@ Dgeros：“欢迎来到……呃……你先把这个戴上。”
 #SCRIPT: catchess_test init
 #INPUT: t_target_name
 #SCRIPT: catchess_test check
-// RANDOM EVENT: 恶灵决定附身你 ⇒ 殉道
+// RANDOM EVENT: 恶灵已附身你 ⇒ 出师未捷身先死
 {t_target_name == ".*":
 	#AWARD: give regex_master
 	“你为什么会觉得它支持正则表达式呢？”
