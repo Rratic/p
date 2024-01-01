@@ -15,6 +15,8 @@ VAR player_manas = 1
 // 辅助指令
 VAR random = 0
 VAR t_target_name = ""
+VAR livevar_password = ""
+VAR script_check = 0
 
 // 流程
 -> menu
