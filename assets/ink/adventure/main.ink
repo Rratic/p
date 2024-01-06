@@ -16,7 +16,7 @@ VAR player_manas = 1
 VAR random = 0
 VAR t_target_name = ""
 VAR livevar_password = ""
-VAR script_check = 0
+VAR script_check = true
 
 // 流程
 -> menu
@@ -43,7 +43,8 @@ VAR script_check = 0
 #CLEAR
 注意多存档；要保存的非导出存档储存在浏览器中，请勿清理 #CLASS: help
 确定要使用名称“{player_name}”吗？
-+ [前往设置] -> setting.name
++ [前往设置]
+	-> set_name() -> beginning
 + [确定] -> jump
 
 = jump
@@ -55,7 +56,8 @@ VAR script_check = 0
 
 = main
 #CLEAR
-+ [命名] -> name
++ [命名]
+	-> set_name() ->
 + [调节文本出现速度]
 	+ + [慢]
 		#SET: textSpeed 400.0
@@ -86,16 +88,16 @@ VAR script_check = 0
 -
 -> main
 
-= name
-#INPUT: player_name
-+ [确定]
-{player_name == "":
-	~ player_name = "Anonymous"
-}
-{player_name == "Rratic":
-	-> r_end_god_name
-}
--> main
+=== set_name()
+	#INPUT: player_name
+	+ [确定]
+	{player_name == "":
+		~ player_name = "Anonymous"
+	}
+	{player_name == "Rratic":
+		->-> r_end_god_name
+	}
+	->->
 
 == statistics ==
 #CLEAR
