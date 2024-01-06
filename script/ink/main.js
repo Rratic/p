@@ -111,6 +111,14 @@
                     this.audioLoop.loop = true;
                 }
 
+                // AWARD: command name
+                else if (splitTag && splitTag.property == "AWARD") {
+                    let args = splitTag.val.split(' ')
+                    let type = args.shift(1)
+                    if (type == "give")
+                        statistics["award"][args[0]] = true
+                }
+
                 // IMAGE: src
                 if (splitTag && splitTag.property == "IMAGE" && contactVar["displayImage"]) {
                     var imageElement = document.createElement('img');
@@ -185,6 +193,8 @@
                 else if (splitTag && splitTag.property == "DISPLAY") {
                     if (splitTag.val == "statistics")
                         display_statistics(appendList)
+                    else if (splitTag.val == "awards")
+                        display_awards(appendList)
                 }
 
                 // LIST: begin/end
@@ -200,18 +210,22 @@
                 // RANDOM: type args...
                 else if (splitTag && splitTag.property == "RANDOM") {
                     let mode = contactVar["randomMode"]
-                    if (mode == "shiny") {
-                        let noti = createQElement("p", { className: "neon", innerText: "%RANDOM%" })
-                        noti.style.textAlign = "center"
-                        appendList.push(noti)
-                    }
+                    let value = undefined
                     if (mode == "normal" || mode == "shiny") {
                         let args = splitTag.val.split(' ')
                         let type = args.shift(1)
-                        if (type == "uniform_int_distribution")
-                            get_var("random").value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
+                        if (type == "uniform_int_distribution") {
+                            value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
+                            get_var("random").value = value
+                        }
                     }
                     else if (mode == "editable") {
+                    }
+                    if (mode == "shiny") {
+                        let text = value === undefined ? "%RANDOM%" : `%RANDOM: ${value}%`
+                        let noti = createQElement("p", { className: "neon", innerText: text })
+                        noti.style.textAlign = "center"
+                        appendList.push(noti)
                     }
                 }
 
@@ -368,6 +382,9 @@
         container.push(ul)
     }
 
+    function display_awards() {
+    }
+
     function get_var(name) {
         return story.state._variablesState._globalVariables.get(name)
     }
@@ -471,7 +488,7 @@
         // load theme from browser memory
         var savedTheme;
         try {
-            savedTheme = window.localStorage.getItem('theme');
+            savedTheme = window.localStorage.getItem('ink-theme');
         }
         catch (e) {
             console.debug("Couldn't load saved theme");
@@ -500,7 +517,7 @@
             try {
                 window.localStorage.setItem('save-state', savePoint);
                 document.getElementById("reload").removeAttribute("disabled");
-                window.localStorage.setItem('theme', document.body.classList.contains("dark") ? "dark" : "");
+                window.localStorage.setItem('ink-theme', document.body.classList.contains("dark") ? "dark" : "");
             } catch (e) {
                 console.warn("Couldn't save state");
             }
