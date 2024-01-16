@@ -1,3 +1,4 @@
+const PROJECT_NAME = "adventure";
 (function (storyContent) {
 
     // Create ink story from the content using inkjs
@@ -191,8 +192,9 @@
 
                 // DISPLAY: varname
                 else if (splitTag && splitTag.property == "DISPLAY") {
-                    if (splitTag.val == "statistics")
-                        display_statistics(appendList)
+                    appendList.push(createQElement("h2", { innerText: splitTag.val }))
+                    if (splitTag.val == "ends")
+                        display_ends(appendList)
                     else if (splitTag.val == "awards")
                         display_awards(appendList)
                 }
@@ -211,15 +213,16 @@
                 else if (splitTag && splitTag.property == "RANDOM") {
                     let mode = contactVar["randomMode"]
                     let value = undefined
+                    let args = splitTag.val.split(' ')
+                    let type = args.shift(1)
                     if (mode == "normal" || mode == "shiny") {
-                        let args = splitTag.val.split(' ')
-                        let type = args.shift(1)
                         if (type == "uniform_int_distribution") {
                             value = Math.floor(Math.random() * (args[1] - args[0] + 1)) + args[0]
-                            get_var("random").value = value
+                            get_var("t_random").value = value
                         }
                     }
                     else if (mode == "editable") {
+                        get_var("t_random").value = Number(window.prompt(splitTag.val, args[0]))
                     }
                     if (mode == "shiny") {
                         let text = value === undefined ? "%RANDOM%" : `%RANDOM: ${value}%`
@@ -227,6 +230,11 @@
                         noti.style.textAlign = "center"
                         appendList.push(noti)
                     }
+                }
+
+                // SCRIPT: name oper
+                else if (splitTag && splitTag.property == "SCRIPT") {
+                    window.alert("功能尚待更新")
                 }
 
                 // SET: varname
@@ -370,7 +378,7 @@
         return v
     }
 
-    function display_statistics(container) {
+    function display_ends(container) {
         let endings = statistics["end"]
         let ul = document.createElement("ul")
         for (let key in endings) {
@@ -382,7 +390,15 @@
         container.push(ul)
     }
 
-    function display_awards() {
+    function display_awards(container) {
+        let awards = statistics["award"]
+        let ul = document.createElement("ul")
+        for (let key in awards) {
+            let li = document.createElement("li")
+            li.innerText = key
+            ul.append(li)
+        }
+        container.push(ul)
     }
 
     function get_var(name) {
@@ -484,14 +500,12 @@
 
     // Detects which theme (light or dark) to use
     function setupTheme(globalTagTheme) {
-
-        // load theme from browser memory
-        var savedTheme;
+        var savedTheme
         try {
-            savedTheme = window.localStorage.getItem('ink-theme');
+            savedTheme = localStorage.getItem('ink-theme')
         }
         catch (e) {
-            console.debug("Couldn't load saved theme");
+            console.debug("Couldn't load saved theme")
         }
 
         // Check whether the OS/browser is configured for dark mode
@@ -515,9 +529,10 @@
         let saveEl = document.getElementById("save");
         if (saveEl) saveEl.addEventListener("click", function (event) {
             try {
-                window.localStorage.setItem('save-state', savePoint);
-                document.getElementById("reload").removeAttribute("disabled");
-                window.localStorage.setItem('ink-theme', document.body.classList.contains("dark") ? "dark" : "");
+                localStorage.setItem(`${PROJECT_NAME}-version`, get_var("VERSION"))
+                localStorage.setItem(`${PROJECT_NAME}-state`, savePoint)
+                document.getElementById("reload").removeAttribute("disabled")
+                localStorage.setItem('ink-theme', document.body.classList.contains("dark") ? "dark" : "")
             } catch (e) {
                 console.warn("Couldn't save state");
             }
@@ -534,7 +549,13 @@
 
             storyContainer.replaceChildren()
             try {
-                let savedState = window.localStorage.getItem('save-state');
+                let savedVersion = localStorage.getItem(`${PROJECT_NAME}-version`)
+                let currentVersion = get_var("VERSION")
+                if (savedVersion != currentVersion) {
+                    let conf = window.confirm(`存档版本 ${savedVersion} 与当前版本 ${currentVersion} 不匹配，是否尝试加载？`)
+                    if (!conf) throw ("Load denied")
+                }
+                let savedState = localStorage.getItem(`${PROJECT_NAME}-state`)
                 if (savedState) story.state.LoadJson(savedState);
             }
             catch (e) {

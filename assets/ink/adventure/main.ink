@@ -1,22 +1,18 @@
-CONST VERSION = "v"
+CONST VERSION = "v0.1.0-alpha"
 
 INCLUDE 1_1.ink
 INCLUDE 1_2.ink
 INCLUDE endings.ink
 
+// 重要变量
 VAR chapter = ""
 VAR player_name = "Anonymous"
-// points
-VAR player_sanity = 10
-VAR player_awareness = 8
-VAR player_gnosis = 1
-VAR player_manas = 1
 
-// 辅助指令
-VAR random = 0
+// 辅助指令的临时变量
+VAR t_check = true
+VAR t_password = ""
+VAR t_random = 0
 VAR t_target_name = ""
-VAR livevar_password = ""
-VAR script_check = true
 
 // 流程
 -> menu
@@ -50,6 +46,7 @@ VAR script_check = true
 = jump
 第壹章 秩序：秩序的天平倒向秩序 #CLASS: help
 + [故事就此开始……] -> 1_1
++ [不是，你先等等] -> menu
 
 == setting ==
 -> main
@@ -101,30 +98,35 @@ VAR script_check = true
 
 == statistics ==
 #CLEAR
-#DISPLAY: statistics
+#DISPLAY: ends
 #DISPLAY: awards
 + [返回] -> menu
 
 == permission ==
 #CLEAR
 本作品按照 CC BY-SA 协议许可。使用的资源包括：
+<h3>技术参考</h3>
+#LIST: begin
+Ink 标准代码
+#LIST: end
+
 <h3>来自 Wikidot（scp-cn）的设定参考（CC BY-SA）</h3>
 注：作者信息可见于对应的页面中 #CLASS: help
 #LIST: begin
 <a href="https:\/\/scp-wiki-cn.wikidot.com/goc-hub-page">全球超自然联盟档案</a>（1-2 中参考）
 <a href="https:\/\/scp-wiki-cn.wikidot.com/scp-cn-2458">scp-cn-2458 - 曲奇就是这样碎的</a>（在 1-2 概率分支中出现）
-<a href="https:\/\/scp-wiki-cn.wikidot.com/parawatch-hub">观谬维基中心页</a>（在 1-2 概率分支中使用该格式）
-<a href="https:\/\/scp-wiki-cn.wikidot.com/anomaly-classification-system-guide">异常分类系统（ACS）指南</a>
-<a href="https:\/\/scp-wiki-cn.wikidot.com/goc-supplemental-thaumatology">████████████教授的讲座摘要：关于应用奇术</a>
-<a href="https:\/\/scp-wiki-cn.wikidot.com/another-goddamn-magic-system">魔法指南</a>
 <a href="https:\/\/scp-wiki-cn.wikidot.com/introduction-to-pataphysics">超形上学导论</a>（在 1-2 分支中出现）
-<a href="https:\/\/scp-wiki-cn.wikidot.com/dr-host">模因学入门讲座\(2020-9-15\)</a>
 #LIST: end
 
 <h3>SCP Universe 相关其它来源的资料参考</h3>
+#LIST: begin
+通用设定
+#LIST: end
 
 <h3>其它资料参考</h3>
+#LIST: begin
 <a href="https:\/\/space.bilibili.com/23191782/channel/seriesdetail?sid=1424248">未明子视频合集【主义主义】</a>（在 1-2 分支中参考）
+#LIST: end
 
 图片如无标注均以来源为链接，遵循相关站点的协议许可。
 #AWARD: give examine_permission
