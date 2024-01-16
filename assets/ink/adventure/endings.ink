@@ -56,6 +56,10 @@
 殉道 #END: unusual
 -> ending
 
+== u_end_suiside ==
+自杀 #END: unusual
+-> ending
+
 == u_end_too_observable ==
 你知道的太多了 #END: unusual
 不用说的话可以不说。#CLASS: help
