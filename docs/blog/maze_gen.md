@@ -115,7 +115,7 @@ function rand() {
     return gsrand>>16 & 32767
 }
 
-class Chunk{
+class Chunk {
     matrix
     constructor() {
         // suppose the map is divided into 64×64 chunks
@@ -128,51 +128,51 @@ Chunk.prototype.put = function(x, y, type) {
 }
 
 /* * * Core * * */
-Chunk.prototype.generate__infmaze_4 = function(lx, ly, rx, ry) { // split the map recursively
-    let x0 = rx - lx
-    let y0 = ry - ly
-    // room small enough (width = 1)
-    if(x0==0 || y0==0) {
-        for(let i = lx; i <= rx; i++) {
-            for(let j = ly; j <= ry; j++) this.put(i, j, 'space')
-        }
-        return
-    }
-    let mx = lx+2*(rand()%(x0>>1))+1
-    let my = ly+2*(rand()%(y0>>1))+1
-    for(let i = lx; i <= rx; i++) this.put(i, my, 'wall')
-    for(let i = ly; i <= ry; i++) this.put(mx, i, 'wall')
-    // split the map into four smaller rooms
-    this.generate__infmaze_4(lx, ly, mx-1, my-1)
-    this.generate__infmaze_4(lx, my+1, mx-1, ry)
-    this.generate__infmaze_4(mx+1, ly, rx, my-1)
-    this.generate__infmaze_4(mx+1, my+1, rx, ry)
-    // three exits serve as passages through rooms
-    let d = rand()%4
-    let myl = (my-ly+1) >> 1
-    let myr = (ry-my+1) >> 1
-    let mxl = (mx-lx+1) >> 1
-    let mxr = (rx-mx+1) >> 1
-    if(d == 0) {
-        this.put(rx - 2*(rand()%mxr), my, 'space')
-        this.put(mx, ly + 2*(rand()%myl), 'space')
-        this.put(mx, ry - 2*(rand()%myr), 'space')
-    }
-    else if(d == 1) {
-        this.put(lx + 2*(rand()%mxl), my, 'space')
-        this.put(mx, ly + 2*(rand()%myl), 'space')
-        this.put(mx, ry - 2*(rand()%myr), 'space')
-    }
-    else if(d == 2) {
-        this.put(lx + 2*(rand()%mxl), my, 'space')
-        this.put(rx - 2*(rand()%mxr), my, 'space')
-        this.put(mx, ry - 2*(rand()%myr), 'space')
-    }
-    else {
-        this.put(lx + 2*(rand()%mxl), my, 'space')
-        this.put(rx - 2*(rand()%mxr), my, 'space')
-        this.put(mx, ly + 2*(rand()%myl), 'space')
-    }
+Chunk.prototype.generate__infmaze_4 = function (lx, ly, rx, ry) { // split the map recursively
+	let x0 = rx - lx
+	let y0 = ry - ly
+	// room small enough (width = 1)
+	if (x0 == 0 || y0 == 0) {
+		for (let i = lx; i <= rx; i++) {
+			for (let j = ly; j <= ry; j++) this.put(i, j, 'space')
+		}
+		return
+	}
+	let mx = lx + 2 * (rand() % (x0 >> 1)) + 1
+	let my = ly + 2 * (rand() % (y0 >> 1)) + 1
+	for (let i = lx; i <= rx; i++) this.put(i, my, 'wall')
+	for (let i = ly; i <= ry; i++) this.put(mx, i, 'wall')
+	// split the map into four smaller rooms
+	this.generate__infmaze_4(lx, ly, mx - 1, my - 1)
+	this.generate__infmaze_4(lx, my + 1, mx - 1, ry)
+	this.generate__infmaze_4(mx + 1, ly, rx, my - 1)
+	this.generate__infmaze_4(mx + 1, my + 1, rx, ry)
+	// three exits serve as passages through rooms
+	let d = rand() % 4
+	let myl = (my - ly + 1) >> 1
+	let myr = (ry - my + 1) >> 1
+	let mxl = (mx - lx + 1) >> 1
+	let mxr = (rx - mx + 1) >> 1
+	if (d == 0) {
+		this.put(rx - 2 * (rand() % mxr), my, 'space')
+		this.put(mx, ly + 2 * (rand() % myl), 'space')
+		this.put(mx, ry - 2 * (rand() % myr), 'space')
+	}
+	else if (d == 1) {
+		this.put(lx + 2 * (rand() % mxl), my, 'space')
+		this.put(mx, ly + 2 * (rand() % myl), 'space')
+		this.put(mx, ry - 2 * (rand() % myr), 'space')
+	}
+	else if (d == 2) {
+		this.put(lx + 2 * (rand() % mxl), my, 'space')
+		this.put(rx - 2 * (rand() % mxr), my, 'space')
+		this.put(mx, ry - 2 * (rand() % myr), 'space')
+	}
+	else {
+		this.put(lx + 2 * (rand() % mxl), my, 'space')
+		this.put(rx - 2 * (rand() % mxr), my, 'space')
+		this.put(mx, ly + 2 * (rand() % myl), 'space')
+	}
 }
 Chunk.prototype.generate__infmaze = function(x, y) {
     // chunks are isolated at first
