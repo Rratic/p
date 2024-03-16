@@ -3,10 +3,10 @@
 考虑到在开源社区以外的贡献无法作为链接被指向，且很明显这是 Github Pages，此处列出在开源社区中的主要成熟项目：
 - [Julialang 中文导引](https://learn.juliacn.com)
 - [文档生成器](https://juliaroadmap.github.io/DoctreePages.jl) [^1]
-- [Adventure](https://github.com/foamworld/ad)
+- [Mercury & Milfoil](https://foamworld.github.io/adventure/)
 
 还有一些废弃项目：[^2]
-- [Foam World](https://foamworld.github.io/adventure/)
+- [Foam World](https://foamworld.github.io/block-world/)
 - [Maze](https://github.com/Rratic/Maze)
 - [Luogu 3.0++ 解释器](https://github.com/Rratic/Luogu3.0plusplus) [^3]
 

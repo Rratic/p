@@ -18,7 +18,7 @@
 | [我们是观谬维基，我们是行走在21世纪的唐·吉诃德](https://scp-wiki-cn.wikidot.com/don-quijote) | 可能是该 GOI 的最好文 |
 | [一生](https://scp-wiki-cn.wikidot.com/one-man-life) | / |
 | [末日竞赛](https://scp-wiki-cn.wikidot.com/doomsday-con-test) | 对于一个指定的 idea，能写出什么？ |
-| [《第一次超自然大战简明史(上)》节选 ](https://scp-wiki-cn.wikidot.com/ow1-first) | / |
+| 第一次超自然大战简明史节选  [上](https://scp-wiki-cn.wikidot.com/ow1-first) & [下](https://scp-wiki-cn.wikidot.com/ow1-second) | / |
 | [加速深蓝](https://scp-wiki-cn.wikidot.com/scp-cn-2463) | 这是好事吗？ |
 | [碧游主人说兽娘感应化形经](https://scp-wiki-cn.wikidot.com/wanderers:furry-girls) | 猫猫 |
 | [猫猫](https://scp-wiki-cn.wikidot.com/wanderers:kitty) | 猫猫 |
