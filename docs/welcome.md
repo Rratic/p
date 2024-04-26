@@ -304,6 +304,10 @@ source = "老子《道德经》"
 [[pool]]
 text = "为天地立心，为生民立命，为往圣继绝学，为万世开太平。"
 source = "张载（本版本自《横渠学案》）"
+
+[[pool]]
+text = "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will b​e made straight; ..."
+source = "Martin Luther King"
 ```
 
 ## 关于
