@@ -1,88 +1,104 @@
-class Pos {
-	x
-	y
-}
-
-function cpos(x, y) {
-	let p = new Pos()
-	p.x = x
-	p.y = y
-	return p
-}
-
 class Board {
 	length
 	height
 	contents
+	/* 
+	 * [cell.id]
+	 * piece type id
+	 * 
+	 * [cell.ownership]
+	 * owner's id, may be undefined
+	 * 
+	 * [cell.flag]
+	 * times the piece has moved
+	 */
 	config
-	getIndex(pos) {
-		return this.contents[pos.x * this.length + pos.y]
+	/* 
+	 * [ctrans]
+	 * translate table, piece type name => type id
+	 * must register "void"
+	 * 
+	 * [cells]
+	 * data of piece types
+	 * * [cells[id].type]
+	 * * "v" for void, "p" for piece
+	 * * [cells[id].moves]
+	 * * moveing handler
+	 * 
+	 * [rival]
+	 * function to check whether two sides are enemies
+	 * 
+	 * [move]
+	 * basic moving function
+	 */
+	getIndex(x, y) {
+		return this.contents[x * this.length + y];
 	}
-	setIndex(pos, x) {
-		this.contents[pos.x * this.length + pos.y] = x
+	setIndex(x, y, cell) {
+		this.contents[x * this.length + y] = cell;
 	}
-	moveTo(src, dest) {
-		let x = this.getIndex(src)
-		if (x["flag"] == undefined) x["flag"] = 1
-		else x["flag"] += 1
-		this.setIndex(src, { id: this.config.ctrans["void"] })
-		this.setIndex(dest, x)
+	setIndexKey(x, y, key, value) {
+		this.contents[x * this.length + y][key] = value;
 	}
-	tryMoveBy(pos, delta) { return this.config.move(pos, delta) }
-	isVoid(pos) { return this.config.cells[this.getIndex(pos).id].type == "v" }
-	isPiece(pos) { return this.config.cells[this.getIndex(pos).id].type == "p" }
-	isAlly(pos, me) {
-		let x = this.getIndex(pos)
-		return this.config.cells[x.id].type == "p" && !this.config.rival(x.ownership, me)
+	moveTo(fx, fy, tx, ty) {
+		let cell = this.getIndex(fx, fy);
+		if (cell["flag"] == undefined)
+			cell["flag"] = 1;
+		else
+			cell["flag"] += 1;
+		this.setIndex(fx, fy, { id: this.config.ctrans["void"] });
+		this.setIndex(tx, ty, cell);
 	}
-	isEnemy(pos, me) {
-		let x = this.getIndex(pos)
-		return this.config.cells[x.id].type == "p" && this.config.rival(x.ownership, me)
+	tryMoveBy(x, y, dx, dy) {
+		return this.config.move(x, y, dx, dy);
 	}
-}
-
-function initialize_chess(cvsid) {
-	let board = __init__()
-	let canvas = document.getElementById(cvsid)
-	let context = canvas.getContext("2d")
-	let xw = Math.floor(canvas.width / board.length)
-	let yw = Math.floor(canvas.height / board.height)
-	let status = -1 // pending
-	let src_cache = null
-	let moves_cache = null
-	canvas.addEventListener("click", function (event) {
-		if (status == -1) return
-		let x = Math.floor(event.offsetX / xw)
-		let y = Math.floor(event.offsetY / yw)
-		let pos = cpos(x, y)
-		if (moves_cache != null && (board.isVoid(pos) || board.isEnemy(pos, status))) {
-			for (let obj of moves_cache) {
-				if (obj.target.x == pos.x && obj.target.y == pos.y) {
-					let f = obj.on
-					if (f == undefined) board.moveTo(src_cache, pos)
-					else f()
-					board.config.canvas_display(context, xw, yw)
-					src_cache = null
-					moves_cache = null
-					status = board.config.turn_player_id(status)
-					return
+	isIn(x, y) {
+		return 0 <= x && x < this.length &&
+			0 <= y && y < this.height;
+	}
+	cellType(x, y) {
+		return this.config.cells[this.getIndex(x, y).id].type;
+	}
+	cellRival(x, y, me) {
+		return this.config.rival(this.getIndex(x, y).ownership, me);
+	}
+	isVoid(x, y) {
+		return this.cellType(x, y) == "v";
+	}
+	isPiece(x, y) {
+		return this.cellType(x, y) == "p";
+	}
+	isAlly(x, y, me) {
+		return this.isPiece(x, y) && !this.cellRival(x, y, me);
+	}
+	isEnemy(x, y, me) {
+		return this.isPiece(x, y) && this.cellRival(x, y, me);
+	}
+	existCount() {
+		let cnt = 0;
+		for (let cell of this.contents)
+			if (this.config.cells[cell.id].type != "v")
+				cnt += 1;
+		return cnt;
+	}
+	existAllies(ownerId) {
+		let listx = [], listy = [];
+		for (let x = 0; x < this.height; x++) {
+			for (let y = 0; y < this.length; y++) {
+				if (this.isAlly(x, y, ownerId)) {
+					listx.push(x);
+					listy.push(y);
 				}
 			}
 		}
-		else if (board.isAlly(pos, status)) {
-			board.config.canvas_display(context, xw, yw)
-			board.config.draw_chosen(context, pos, xw, yw)
-			let moves = board.config.cells[board.getIndex(pos).id].moves(board, pos)
-			src_cache = pos
-			if (moves == []) return
-			for (let obj of moves) {
-				let np = obj.target
-				board.config.draw_target(context, np, xw, yw)
-			}
-			moves_cache = moves
-		}
-	})
-	board.config.pieces_initialize()
-	board.config.canvas_display(context, xw, yw)
-	status = board.config.first_player_id
+		return [listx, listy];
+	}
+	copy() {
+		let board = new Board();
+		board.length = this.length;
+		board.height = this.height;
+		board.contents = structuredClone(this.contents);
+		board.config = this.config;
+		return board;
+	}
 }

@@ -7,8 +7,10 @@
 
 ```insert-html
 <script src="../../script/chess/chess_base.js"></script>
-<script src="../../assets/ink/adventure/catchess.js"></script>
-<canvas id="cat_game" width="512" height="512" style="background-color:#C19B6F"></canvas>
-<br/>
-<button onclick="initialize_chess('cat_game')">初始化</button>
+<script src="../../script/chess/catchess.js"></script>
+<script src="../../script/chess/catchess_handler.js"></script>
+<div id="cccc"></div>
+<input id="ssss" type="number" placeholder="棋盘大小 5~16" min="5" max="16" style="width:120px" />
+<input id="aaaa" type="number" placeholder="1=单人 2=双人" min="1" max="2" style="width:120px" />
+<button onclick="launch()">建立</button>
 ```
