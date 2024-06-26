@@ -27,10 +27,12 @@
 				</div>
 			</header>
 			<article class="content"><h1 id='header-猫猫棋'>猫猫棋<a class='docs-heading-anchor-permalink'></a></h1><p>规则：</p><ul><li><p>【白猫】类似跳棋，在周围 8 个方向若有棋子、跳过棋子是空格则可以跳过，会改变跳过棋子的毛色（白=&gt;黑=&gt;橘=&gt;白）</p></li><li><p>【黑猫】类似国际象棋的兵，处于开始状态可以向前两步；可以向前走一步；只能向侧前方吃；没有【吃过路兵】规则</p></li><li><p>【橘猫】可以向周围 4 个方向移动/吃</p></li><li><p>棋盘的上下边界是循环的</p></li></ul><script src="../../script/chess/chess_base.js"></script>
-<script src="../../assets/ink/adventure/catchess.js"></script>
-<canvas id="cat_game" width="512" height="512" style="background-color:#C19B6F"></canvas>
-<br/>
-<button onclick="initialize_chess('cat_game')">初始化</button>
+<script src="../../script/chess/catchess.js"></script>
+<script src="../../script/chess/catchess_handler.js"></script>
+<div id="cccc"></div>
+<input id="ssss" type="number" placeholder="棋盘大小 5~16" min="5" max="16" style="width:120px" />
+<input id="aaaa" type="number" placeholder="1=单人 2=双人" min="1" max="2" style="width:120px" />
+<button onclick="launch()">建立</button>
 <div id='rocket' onclick='boom()'></div></article>
 			<nav class="docs-footer"><a class="docs-footer-prevpage" href="index.html">« 索引</a><div class='flexbox-break'></div><p class='footer-message'>Powered by <a href='https://github.com/JuliaRoadmap/DoctreePages.jl'>DoctreePages.jl</a> and its dependencies.</p></nav>
 			<div class='giscus'></div>
