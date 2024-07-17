@@ -10,8 +10,11 @@
 
 ### 排版
 - [PDF 处理](https://smallpdf.com/cn)
-- [PDF 翻译](https://deepl.com)
 - [Typst](https://typst.app/)
+
+## 翻译
+- [支持文件翻译](https://deepl.com)
+- [Longman Dictionary of Contemporary English](https://www.ldoceonline.com/)
 
 ## 学习
 - [Coursea](https://www.coursera.org/)
@@ -33,7 +36,7 @@
 ## 物理
 - [NIST](https://www.nist.gov/pml)
 - [damtp](www.damtp.cam.ac.uk)
-- [引擎工具](https://brm.io/matter-js/)
+- [在线 2D 引擎](https://brm.io/matter-js/)
 
 ## 化学
 - [ptable](https://ptable.com/) - 元素周期表
