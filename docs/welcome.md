@@ -24,7 +24,7 @@ text = "理念是杀得死的，用更好的理念。"
 original = "Ideas can be killed. With better ideas."
 source = "qntm <em>antimemetics-division-hub</em>"
 license = "CC BY-SA 3.0"
-	
+
 [[pool]]
 text = "人为刀俎，我为鱼肉。"
 original = "如今人方为刀俎，我为鱼肉，何辞为。"
@@ -61,11 +61,11 @@ source = "<a href='https://www.bilibili.com/video/BV16g411Y76G/'>《生而为人
 [[pool]]
 text = "给时光以生命，而不是给生命以时光。"
 original = "To the time to life, rather than to life in time."
-source = "Blaise Pascal"
+source = "Blaise Pascal（帕斯卡）"
 
 [[pool]]
 text = "每个人都是依据他在世界上的使命拟定自己的计划。他想精熟某些技艺，想藉此得到某些荣耀和平安，想要在脚踏实地的人生里得到长久的幸福，无数的欢乐与愿景，构成了神奇的灯笼上面缤纷的图饰，在他的想象里展开；结束这场光影游戏的死亡，在黑暗的远方招手，但是欢乐的世界的光线遮蔽且扭曲了它。我们活在自己的梦境里，真实的命运却为我们铺了一条完全不同的道路。冥冥中的安排与我们自己的想象完全不一样，我们每踏出充满希望的脚步，紧跟而来的便是失望…直到看似遥远的死亡，突然结束这一场游戏。"
-source = "Immanuel Kant"
+source = "Immanuel Kant（康德）"
 
 [[pool]]
 text = "如无必要，勿增实体。"
@@ -161,6 +161,10 @@ text = "欲进余以千秋之业，岂料余之一事无成也哉！"
 source = "张岱《自为墓志铭》"
 
 [[pool]]
+text = "苍山负雪，明烛天南。"
+source = "姚鼐《登泰山记》"
+
+[[pool]]
 text = "人/民相食。"
 source = "《资治通鉴》、《三国志》、《宋史》、《辽史》、《明史》、《清史稿》等"
 
@@ -178,7 +182,7 @@ source = "《世说新语·言语》"
 
 [[pool]]
 text = "所有命运馈赠的礼物，早已在暗中标好了价格。"
-source = "茨威格"
+source = "茨威格《断头王后》*断章取义"
 
 [[pool]]
 text = "后生可畏，焉知来者之不如今也。"
@@ -202,7 +206,7 @@ original = "Wir müssen wissen. Wir werden wissen."
 source = "David Hilbert（希尔伯特）墓志铭"
 
 [[pool]]
-text = "Talk is cheap, show me the code."
+text = "Talk is cheap. Show me the code."
 source = "Linus Torvalds"
 
 [[pool]]
@@ -224,6 +228,7 @@ source = "William Shakespare <em>Hamlet</em>"
 
 [[pool]]
 text = "通过沉浸于痛苦来获得满足，体现了这样一种普遍原则，即通过让自己迷失在某种更巨大的东西中，通过消解自己的个性，通过放弃自我以及它所拥有的一切怀疑、冲突、痛苦、局限和孤独，来获得满足。"
+original = "The obtaining of satisfaction by submersion in misery is an expression of the general principle of finding satisfaction by losing the self in something greater, by dissolving the individuality, by getting rid of the self with its doubts, conflicts, pains, limitations and isolation."
 source = "Karen Horney 《我们时代的神经症人格》"
 
 [[pool]]
@@ -236,7 +241,8 @@ original = "Nun sage ich: der Mensch und überhaupt jedes vernünftige<br>Wesen 
 source = "康德《实践理性批判》"
 
 [[pool]]
-text = "Ad Astra Per Aspera"
+text = "循此苦旅，直抵群星。"
+original = "Ad Astra Per Aspera"
 source = "拉丁语格言"
 
 [[pool]]
@@ -265,7 +271,7 @@ source = "梭罗"
 
 [[pool]]
 text = "无可云证，是立足境。无立足境，是方干净。"
-source = "《红楼梦》"
+source = "曹雪芹《红楼梦》"
 
 [[pool]]
 text = "Writing at its best is a lonely life. Organizations for writers palliate the writer's loneliness, but I doubt if they improve his writing. He grows in public stature as he sheds his loneliness and often his work deteriorates. For he does his work alone, and if he is a good enough writer, he must face eternity or the lack of it each day.<br>For a true writer, each book should be a new beginning where he tries again for something that is beyond attainment. He should always try for something that has never been done or that others have tried and failed. Then sometimes, with good luck, he will succeed.<br>How simple the writing of literature would be if it were only necessary to write in another way what has been well written. It is because we have had such great writers in the past that a writer is driven far out past where he can go, out to where no one can help him."
@@ -310,6 +316,14 @@ source = "张载（本版本自《横渠学案》）"
 [[pool]]
 text = "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will b​e made straight; ..."
 source = "Martin Luther King"
+
+[[pool]]
+text = "瞒和骗”的要诀在于，闭上眼睛，绕开真实人生，把一切需要改良的现实问题转化成一个无私奉献的道德自律问题，然后用形而上的空洞抒情代替形而下的技术改进。苦难和苦难的制造者就这样一起消失。"
+source = "狄马《苦难的妙用》引 鲁迅《论睁了眼看》"
+
+[[pool]]
+text = "自由固不是钱所能买到的，但能够为钱而卖掉。"
+source = "鲁迅 演讲《娜拉走后怎样》"
 ```
 
 ## 关于
