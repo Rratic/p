@@ -178,7 +178,7 @@ source = "《荀子》"
 
 [[pool]]
 text = "木犹如此，人何以堪。"
-source = "《世说新语·言语》"
+source = "《世说新语·言语》、《枯树赋》"
 
 [[pool]]
 text = "所有命运馈赠的礼物，早已在暗中标好了价格。"
@@ -314,7 +314,7 @@ text = "为天地立心，为生民立命，为往圣继绝学，为万世开太
 source = "张载（本版本自《横渠学案》）"
 
 [[pool]]
-text = "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will b​e made straight; ..."
+text = "I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked places will be made straight; ..."
 source = "Martin Luther King"
 
 [[pool]]
@@ -333,6 +333,16 @@ source = "克利福德·格尔茨《文化的解释》引 马克斯·韦伯"
 text = "古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？此余之所得也！"
 source = "王安石《游褒禅山记》"
 ```
+
+背景音乐自己放（这里链接了 bilibili 的）：
+* [纯音乐×200+](https://www.bilibili.com/video/BV1os41197sv/)
+* [纯音乐×200](https://www.bilibili.com/video/BV1pV4y1U7RF/)
+* [ENDER LILES](https://www.bilibili.com/video/BV1CX4y1P7M8/)
+* [Scarborough Fair](https://www.bilibili.com/video/BV15W4y1f7VT/)
+* [彼岸花落](https://www.bilibili.com/video/BV1j44y197cD/)
+* [Relentless【WhiteRose】](https://www.bilibili.com/video/BV16t411f7mX/)
+* [亲爱的旅人啊](https://www.bilibili.com/video/BV1A4411N7Kb/) | [Always with me](https://www.bilibili.com/video/BV1wx41157D3/)
+* [起风了](https://www.bilibili.com/video/BV1Z84y1476V/) | 漫夜星 - 朝臣群像曲 | 绝世名伶 - 你 | [（杂）](https://space.bilibili.com/23285202/channel/collectiondetail?sid=1709193)
 
 ## 关于
 Q：如何找到所有的页面列表？  
