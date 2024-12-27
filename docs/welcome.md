@@ -346,7 +346,7 @@ source = "杜甫《天末怀李白》"
 * [彼岸花落](https://www.bilibili.com/video/BV1j44y197cD/)
 * [Relentless【WhiteRose】](https://www.bilibili.com/video/BV16t411f7mX/)
 * [亲爱的旅人啊](https://www.bilibili.com/video/BV1A4411N7Kb/) | [Always with me](https://www.bilibili.com/video/BV1wx41157D3/)
-* [欢乐颂](https://www.bilibili.com/video/BV1KFUdYwEBY/) | 漫夜星 - 朝臣群像曲 | [Bad Apple](https://www.bilibili.com/video/BV1mAUxY2EfE/) | 绝世名伶 - 你 | [（杂）](https://space.bilibili.com/23285202/channel/collectiondetail?sid=1709193)
+* [欢乐颂](https://www.bilibili.com/video/BV1KFUdYwEBY/) | 漫夜星 - 朝臣群像曲 | [Bad Apple](https://www.bilibili.com/video/BV1mAUxY2EfE/) | 神的游戏 - 艳火 | 绝世名伶 - 你 | [（杂）](https://space.bilibili.com/23285202/channel/collectiondetail?sid=1709193)
 
 ## 关于
 Q：如何找到所有的页面列表？  
