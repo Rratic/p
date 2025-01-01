@@ -90,6 +90,7 @@ let catchessRules = {
 		board.length = size;
 		board.height = size;
 		board.contents = new Array(size * size);
+		board.count = [[0, size, size, 0], [0, size, size, 0]];
 		board.config = {
 			"ctrans": { "void": 0, "white": 1, "black": 2, "orange": 3 },
 			"cells": [
@@ -98,10 +99,10 @@ let catchessRules = {
 				{ type: "p", moves: moves_black_cat },
 				{ type: "p", moves: moves_orange_cat },
 			],
-			"rival": (a, b) => { return a != b },
-			"front": (ownership) => { return ownership == 0 ? 1 : -1 },
+			"rival": (a, b) => (a != b),
+			"front": (ownership) => (ownership == 0 ? 1 : -1),
 			"first_player_id": 1,
-			"turn_player_id": (o) => { return 1 - o },
+			"turn_player_id": (o) => (1 - o),
 			"move": function (x, y, dx, dy) {
 				let x0 = x + dx;
 				let y0 = y + dy;
@@ -165,6 +166,20 @@ let catchessRules = {
 		}
 		return true;
 	},
+	__evaluate(board, player) {
+		let t = [0, 0];
+		for (let j = 0; j <= 1; j++) {
+			let c = board.count[j];
+			let d = 0;
+			if (c[2] + c[3] == 0) d = c[1];
+			else {
+				d = c[1] <= 5 ? 5 : c[1];
+				d += 2 * c[2] + 3 * c[3];
+			}
+			t[j] = d;
+		}
+		return t[player] - t[1 - player];
+	},
 	__play_without_ai(board, x, y, tx, ty, on) {
 		if (on == undefined) {
 			board.moveTo(x, y, tx, ty);
@@ -185,10 +200,9 @@ let catchessRules = {
 		let allies = board.existAllies(player);
 		let cnt_ally = allies[0].length;
 		let count = board.existCount();
-		let k = (player == 0) ? 1 : -1;
-		if (cnt_ally == 0) return -count * k;
-		if (cnt_ally == count) return count * k;
-		if (depth == 0) return (2 * cnt_ally - count) * k;
+		if (depth == 0 || cnt_ally == 0 || cnt_ally == count) {
+			return this.__evaluate(board, player);
+		}
 		// branches
 		let typeBigger = (player == 0); // is 极大节点
 		let flag = false, flagAv = true;
@@ -241,7 +255,7 @@ let catchessRules = {
 		}
 	},
 	__play_ai(board, ownsId) {
-		let value = this.alphabeta(board, 3, -Infinity, Infinity, ownsId, true);
+		let value = this.alphabeta(board, 4, -Infinity, Infinity, ownsId, true);
 		if (typeof (value) == "object") {
 			if (value.length == 1) {
 				console.error("unexpected: no proper behaviour");
