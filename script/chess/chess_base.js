@@ -12,6 +12,10 @@ class Board {
 	 * [cell.flag]
 	 * times the piece has moved
 	 */
+	count
+	/* 
+	 * count[ownership][id] = number
+	 */
 	config
 	/* 
 	 * [ctrans]
@@ -23,7 +27,7 @@ class Board {
 	 * * [cells[id].type]
 	 * * "v" for void, "p" for piece
 	 * * [cells[id].moves]
-	 * * moveing handler
+	 * * moving handler
 	 * 
 	 * [rival]
 	 * function to check whether two sides are enemies
@@ -35,7 +39,15 @@ class Board {
 		return this.contents[x * this.length + y];
 	}
 	setIndex(x, y, cell) {
-		this.contents[x * this.length + y] = cell;
+		let ind = x * this.length + y;
+		let ocell = this.contents[ind];
+		if (ocell.ownership != undefined) {
+			this.count[ocell.ownership][ocell.id] -= 1;
+		}
+		if (cell.ownership != undefined) {
+			this.count[cell.ownership][cell.id] += 1;
+		}
+		this.contents[ind] = cell;
 	}
 	setIndexKey(x, y, key, value) {
 		this.contents[x * this.length + y][key] = value;
@@ -98,6 +110,7 @@ class Board {
 		board.length = this.length;
 		board.height = this.height;
 		board.contents = structuredClone(this.contents);
+		board.count = structuredClone(this.count);
 		board.config = this.config;
 		return board;
 	}
