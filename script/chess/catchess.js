@@ -243,7 +243,7 @@ let catchessRules = {
 				break;
 			}
 		}
-		if (flagAv) return -k; // missed terminal
+		if (flagAv) return this.__evaluate(board, player); // missed terminal
 		let result = typeBigger ? α : β;
 		if (!tellMove) {
 			return result;

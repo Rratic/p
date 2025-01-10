@@ -88,9 +88,9 @@ class Board {
 	}
 	existCount() {
 		let cnt = 0;
-		for (let cell of this.contents)
-			if (this.config.cells[cell.id].type != "v")
-				cnt += 1;
+		for (let owned of this.count)
+			for (let num of owned)
+				cnt += num;
 		return cnt;
 	}
 	existAllies(ownerId) {
