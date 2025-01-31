@@ -1,13 +1,25 @@
 # 设定集
+<style>
+	.markdown-preview blockquote {
+		padding: 15px;
+	}
+
+	html body code {
+		background-color: silver;
+	}
+</style>
+
 ## 引言
 > For as the heavens are higher than the earth,
 > so are my ways higher than your ways,
 > and my thoughts than your thoughts. (Isaiah 55:9)
 
 ## 世界
-世界是一个巨大（真的，三千大千世界为一佛土那样，连接关系为超图）的不知道什么东西。
+世界是一个巨大的不知道什么内容的真类。
 
-单体世界是一个时间线到世界状态的映射，局部上包含巨大的不知道什么东西。
+有有限但数目巨大的单体世界。按“簇”进行分级为小千世界-中千世界-大千世界-佛土。连接关系为超图。
+
+单体世界通常可视作一个时间线到世界状态的映射，局部上包含巨大的不知道什么东西。
 
 ## 力量体系
 通过**识海**获得自身特有的**灵**（本质是群），接近相应的法则（本质是无限群，可能比实数集大若干级）。
@@ -89,7 +101,7 @@
 
 **晋升**：冥想，逐渐过渡观想内容。衍生出合成群列法、置换法。
 
-## 势力
+## 主世界势力
 **秩序疆域**：重视规则。由连绵的宫殿群组成。以循环群为主，运用秩序相关法则为主。
 * 冥想法为齿轮（包括连在一根轴上的多个齿轮），后续为精密的机器。
 * 敕令学派：规则编织；言灵。
@@ -128,7 +140,7 @@
 
 在*无穷高处*存在法则产生的日月星辰之像，由**永恒灯塔**的成员看守。
 
-热量的不均匀产生了风。
+光照导致的热量的不均匀产生了风。
 
 #### 奇异生物
 **导线虫**：古代敕令学派的遗留。主要由 `space`，`ehead`，`etail`，`conductor` 四种状态的元胞组成，满足 wire-world 规则：
@@ -137,6 +149,15 @@
 > * 某 `conductor` 的邻居中一个或两个为 `ehead` 时，变为 `ehead`
 
 由于与其它学派法术的纠缠，产生了其它的效能元胞，由此产生了形形色色的亚种。
+
+**薄膜兔**：永恒灯塔的仆从。一种可能出现在有界且通常可定向的曲面上的智慧生物，可以形同*折纸公理*生成痕迹（表现为纤维脆化、彩色油漆等）来干涉现实。
+
+### 无底深渊概述
+无底深渊有无限多层，编号取遍 $\mathbb{Z}_{\geq 0}$，除第零层称“深渊表层”外，其余每层都有领主。只有编号相邻层有直接连接，也可绕道其它世界。
+
+每一层的高度 300m 左右，长宽各约 12km
+
+此处的神秘学效应略有不同，且随层数增加而变复杂。
 
 ### 典藏法术评注
 #### 戏法/学徒法术
@@ -147,7 +168,7 @@
 > 1. 撬动**神秘法则**创造微光。
 >
 > 注释：
-> 1. 最基础的法术。微光的象征来自于升华者本身的“升华”。
+> 1. 最基础的法术。微光的象征来自于升华者本身的“升华”。因此，新晋的堕落者往往需进行一定准备方能施放。
 > 2. 通常光照强度 $\propto r^{1-dim}$，敕令/魔术学派大巫师可以将其改变，如 $\propto r^2$，从而产生巨大的效果。
 
 对比元素学派的两种法术：
@@ -188,147 +209,114 @@
 >
 > 注释：
 > 1. 此法术模型使用了 `creation::physics` 和 `rand` 规则命名空间，需要提前准备。
->
-> 附件1（伪代码）：
-> ```rust
-> use creation::physics::{prelude::*, Wall};
-> use rand::{rngs::ThreadRng, Rng};
-> 
-> fn gen_oddeven(rng: &mut ThreadRng, left: usize, right: usize) -> usize {
->     left + (rng.gen_range(0..=(right - left) >> 1) << 1)
-> }
-> 
-> const BLOCK_SIZE: f32 = 50.0;
-> const CHUNK_SIZE: usize = 32;
-> 
-> struct RecordChunk {
->     walls: Vec<((usize, usize), (usize, usize))>,
->     // pub record: [[u8; CHUNK_SIZE]; CHUNK_SIZE],
-> }
-> 
-> impl RecordChunk {
->     pub fn new() -> Self {
->         RecordChunk {
->             walls: Vec::<((usize, usize), (usize, usize))>::new(),
->         }
->     }
-> 
->     pub fn put(&mut self, x: usize, y: usize) {
->         self.walls.push(((x, x), (y, y)));
->     }
-> 
->     pub fn iter(&self) -> std::slice::Iter<((usize, usize), (usize, usize))> {
->         return self.walls.iter();
->     }
-> 
->     pub fn push(&mut self, x: (usize, usize), y: (usize, usize)) {
->         self.walls.push((x, y));
->     }
-> 
->     pub fn push_with_split_col(&mut self, x: usize, y: (usize, usize, usize)) {
->         let (ly, my, ry) = y;
->         if ly != my {
->             self.walls.push(((x, x), (ly, my - 1)))
->         };
->         if my != ry {
->             self.walls.push(((x, x), (my + 1, ry)))
->         };
->     }
-> 
->     pub fn push_with_split_lin(&mut self, x: (usize, usize, usize), y: usize) {
->         let (lx, mx, rx) = x;
->         if lx != mx {
->             self.walls.push(((lx, mx - 1), (y, y)))
->         };
->         if mx != rx {
->             self.walls.push(((mx + 1, rx), (y, y)))
->         };
->     }
-> 
->     /// Algorithm that recursively generates maze.
->     fn generate_area(&mut self, rng: &mut ThreadRng, lx: usize, ly: usize, rx: usize, ry: usize) {
->         if lx == rx || ly == ry {
->             return;
->         }
-> 
->         let mx = gen_oddeven(rng, lx + 1, rx - 1);
->         let my = gen_oddeven(rng, ly + 1, ry - 1);
-> 
->         // Add walls that divide areas (with tunnels).
->         self.put(mx, my);
->         let direction = rng.gen_range(0..4);
->         if direction != 0 {
->             let tunnel_lx = gen_oddeven(rng, lx, mx - 1);
->             self.push_with_split_lin((lx, tunnel_lx, mx - 1), my);
->         } else {
->             self.push((lx, mx - 1), (my, my));
->         }
->         if direction != 1 {
->             let tunnel_rx = gen_oddeven(rng, mx + 1, rx);
->             self.push_with_split_lin((mx + 1, tunnel_rx, rx), my);
->         } else {
->             self.push((mx + 1, rx), (my, my));
->         }
->         if direction != 2 {
->             let tunnel_ly = gen_oddeven(rng, ly, my - 1);
->             self.push_with_split_col(mx, (ly, tunnel_ly, my - 1));
->         } else {
->             self.push((mx, mx), (ly, my - 1));
->         }
->         if direction != 3 {
->             let tunnel_ry = gen_oddeven(rng, my + 1, ry);
->             self.push_with_split_col(mx, (my + 1, tunnel_ry, ry));
->         } else {
->             self.push((mx, mx), (my + 1, ry));
->         }
-> 
->         // Recursively generate areas.
->         self.generate_area(rng, lx, ly, mx - 1, my - 1);
->         self.generate_area(rng, lx, my + 1, mx - 1, ry);
->         self.generate_area(rng, mx + 1, ly, rx, my - 1);
->         self.generate_area(rng, mx + 1, my + 1, rx, ry);
->     }
-> 
->     pub fn generate(&mut self, rng: &mut ThreadRng) {
->         self.put(0, 0);
->         self.push_with_split_col(0, (1, gen_oddeven(rng, 1, CHUNK_SIZE - 1), CHUNK_SIZE - 1));
->         self.push_with_split_lin((1, gen_oddeven(rng, 1, CHUNK_SIZE - 1), CHUNK_SIZE - 1), 0);
->         self.generate_area(rng, 1, 1, CHUNK_SIZE - 1, CHUNK_SIZE - 1);
->     }
-> }
-> 
-> pub fn build_maze_chunk(mut commands: Commands, rng: &mut ThreadRng, offset_x: f32, offset_y: f32) {
->     let mut chunk = RecordChunk::new();
->     chunk.generate(rng);
-> 
->     let square_sprite = Sprite {
->         content: Wall,
->         custom_size: Some(Vec2::splat(BLOCK_SIZE)),
->         ..default()
->     };
-> 
->     for (range_x, range_y) in chunk.iter() {
->         let (lx, rx): (usize, usize) = *range_x;
->         let (ly, ry): (usize, usize) = *range_y;
->         // if lx == rx && ly == ry { continue; }
->         commands.spawn((
->             SpriteBundle {
->                 sprite: square_sprite.clone(),
->                 transform: Transform::from_xyz(
->                     ((lx + rx) as f32) * 0.5 * BLOCK_SIZE + offset_x,
->                     ((ly + ry) as f32) * 0.5 * BLOCK_SIZE + offset_y,
->                     1.0,
->                 )
->                 .with_scale(Vec3::new(
->                     (rx - lx + 1) as f32,
->                     (ry - ly + 1) as f32,
->                     1.0,
->                 )),
->                 ..default()
->             },
->             RigidBody::Static,
->             Collider::rectangle(BLOCK_SIZE, BLOCK_SIZE),
->         ));
->     }
-> }
-> ```
+
+附件1：伪代码
+```rust
+use creation::physics::{prelude::*, Wall};
+use rand::{rngs::ThreadRng, Rng};
+
+fn gen_oddeven(rng: &mut ThreadRng, left: usize, right: usize) -> usize {
+	left + (rng.gen_range(0..=(right - left) >> 1) << 1)
+}
+
+const BLOCK_SIZE: f32 = 50.0;
+const CHUNK_SIZE: usize = 32;
+
+struct RecordChunk {
+	pub record: [[u8; CHUNK_SIZE]; CHUNK_SIZE],
+}
+
+impl RecordChunk {
+	pub fn new() -> Self {
+		RecordChunk {
+			record: [[0u8; CHUNK_SIZE]; CHUNK_SIZE],
+		}
+	}
+
+	/// Algorithm that recursively generates maze.
+	fn generate_area(&mut self, rng: &mut ThreadRng, lx: usize, ly: usize, rx: usize, ry: usize) {
+		if lx == rx || ly == ry {
+			for i in lx..=rx {
+				for j in ly..=ry {
+					self.record[i][j] = 0;
+				}
+			}
+			return;
+		}
+
+		let mx = gen_oddeven(rng, lx + 1, rx - 1);
+		let my = gen_oddeven(rng, ly + 1, ry - 1);
+
+		// Add walls that divide areas.
+		for i in lx..=rx {
+			self.record[i][my] = 1;
+		}
+
+		for j in ly..=ry {
+			self.record[mx][j] = 1;
+		}
+
+		// Recursively generate areas.
+		self.generate_area(rng, lx, ly, mx - 1, my - 1);
+		self.generate_area(rng, lx, my + 1, mx - 1, ry);
+		self.generate_area(rng, mx + 1, ly, rx, my - 1);
+		self.generate_area(rng, mx + 1, my + 1, rx, ry);
+
+		// Add tunnels.
+		let direction = rng.gen_range(0..4);
+		if [0, 1, 2].contains(&direction) {
+			self.record[gen_oddeven(rng, lx, mx)][my] = 0;
+		}
+		if [0, 1, 3].contains(&direction) {
+			self.record[gen_oddeven(rng, mx, rx)][my] = 0;
+		}
+		if [0, 2, 3].contains(&direction) {
+			self.record[mx][gen_oddeven(rng, ly, my)] = 0;
+		}
+		if [1, 2, 3].contains(&direction) {
+			self.record[mx][gen_oddeven(rng, my, ry)] = 0;
+		}
+	}
+
+	pub fn generate(&mut self, rng: &mut ThreadRng) {
+		for i in 0..CHUNK_SIZE {
+			self.record[i][0] = 1;
+			self.record[0][i] = 1;
+		}
+		self.generate_area(rng, 1, 1, CHUNK_SIZE - 1, CHUNK_SIZE - 1);
+		self.record[gen_oddeven(rng, 1, CHUNK_SIZE - 1)][0] = 0;
+		self.record[0][gen_oddeven(rng, 1, CHUNK_SIZE - 1)] = 0;
+	}
+}
+
+pub fn build_maze_chunk(mut commands: Commands, rng: &mut ThreadRng) {
+	let mut chunk = RecordChunk::new();
+	chunk.generate(rng);
+
+	let square_sprite = Wall {
+		size: Some(Vec2::splat(BLOCK_SIZE)),
+		..default()
+	};
+
+	for i in 0..32 {
+		for j in 0..32 {
+			if chunk.record[i][j] == 0u8 {
+				continue;
+			}
+			commands.spawn((
+				SpriteBundle {
+					sprite: square_sprite.clone(),
+					transform: Transform::from_xyz(
+						(i as f32) * BLOCK_SIZE,
+						(j as f32) * BLOCK_SIZE,
+						1.0,
+					),
+					..default()
+				},
+				RigidBody::Static,
+				Collider::rectangle(BLOCK_SIZE, BLOCK_SIZE),
+			));
+		}
+	}
+}
+```
